@@ -16,7 +16,8 @@
       "category_tag": "DLP, 정보유출방지",
       "ai_reason": "생성형 AI 서비스 개인정보 유출방지시스템 도입과 관련된 솔루션 제공 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01588190&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 132,
@@ -28,7 +29,8 @@
       "category_tag": "개인정보보호, 솔루션 도입",
       "ai_reason": "해당 사업은 개인정보보호 관리체계 강화에 초점을 두고 있어, 이노티움의 개인정보보호 솔루션과 관련된 제품군이 적합합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01564550&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 162,
@@ -40,7 +42,8 @@
       "category_tag": "N2SF, 보안솔루션",
       "ai_reason": "정보보호 시스템 구축 관련",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 110,
@@ -52,7 +55,8 @@
       "category_tag": "정보보호 시스템, 유지관리",
       "ai_reason": "통합 유지관리 욡역과 관련된 업무로 보안 솔루션 구축 및 관리에 대한 경험을 요구할 수 있음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561722&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 117,
@@ -64,7 +68,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가 사업과 관련된 보안 솔루션 구축이 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01568232&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 127,
@@ -76,7 +81,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "기록관리부 유지관리 사업과 관련된 개인정보 영향평가에서 문서중앙화(ECM) 솔루션을 통해 보안 및 관리가 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571405&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 152,
@@ -88,7 +94,8 @@
       "category_tag": "정보보호 시스템 구축",
       "ai_reason": "개인정보영향평가와 관련된 보안 솔루션 도입 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584243&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 164,
@@ -100,7 +107,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가와 관련된 보안 솔루션 도입에 초점을 맞추어 평가하였습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596835&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     }
   ],
   "new": [
@@ -114,7 +122,8 @@
       "category_tag": "DLP, 정보유출방지",
       "ai_reason": "생성형 AI 서비스 개인정보 유출방지시스템 도입과 관련된 솔루션 제공 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01588190&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 132,
@@ -126,7 +135,8 @@
       "category_tag": "개인정보보호, 솔루션 도입",
       "ai_reason": "해당 사업은 개인정보보호 관리체계 강화에 초점을 두고 있어, 이노티움의 개인정보보호 솔루션과 관련된 제품군이 적합합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01564550&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 162,
@@ -138,7 +148,8 @@
       "category_tag": "N2SF, 보안솔루션",
       "ai_reason": "정보보호 시스템 구축 관련",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 110,
@@ -150,7 +161,8 @@
       "category_tag": "정보보호 시스템, 유지관리",
       "ai_reason": "통합 유지관리 욡역과 관련된 업무로 보안 솔루션 구축 및 관리에 대한 경험을 요구할 수 있음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561722&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 117,
@@ -162,7 +174,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가 사업과 관련된 보안 솔루션 구축이 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01568232&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 127,
@@ -174,7 +187,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "기록관리부 유지관리 사업과 관련된 개인정보 영향평가에서 문서중앙화(ECM) 솔루션을 통해 보안 및 관리가 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571405&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 152,
@@ -186,7 +200,8 @@
       "category_tag": "정보보호 시스템 구축",
       "ai_reason": "개인정보영향평가와 관련된 보안 솔루션 도입 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584243&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 164,
@@ -198,7 +213,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가와 관련된 보안 솔루션 도입에 초점을 맞추어 평가하였습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596835&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 104,
@@ -210,7 +226,8 @@
       "category_tag": "유지보수, 보안솔루션",
       "ai_reason": "직접적인 납품 기회가 없음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 108,
@@ -222,7 +239,8 @@
       "category_tag": "보안, 교육",
       "ai_reason": "교육 관련 용역이므로 납품 기회가 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01560891&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 116,
@@ -234,7 +252,8 @@
       "category_tag": "개인정보보호, 영향평가",
       "ai_reason": "보안 관련성이 떨어짐",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01565358&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 118,
@@ -246,7 +265,8 @@
       "category_tag": "개인정보보호, 감리",
       "ai_reason": "공고 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01558523&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 119,
@@ -258,7 +278,8 @@
       "category_tag": "클라우드 이관, 개인정보영향평가",
       "ai_reason": "보안 관련 서비스가 아닌 감리 및 영향평가에 중점적입니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01569315&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 126,
@@ -270,7 +291,8 @@
       "category_tag": "해킹방어, 대회",
       "ai_reason": "납품·구축 기업으로서 직접적인 보안 솔루션 제공 기회가 적음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571096&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 129,
@@ -282,7 +304,8 @@
       "category_tag": "AI, 암호화",
       "ai_reason": "관련성 낮음, 보안 기술 개발 용역으로 직접 납품 불가",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01573756&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 135,
@@ -294,7 +317,8 @@
       "category_tag": "보안, 유지보수",
       "ai_reason": "공고 내용은 스마트워크시스템의 운영용역 및 유지보수에 중점을 둔 것으로 보안 솔루션 납품 기회는 적음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01575407&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 137,
@@ -306,7 +330,8 @@
       "category_tag": "보안, 관련성저",
       "ai_reason": "개인정보 영향평가와 직접적인 관련성이 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577008&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 139,
@@ -318,7 +343,8 @@
       "category_tag": "개인정보보호, 교육",
       "ai_reason": "교육 관련 항목에 포함되나 납품 기회는 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577826&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 143,
@@ -330,7 +356,8 @@
       "category_tag": "보안, 정보보호",
       "ai_reason": "개인정보 관련 용역이지만, 직접적인 보안 솔루션 납품 기회는 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577800&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 144,
@@ -342,7 +369,8 @@
       "category_tag": "Zero Trust, 보안기술",
       "ai_reason": "관련성 낮음, 주요 제품군과 직접적인 연관성이 미미합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 145,
@@ -354,7 +382,8 @@
       "category_tag": "취약점 탐지, 대응기술",
       "ai_reason": "보안 관련 기술이나 솔루션을 제작하는 것이 아니라 콘텐츠 제작업체를 찾는 입찰공고로, 이노티움의 제품과 직접적인 관련이 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579538&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 146,
@@ -366,7 +395,8 @@
       "category_tag": "데이터보안, 활용융합, 비교과",
       "ai_reason": "입찰 공고는 보안 관련 제품 납품보다는 콘텐츠 제작에 초점이 맞춰져 있어 낮은 관련성评为中文",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579569&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 148,
@@ -378,7 +408,8 @@
       "category_tag": "보안, 인프라",
       "ai_reason": "IP사업화 관련 프로그램에서 보안 솔루션의 직접 납품 기회는 제한적입니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01581988&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 151,
@@ -390,7 +421,8 @@
       "category_tag": "보안, 관련성저",
       "ai_reason": "디지털 병리 솔루션과 개인정보 영향평가와 직접적인 보안 제품 또는 서비스 연관성이 떨어짐.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584793&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 154,
@@ -402,7 +434,8 @@
       "category_tag": "보안, 교육",
       "ai_reason": "교육 관련 용역이지만, 보안 요소가 포함되지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01586532&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 157,
@@ -414,7 +447,8 @@
       "category_tag": "AI, 불법조업",
       "ai_reason": "관련성 낮음, 보안 솔루션 구축과 관련 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01592794&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 158,
@@ -426,7 +460,8 @@
       "category_tag": "정보보호, 감리",
       "ai_reason": "사업 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582768&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 165,
@@ -438,7 +473,8 @@
       "category_tag": "보안, 연구개발",
       "ai_reason": "프로젝트 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01598492&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 167,
@@ -450,7 +486,8 @@
       "category_tag": "보안, 백업",
       "ai_reason": "주소정보관리시스템 백업장비 도입과 직접적인 관련성은 높지만, 이노티움의 핵심 제품군에서는 백업 솔루션에 대한 직접 납품이 포함되어 있지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     }
   ],
   "deadline": [
@@ -464,7 +501,8 @@
       "category_tag": "N2SF, 보안솔루션",
       "ai_reason": "정보보호 시스템 구축 관련",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 164,
@@ -476,7 +514,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가와 관련된 보안 솔루션 도입에 초점을 맞추어 평가하였습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596835&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 132,
@@ -488,7 +527,8 @@
       "category_tag": "개인정보보호, 솔루션 도입",
       "ai_reason": "해당 사업은 개인정보보호 관리체계 강화에 초점을 두고 있어, 이노티움의 개인정보보호 솔루션과 관련된 제품군이 적합합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01564550&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 165,
@@ -500,7 +540,8 @@
       "category_tag": "보안, 연구개발",
       "ai_reason": "프로젝트 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01598492&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 167,
@@ -512,7 +553,8 @@
       "category_tag": "보안, 백업",
       "ai_reason": "주소정보관리시스템 백업장비 도입과 직접적인 관련성은 높지만, 이노티움의 핵심 제품군에서는 백업 솔루션에 대한 직접 납품이 포함되어 있지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     }
   ],
   "inst_top10": [
@@ -630,7 +672,8 @@
       "category_tag": "보안, 백업",
       "ai_reason": "주소정보관리시스템 백업장비 도입과 직접적인 관련성은 높지만, 이노티움의 핵심 제품군에서는 백업 솔루션에 대한 직접 납품이 포함되어 있지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 166,
@@ -642,7 +685,8 @@
       "category_tag": "교육, 평생교육",
       "ai_reason": "이노티움의 사업 특성상 교육 관련 분야는 컨설팅/감사/관제/교육으로 분류되어 납품 기회가 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01599271&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 168,
@@ -654,7 +698,8 @@
       "category_tag": "보안컨설팅, 개인정보보호",
       "ai_reason": "컨설팅 서비스로 분류되므로 관련성이 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582558&bidPbancOrd=001",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 164,
@@ -666,7 +711,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가와 관련된 보안 솔루션 도입에 초점을 맞추어 평가하였습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596835&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 165,
@@ -678,7 +724,8 @@
       "category_tag": "보안, 연구개발",
       "ai_reason": "프로젝트 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01598492&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 162,
@@ -690,7 +737,8 @@
       "category_tag": "N2SF, 보안솔루션",
       "ai_reason": "정보보호 시스템 구축 관련",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 161,
@@ -702,7 +750,8 @@
       "category_tag": "보안 컨설팅",
       "ai_reason": "컨설팅 서비스 제공 범위 외에 해당합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594027&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 163,
@@ -714,7 +763,8 @@
       "category_tag": "교육, 컨설파인, 공급망",
       "ai_reason": "이노티움의 사업 특성상 교육과 관련된 용역은 처리하지 않습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596063&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 157,
@@ -726,7 +776,8 @@
       "category_tag": "AI, 불법조업",
       "ai_reason": "관련성 낮음, 보안 솔루션 구축과 관련 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01592794&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 158,
@@ -738,7 +789,8 @@
       "category_tag": "정보보호, 감리",
       "ai_reason": "사업 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582768&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 156,
@@ -750,7 +802,8 @@
       "category_tag": "보안 컨설팅, 개인정보보호",
       "ai_reason": "이노티움의 사업 특성상 감리 및 개인정보영향평가 용역과 관련된 컨설팅/감사는 처리하지 않습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01592666&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 159,
@@ -762,7 +815,8 @@
       "category_tag": "보안컨설팅, 진단",
       "ai_reason": "컨설팅 서비스가 아닌 제품 납품에 초점을 맞추고 있으므로 무관합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01592638&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 160,
@@ -774,7 +828,8 @@
       "category_tag": "개인정보비식별시스템, 임차",
       "ai_reason": "무관하거나 컨설팅/감사/관제/교육/진단 전용",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01591557&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 155,
@@ -786,7 +841,8 @@
       "category_tag": "DLP, 정보유출방지",
       "ai_reason": "생성형 AI 서비스 개인정보 유출방지시스템 도입과 관련된 솔루션 제공 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01588190&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 152,
@@ -798,7 +854,8 @@
       "category_tag": "정보보호 시스템 구축",
       "ai_reason": "개인정보영향평가와 관련된 보안 솔루션 도입 가능",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584243&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 154,
@@ -810,7 +867,8 @@
       "category_tag": "보안, 교육",
       "ai_reason": "교육 관련 용역이지만, 보안 요소가 포함되지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01586532&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 153,
@@ -822,7 +880,8 @@
       "category_tag": "개인정보보호, 보험",
       "ai_reason": "공고 내용과 직접적인 관련성이 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01585328&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 151,
@@ -834,7 +893,8 @@
       "category_tag": "보안, 관련성저",
       "ai_reason": "디지털 병리 솔루션과 개인정보 영향평가와 직접적인 보안 제품 또는 서비스 연관성이 떨어짐.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584793&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 150,
@@ -846,7 +906,8 @@
       "category_tag": "개인정보보호, 컨설팅",
       "ai_reason": "공고 내용은 개인정보영향평가 및 ISMS 인증 컨설팅으로, 이노티움의 납품 가능한 보안 제품과 서비스에 포함되지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582558&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 144,
@@ -858,7 +919,8 @@
       "category_tag": "Zero Trust, 보안기술",
       "ai_reason": "관련성 낮음, 주요 제품군과 직접적인 연관성이 미미합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 145,
@@ -870,7 +932,8 @@
       "category_tag": "취약점 탐지, 대응기술",
       "ai_reason": "보안 관련 기술이나 솔루션을 제작하는 것이 아니라 콘텐츠 제작업체를 찾는 입찰공고로, 이노티움의 제품과 직접적인 관련이 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579538&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 146,
@@ -882,7 +945,8 @@
       "category_tag": "데이터보안, 활용융합, 비교과",
       "ai_reason": "입찰 공고는 보안 관련 제품 납품보다는 콘텐츠 제작에 초점이 맞춰져 있어 낮은 관련성评为中文",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579569&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 148,
@@ -894,7 +958,8 @@
       "category_tag": "보안, 인프라",
       "ai_reason": "IP사업화 관련 프로그램에서 보안 솔루션의 직접 납품 기회는 제한적입니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01581988&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 147,
@@ -906,7 +971,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 납품·구축만 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01580263&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 137,
@@ -918,7 +984,8 @@
       "category_tag": "보안, 관련성저",
       "ai_reason": "개인정보 영향평가와 직접적인 관련성이 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577008&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 139,
@@ -930,7 +997,8 @@
       "category_tag": "개인정보보호, 교육",
       "ai_reason": "교육 관련 항목에 포함되나 납품 기회는 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577826&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 143,
@@ -942,7 +1010,8 @@
       "category_tag": "보안, 정보보호",
       "ai_reason": "개인정보 관련 용역이지만, 직접적인 보안 솔루션 납품 기회는 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577800&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 136,
@@ -954,7 +1023,8 @@
       "category_tag": "보안 컨설팅, 개인정보보호",
       "ai_reason": "공고 내용과 관련된 보안 솔루션이나 제품은 포함되지 않음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01576901&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 138,
@@ -966,7 +1036,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 납품·구축 서비스에 국한되어 있습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01569482&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 140,
@@ -978,7 +1049,8 @@
       "category_tag": "보안 컨설팅, 공급망 세무·회계",
       "ai_reason": "공고 내용과 관련성이 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01577847&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 141,
@@ -990,7 +1062,8 @@
       "category_tag": "개인정보보호, 감리",
       "ai_reason": "공고 내용과 직접적인 관련성이 없으며, 이노티움의 사업 특성에 따른 납품 가능 범위를 벗어난다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01544662&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 142,
@@ -1002,7 +1075,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 진단에 초점이 있어 무관합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01576407&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 132,
@@ -1014,7 +1088,8 @@
       "category_tag": "개인정보보호, 솔루션 도입",
       "ai_reason": "해당 사업은 개인정보보호 관리체계 강화에 초점을 두고 있어, 이노티움의 개인정보보호 솔루션과 관련된 제품군이 적합합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01564550&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 129,
@@ -1026,7 +1101,8 @@
       "category_tag": "AI, 암호화",
       "ai_reason": "관련성 낮음, 보안 기술 개발 용역으로 직접 납품 불가",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01573756&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 135,
@@ -1038,7 +1114,8 @@
       "category_tag": "보안, 유지보수",
       "ai_reason": "공고 내용은 스마트워크시스템의 운영용역 및 유지보수에 중점을 둔 것으로 보안 솔루션 납품 기회는 적음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01575407&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 131,
@@ -1050,7 +1127,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "공고 내용이 개인정보보호 컨설팅 용역으로, 이노티움의 사업 특성과 관련성이 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01574989&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 127,
@@ -1062,7 +1140,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "기록관리부 유지관리 사업과 관련된 개인정보 영향평가에서 문서중앙화(ECM) 솔루션을 통해 보안 및 관리가 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571405&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 126,
@@ -1074,7 +1153,8 @@
       "category_tag": "해킹방어, 대회",
       "ai_reason": "납품·구축 기업으로서 직접적인 보안 솔루션 제공 기회가 적음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571096&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 128,
@@ -1086,7 +1166,8 @@
       "category_tag": "보안 컨설팅, 전주기 평가 연구",
       "ai_reason": "공고 내용은 전주기 모니터링 및 실태분석으로, 이는 보안 컨설팅이나 전주기 평가 연구와 관련이 있으며 납품 기회는 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01573428&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 117,
@@ -1098,7 +1179,8 @@
       "category_tag": "정보보호, 시스템구축",
       "ai_reason": "개인정보 영향평가 사업과 관련된 보안 솔루션 구축이 가능합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01568232&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 116,
@@ -1110,7 +1192,8 @@
       "category_tag": "개인정보보호, 영향평가",
       "ai_reason": "보안 관련성이 떨어짐",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01565358&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 118,
@@ -1122,7 +1205,8 @@
       "category_tag": "개인정보보호, 감리",
       "ai_reason": "공고 내용과 직접적인 관련성 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01558523&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 119,
@@ -1134,7 +1218,8 @@
       "category_tag": "클라우드 이관, 개인정보영향평가",
       "ai_reason": "보안 관련 서비스가 아닌 감리 및 영향평가에 중점적입니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01569315&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 115,
@@ -1146,7 +1231,8 @@
       "category_tag": "컨설팅, 영향평가",
       "ai_reason": "전주기 성과관리 컨설팅 및 영향평가 실행 방안 용역은 컨설팅 서비스에 해당하므로 관련성이 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01564339&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 120,
@@ -1158,7 +1244,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "개인정보보호 컨설팅 사업과 관련 없음",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01566807&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 121,
@@ -1170,7 +1257,8 @@
       "category_tag": "교육, 컨설팅",
       "ai_reason": "이노티움의 사업 특성상 교육 및 컨설팅은 포함되지 않습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01569998&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 123,
@@ -1182,7 +1270,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 사업이 아닌 납품·구축 범위 외입니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01570076&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 112,
@@ -1194,7 +1283,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 평가 용역으로 무관합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01566156&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 113,
@@ -1206,7 +1296,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 제품 납품에 초점을 맞추는 회사 특성상 무관합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01565550&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 114,
@@ -1218,7 +1309,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 납품·구축 서비스에 해당不上，您希望我按照指定格式输出评分、标签和理由。根据您提供的信息，“2026年农林事业信息系统信息安全及个人信息保护强化咨询”这个公告明确要求的是咨询服务，而",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01567061&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 110,
@@ -1230,7 +1322,8 @@
       "category_tag": "정보보호 시스템, 유지관리",
       "ai_reason": "통합 유지관리 욡역과 관련된 업무로 보안 솔루션 구축 및 관리에 대한 경험을 요구할 수 있음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561722&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 108,
@@ -1242,7 +1335,8 @@
       "category_tag": "보안, 교육",
       "ai_reason": "교육 관련 용역이므로 납품 기회가 없습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01560891&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 109,
@@ -1254,7 +1348,8 @@
       "category_tag": "교육, 컨설팅",
       "ai_reason": "이노티움의 사업 특성상 교육 및 컨설팅은 포함되지 않습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01551871&bidPbancOrd=001",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 111,
@@ -1266,7 +1361,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 납품·구축 서비스에 해당不上，您希望我按照指定格式输出评分、标签和原因。根据您提供的信息，“2026年小消防队个人信息保护咨询”这个公告明确要求的是“咨询”，而您的公司不",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01563574&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 104,
@@ -1278,7 +1374,8 @@
       "category_tag": "유지보수, 보안솔루션",
       "ai_reason": "직접적인 납품 기회가 없음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 105,
@@ -1290,7 +1387,8 @@
       "category_tag": "보안컨설팅",
       "ai_reason": "컨설팅 서비스가 아닌 납품·구축에 초점을 맞추고 있습니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01559919&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 106,
@@ -1302,7 +1400,8 @@
       "category_tag": "교육, 컨설팅",
       "ai_reason": "교과목 콘텐츠 개발 용역은 교육 및 컨설팅에 해당하여 납품 대상에서 제외됩니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01551871&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 107,
@@ -1314,7 +1413,8 @@
       "category_tag": "보안무관",
       "ai_reason": "이노티움의 사업 특성상 차량 임차와 관련된 공고는 보안 서비스나 제품을 납품하는 것이 아니므로 무관합니다.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561719&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 101,
@@ -1326,7 +1426,8 @@
       "category_tag": "오류",
       "ai_reason": "연산 지연",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01557376&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 102,
@@ -1338,7 +1439,8 @@
       "category_tag": "오류",
       "ai_reason": "연산 지연",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01528884&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     },
     {
       "id": 103,
@@ -1350,9 +1452,10 @@
       "category_tag": "오류",
       "ai_reason": "연산 지연",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01557043&bidPbancOrd=000",
-      "source": "G2B"
+      "source": "G2B",
+      "budget": 0
     }
   ],
-  "updated_at": "2026-07-02 13:23",
+  "updated_at": "2026-07-02 13:35",
   "period": "2026-06-02 ~ 2026-07-02"
 }
