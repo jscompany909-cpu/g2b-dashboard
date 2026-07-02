@@ -1,6 +1,6 @@
 {
   "kpi": {
-    "new_week": 61,
+    "new_week": 58,
     "top7": 5,
     "total": 99,
     "deadline": 3
@@ -30,7 +30,7 @@
       "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 54545455
     },
     {
       "id": 167,
@@ -97,7 +97,7 @@
       "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 54545455
     },
     {
       "id": 167,
@@ -203,7 +203,7 @@
       "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 54545455
     },
     {
       "id": 167,
@@ -400,7 +400,7 @@
       "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 54545455
     },
     {
       "id": 161,
@@ -1077,47 +1077,8 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561719&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
-    },
-    {
-      "id": 101,
-      "institution": "조달청 서울지방조달청",
-      "title": "범죄피해자 통합지원시스템 구축(1차) 사업 감리 및 개인정보영향평가",
-      "reg_date": "2026-06-02",
-      "end_date": "2026-06-18",
-      "score": 0,
-      "category_tag": "감리, 개인정보영향평가",
-      "ai_reason": "감리 및 개인정보영향평가는 이노티움의 사업 영역이 아님.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01557376&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 102,
-      "institution": "조달청",
-      "title": "국립법무병원 차세대 통합의료정보시스템 구축 감리 및 개인정보영향평가 용역",
-      "reg_date": "2026-06-02",
-      "end_date": "2026-06-30",
-      "score": 0,
-      "category_tag": "감리, 개인정보영향평가",
-      "ai_reason": "감리 및 개인정보영향평가는 이노티움 사업 범위에 포함되지 않음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01528884&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 103,
-      "institution": "(재)국가생명윤리정책원",
-      "title": "정보보호 및 개인정보 보호 관리체계 인증(ISMS-P) 사전 컨설팅",
-      "reg_date": "2026-06-02",
-      "end_date": "2026-06-15",
-      "score": 0,
-      "category_tag": "보안 컨설팅, ISMS-P",
-      "ai_reason": "컨설팅 전용 사업으로 이노티움의 납품·구축 특성과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01557043&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
-  "updated_at": "2026-07-02 15:49",
-  "period": "2026-06-02 ~ 2026-07-02"
+  "updated_at": "2026-07-03 08:42",
+  "period": "2026-06-03 ~ 2026-07-03"
 }
