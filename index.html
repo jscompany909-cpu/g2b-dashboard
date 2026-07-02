@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이노티움 입찰 대시보드</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f4f8; color: #1a202c; }
+
+.header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #1e3a8a 100%);
+  color: white; padding: 18px 28px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.header h1 { font-size: 18px; font-weight: 700; }
+.header-sub { font-size: 11px; opacity: .55; margin-top: 3px; }
+.header-right { font-size: 11px; opacity: .65; text-align: right; }
+
+.refresh-btn {
+  margin-top: 6px; padding: 4px 12px;
+  background: rgba(255,255,255,.15); color: white;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 5px;
+  font-size: 11px; cursor: pointer; font-family: inherit;
+}
+.refresh-btn:hover { background: rgba(255,255,255,.25); }
+
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px; padding: 18px 28px;
+}
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+.kpi-card {
+  background: white; border-radius: 10px; padding: 16px 18px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.07); border-left: 4px solid;
+  transition: box-shadow .15s;
+}
+.kpi-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,.1); }
+.kpi-label { font-size: 11px; color: #6b7280; margin-bottom: 6px; }
+.kpi-value { font-size: 30px; font-weight: 700; line-height: 1; }
+.kpi-sub   { font-size: 12px; color: #9ca3af; }
+
+.tab-bar {
+  display: flex; padding: 0 28px; background: white;
+  border-bottom: 2px solid #e2e8f0; overflow-x: auto;
+}
+.tab-btn {
+  padding: 11px 16px; border: none; background: none; cursor: pointer;
+  font-size: 13px; font-family: inherit; color: #6b7280;
+  border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+}
+.tab-btn.active { color: #1e3a8a; border-color: #1e3a8a; font-weight: 700; }
+.badge {
+  display: inline-block; margin-left: 5px; padding: 1px 7px;
+  background: #e2e8f0; border-radius: 10px; font-size: 10px; color: #374151;
+}
+.tab-btn.active .badge { background: #dbeafe; color: #1e3a8a; }
+
+.tab-content { display: none; padding: 18px 28px 40px; }
+.tab-content.active { display: block; }
+.tab-desc {
+  font-size: 12px; color: #1e3a8a; margin-bottom: 14px;
+  padding: 9px 14px; background: #eff6ff; border-radius: 6px; border-left: 3px solid #3b82f6;
+}
+
+.table-wrap { overflow-x: auto; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+table { width: 100%; border-collapse: collapse; background: white; font-size: 12px; min-width: 700px; }
+thead tr { background: #f8fafc; }
+th {
+  padding: 10px 8px; text-align: left; color: #374151; font-weight: 600;
+  border-bottom: 2px solid #e2e8f0; white-space: nowrap; cursor: pointer; user-select: none;
+}
+th:hover { background: #f1f5f9; }
+td { padding: 9px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+tbody tr:hover td { background: #f8fafc; }
+td a { color: #1e3a8a; font-weight: 600; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.deadline-cell { white-space: nowrap; color: #e53e3e; font-weight: 600; }
+.reason-cell   { font-size: 11px; color: #555; }
+
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 800px) { .charts-grid { grid-template-columns: 1fr; } }
+.chart-card {
+  background: white; border-radius: 8px; padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.chart-card h3 { font-size: 13px; color: #374151; margin-bottom: 14px; font-weight: 600; }
+
+.no-data {
+  text-align: center; padding: 60px 20px; color: #9ca3af;
+  background: white; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.no-data h2 { font-size: 16px; margin-bottom: 10px; color: #6b7280; }
+.no-data code { font-size: 12px; background: #f1f5f9; padding: 8px 14px; border-radius: 5px; display: inline-block; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <h1>이노티움 입찰 인텔리전스 대시보드</h1>
+    <div class="header-sub">나라장터 · KISA · NIPA · IITP 30일 수집 | GitHub Pages 정적 버전</div>
+  </div>
+  <div class="header-right">
+    <div id="updated-at">로딩 중...</div>
+    <button class="refresh-btn" onclick="fetchData()">⟳ 새로고침</button>
+  </div>
+</div>
+
+<!-- KPI -->
+<div class="kpi-grid">
+  <div class="kpi-card" style="border-color:#3b82f6">
+    <div class="kpi-label">📅 최근 30일 신규</div>
+    <div class="kpi-value" style="color:#3b82f6"><span id="kpi-new">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#ef4444">
+    <div class="kpi-label">🎯 TOP 후보 (5점+)</div>
+    <div class="kpi-value" style="color:#ef4444"><span id="kpi-top">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#10b981">
+    <div class="kpi-label">🗄️ DB 누적</div>
+    <div class="kpi-value" style="color:#10b981"><span id="kpi-total">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#f59e0b">
+    <div class="kpi-label">⏰ 14일 내 마감</div>
+    <div class="kpi-value" style="color:#f59e0b"><span id="kpi-deadline">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('top',this)">🎯 Top 후보<span class="badge" id="cnt-top">-</span></button>
+  <button class="tab-btn" onclick="showTab('new',this)">📋 전체 신규<span class="badge" id="cnt-new">-</span></button>
+  <button class="tab-btn" onclick="showTab('deadline',this)">⏰ 마감임박<span class="badge" id="cnt-deadline">-</span></button>
+  <button class="tab-btn" onclick="showTab('stats',this)">📊 통계</button>
+  <button class="tab-btn" onclick="showTab('raw',this)">🔍 Raw<span class="badge" id="cnt-raw">-</span></button>
+</div>
+
+<!-- Tab: Top -->
+<div id="tab-top" class="tab-content active">
+  <p class="tab-desc">🎯 <strong>Top 후보</strong> — 관련도 5점 이상, 최근 30일. 우선 검토 대상.</p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>공고명</th>
+      <th onclick="sortTab('top',2)">공고일 ↕</th>
+      <th onclick="sortTab('top',3)">마감일 ↕</th>
+      <th onclick="sortTab('top',4)">점수 ↕</th>
+      <th>카테고리</th><th>AI 분석</th>
+    </tr></thead>
+    <tbody id="tbody-top"></tbody>
+  </table></div>
+</div>
+
+<!-- Tab: New -->
+<div id="tab-new" class="tab-content">
+  <p class="tab-desc">📋 <strong>전체 신규</strong> — 최근 30일 매칭 공고 (1점 이상).</p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>공고명</th>
+      <th onclick="sortTab('new',2)">공고일 ↕</th>
+      <th onclick="sortTab('new',3)">마감일 ↕</th>
+      <th onclick="sortTab('new',4)">점수 ↕</th>
+      <th>카테고리</th><th>AI 분석</th>
+    </tr></thead>
+    <tbody id="tbody-new"></tbody>
+  </table></div>
+</div>
+
+<!-- Tab: Deadline -->
+<div id="tab-deadline" class="tab-content">
+  <p class="tab-desc">⏰ <strong>마감임박</strong> — 14일 내 마감. 영업 액션 필요.</p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>공고명</th><th>공고일</th>
+      <th onclick="sortTab('deadline',3)">마감일 ↕</th>
+      <th onclick="sortTab('deadline',4)">점수 ↕</th>
+      <th>카테고리</th><th>AI 분석</th>
+    </tr></thead>
+    <tbody id="tbody-deadline"></tbody>
+  </table></div>
+</div>
+
+<!-- Tab: Stats -->
+<div id="tab-stats" class="tab-content">
+  <p class="tab-desc">📊 <strong>통계</strong> — 발주처 TOP10 및 카테고리 분포.</p>
+  <div class="charts-grid">
+    <div class="chart-card"><h3>🏢 발주처 TOP 10</h3><canvas id="c-inst"></canvas></div>
+    <div class="chart-card"><h3>🏷️ 카테고리별 분포</h3><canvas id="c-cat"></canvas></div>
+  </div>
+</div>
+
+<!-- Tab: Raw -->
+<div id="tab-raw" class="tab-content">
+  <p class="tab-desc">🔍 <strong>Raw</strong> — 최근 30일 전체 원본 데이터.</p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>공고명</th>
+      <th onclick="sortTab('raw',2)">공고일 ↕</th>
+      <th onclick="sortTab('raw',3)">마감일 ↕</th>
+      <th onclick="sortTab('raw',4)">점수 ↕</th>
+      <th>카테고리</th><th>AI 분석</th>
+    </tr></thead>
+    <tbody id="tbody-raw"></tbody>
+  </table></div>
+</div>
+
+<script>
+let _cache = {}, _charts = {}, _sort = {};
+
+async function fetchData() {
+  document.getElementById('updated-at').textContent = '불러오는 중...';
+  try {
+    // GitHub Pages: 같은 repo의 data/announcements.json 읽기
+    const d = await fetch('./data/announcements.json?_=' + Date.now()).then(r => {
+      if (!r.ok) throw new Error('파일 없음');
+      return r.json();
+    });
+    _cache = d;
+    document.getElementById('kpi-new').textContent      = d.kpi.new_week;
+    document.getElementById('kpi-top').textContent      = d.kpi.top7;
+    document.getElementById('kpi-total').textContent    = d.kpi.total;
+    document.getElementById('kpi-deadline').textContent = d.kpi.deadline;
+    document.getElementById('updated-at').textContent   = '데이터 기준: ' + d.updated_at;
+
+    renderTable('top',      d.top);
+    renderTable('new',      d.new);
+    renderTable('deadline', d.deadline);
+    renderTable('raw',      d.raw);
+    renderCharts(d);
+  } catch(e) {
+    document.getElementById('updated-at').textContent = '⚠️ 데이터 없음';
+    ['top','new','deadline','raw'].forEach(key => {
+      const tbody = document.getElementById('tbody-' + key);
+      if (tbody) tbody.innerHTML = `<tr><td colspan="7">
+        <div class="no-data">
+          <h2>데이터 파일이 없습니다</h2>
+          <p>PC에서 아래 명령을 실행하고 GitHub에 push하세요.</p>
+          <code>python g2b_export_json.py</code>
+        </div>
+      </td></tr>`;
+    });
+  }
+}
+
+// ── 테이블 ──────────────────────────────────────────────────────────
+const KEYS = ['institution','title','reg_date','end_date','score','category_tag','ai_reason'];
+
+function badge(s) {
+  const c = s>=9?'#e53e3e':s>=7?'#dd6b20':s>=5?'#38a169':'#718096';
+  return `<span style="background:${c};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">${s}점</span>`;
+}
+
+const SRC_COLOR = {'G2B':'#1e40af','KISA':'#065f46','NIPA':'#92400e','IITP':'#6b21a8'};
+function srcBadge(src) {
+  const c = SRC_COLOR[src] || '#374151';
+  return `<span style="background:${c};color:white;padding:1px 5px;border-radius:6px;font-size:10px;font-weight:700;margin-right:3px">${src||'G2B'}</span>`;
+}
+
+function renderTable(key, rows) {
+  const cnt = document.getElementById('cnt-' + key);
+  if (cnt) cnt.textContent = rows.length;
+  const tbody = document.getElementById('tbody-' + key);
+  if (!tbody) return;
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:28px;color:#9ca3af">데이터 없음</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(r => {
+    const inst = r.institution ? r.institution.slice(0,14) : '';
+    return `<tr>
+      <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
+      <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
+      <td style="white-space:nowrap">${r.reg_date}</td>
+      <td class="deadline-cell">${r.end_date}</td>
+      <td style="text-align:center">${badge(r.score)}</td>
+      <td style="white-space:nowrap">${r.category_tag}</td>
+      <td class="reason-cell">${r.ai_reason}</td>
+    </tr>`;
+  }).join('');
+}
+
+function sortTab(key, idx) {
+  const map = {top:_cache.top, new:_cache.new, deadline:_cache.deadline, raw:_cache.raw};
+  if (!map[key]) return;
+  const asc = !_sort[key+idx]; _sort[key+idx] = asc;
+  const sorted = [...map[key]].sort((a,b) => {
+    const f = KEYS[idx], va = a[f], vb = b[f];
+    return typeof va==='number' ? (asc?va-vb:vb-va) : (asc?String(va).localeCompare(String(vb),'ko'):String(vb).localeCompare(String(va),'ko'));
+  });
+  renderTable(key, sorted);
+}
+
+// ── 차트 ────────────────────────────────────────────────────────────
+const PAL = ['#3b82f6','#ef4444','#10b981','#f59e0b','#8b5cf6','#ec4899','#14b8a6','#f97316','#6366f1','#84cc16','#06b6d4','#a855f7','#d946ef','#0ea5e9','#22c55e'];
+
+function renderCharts(d) {
+  if (_charts.inst) _charts.inst.destroy();
+  if (_charts.cat)  _charts.cat.destroy();
+  _charts.inst = new Chart(document.getElementById('c-inst'), {
+    type: 'bar',
+    data: {
+      labels: d.inst_top10.map(r=>r.name.slice(0,14)),
+      datasets: [{ label:'건수', data: d.inst_top10.map(r=>r.cnt), backgroundColor:'#3b82f6', borderRadius:4 }]
+    },
+    options: { indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true,ticks:{stepSize:1}}} }
+  });
+  _charts.cat = new Chart(document.getElementById('c-cat'), {
+    type: 'doughnut',
+    data: {
+      labels: d.cat_dist.map(r=>r.tag),
+      datasets:[{ data:d.cat_dist.map(r=>r.cnt), backgroundColor:PAL }]
+    },
+    options: { plugins:{ legend:{ position:'right', labels:{ font:{size:11}, boxWidth:12 } } } }
+  });
+}
+
+// ── 탭 ──────────────────────────────────────────────────────────────
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+fetchData();
+</script>
+</body>
+</html>
