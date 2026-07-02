@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 58,
-    "top7": 5,
-    "total": 99,
+    "new_week": 62,
+    "top7": 6,
+    "total": 103,
     "deadline": 3
   },
   "top": [
@@ -43,6 +43,19 @@
       "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
       "source": "G2B",
+      "budget": 39600000
+    },
+    {
+      "id": 175,
+      "institution": "KISA",
+      "title": "[사전규격공개] 개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-02",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
+      "source": "KISA",
       "budget": 0
     },
     {
@@ -56,7 +69,7 @@
       "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 181754000
     },
     {
       "id": 144,
@@ -110,6 +123,19 @@
       "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
       "source": "G2B",
+      "budget": 39600000
+    },
+    {
+      "id": 175,
+      "institution": "KISA",
+      "title": "[사전규격공개] 개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-02",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
+      "source": "KISA",
       "budget": 0
     },
     {
@@ -123,7 +149,7 @@
       "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 181754000
     },
     {
       "id": 144,
@@ -216,7 +242,7 @@
       "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 39600000
     }
   ],
   "inst_top10": [
@@ -267,6 +293,10 @@
       "cnt": 12
     },
     {
+      "tag": "개인정보보호 컨설팅",
+      "cnt": 4
+    },
+    {
       "tag": "개인정보영향평가, 용역",
       "cnt": 3
     },
@@ -279,11 +309,11 @@
       "cnt": 3
     },
     {
-      "tag": "개인정보보호 컨설팅",
-      "cnt": 3
+      "tag": "연구개발, 암호화, 사이버위협 대응",
+      "cnt": 2
     },
     {
-      "tag": "연구개발, 암호화, 사이버위협 대응",
+      "tag": "보안 컨설팅, 취약점 진단",
       "cnt": 2
     },
     {
@@ -317,13 +347,48 @@
     {
       "tag": "컨설팅, 조사·분석",
       "cnt": 1
-    },
-    {
-      "tag": "컨설팅, 영향평가",
-      "cnt": 1
     }
   ],
   "raw": [
+    {
+      "id": 175,
+      "institution": "KISA",
+      "title": "[사전규격공개] 개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-02",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
+      "source": "KISA",
+      "budget": 0
+    },
+    {
+      "id": 172,
+      "institution": "식품의약품안전처",
+      "title": "2026년 개인정보보호 체계 개선 컨설팅",
+      "reg_date": "2026-06-25",
+      "end_date": "2026-07-07",
+      "score": 0,
+      "category_tag": "개인정보보호 컨설팅",
+      "ai_reason": "컨설팅 사업으로 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01602617&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 45454545
+    },
+    {
+      "id": 174,
+      "institution": "재단법인부산과학기술고등교육진흥원",
+      "title": "정보보안 및 개인정보보호 취약점 진단·관리체계 강화 용역",
+      "reg_date": "2026-06-25",
+      "end_date": "2026-07-06",
+      "score": 0,
+      "category_tag": "보안 컨설팅, 취약점 진단",
+      "ai_reason": "취약점 진단 및 관리체계 강화는 컨설팅·진단 중심으로 이노티움 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01601688&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 45305455
+    },
     {
       "id": 167,
       "institution": "한국지역정보개발원",
@@ -335,7 +400,7 @@
       "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 39600000
     },
     {
       "id": 166,
@@ -362,6 +427,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582558&bidPbancOrd=001",
       "source": "G2B",
       "budget": 0
+    },
+    {
+      "id": 173,
+      "institution": "(주)한국가스기술공사",
+      "title": "`26년 완주군 수소전주기 클러스터 수소충전소 유지보수 용역",
+      "reg_date": "2026-06-24",
+      "end_date": "2026-07-02",
+      "score": 0,
+      "category_tag": "유지보수, 수소충전소",
+      "ai_reason": "보안 소프트웨어 납품·구축과 무관한 수소충전소 유지보수 용역.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01600998&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 563365000
     },
     {
       "id": 164,
@@ -1037,7 +1115,7 @@
       "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
       "source": "G2B",
-      "budget": 0
+      "budget": 181754000
     },
     {
       "id": 105,
@@ -1079,6 +1157,6 @@
       "budget": 0
     }
   ],
-  "updated_at": "2026-07-03 08:42",
+  "updated_at": "2026-07-03 08:59",
   "period": "2026-06-03 ~ 2026-07-03"
 }
