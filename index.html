@@ -136,18 +136,19 @@ td a:hover { text-decoration: underline; }
   <button class="tab-btn" onclick="showTab('deadline',this)">⏰ 마감임박<span class="badge" id="cnt-deadline">-</span></button>
   <button class="tab-btn" onclick="showTab('stats',this)">📊 통계</button>
   <button class="tab-btn" onclick="showTab('raw',this)">🔍 Raw<span class="badge" id="cnt-raw">-</span></button>
+  <button class="tab-btn" onclick="showTab('deleted',this)">🗑️ 숨김<span class="badge" id="cnt-deleted" style="background:#fee2e2;color:#dc2626">0</span></button>
 </div>
 
 <!-- Tab: Top -->
 <div id="tab-top" class="tab-content active">
-  <p class="tab-desc">🎯 <strong>Top 후보</strong> — 관련도 5점 이상, 최근 30일. 우선 검토 대상.</p>
+  <p class="tab-desc">🎯 <strong>Top 후보</strong> — 관련도 5점 이상, 마감 미경과 공고만. 지금 바로 지원 가능한 건.</p>
   <div class="table-wrap"><table>
     <thead><tr>
       <th>발주기관</th><th>공고명</th><th>금액</th>
       <th onclick="sortTab('top',2)">공고일 ↕</th>
       <th onclick="sortTab('top',3)">마감일 ↕</th>
       <th onclick="sortTab('top',4)">점수 ↕</th>
-      <th>카테고리</th><th>AI 분석</th>
+      <th>카테고리</th><th>AI 분석</th><th></th>
     </tr></thead>
     <tbody id="tbody-top"></tbody>
   </table></div>
@@ -182,6 +183,18 @@ td a:hover { text-decoration: underline; }
   </table></div>
 </div>
 
+<!-- Tab: Deleted -->
+<div id="tab-deleted" class="tab-content">
+  <p class="tab-desc" style="border-color:#dc2626;background:#fff5f5;color:#991b1b">🗑️ <strong>숨김 목록</strong> — 숨긴 항목. 복구하면 Top/신규에 다시 표시됩니다. (브라우저 로컬 저장)</p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>공고명</th><th>금액</th>
+      <th>공고일</th><th>마감일</th><th>점수</th><th>카테고리</th><th>AI 분석</th><th></th>
+    </tr></thead>
+    <tbody id="tbody-deleted"></tbody>
+  </table></div>
+</div>
+
 <!-- Tab: Stats -->
 <div id="tab-stats" class="tab-content">
   <p class="tab-desc">📊 <strong>통계</strong> — 발주처 TOP10 및 카테고리 분포.</p>
@@ -208,6 +221,27 @@ td a:hover { text-decoration: underline; }
 
 <script>
 let _cache = {}, _charts = {}, _sort = {};
+
+// ── 삭제/복원 (localStorage 기반) ──────────────────────────────────
+const DELETED_KEY = 'g2b_deleted_ids';
+let _deleted = new Set(JSON.parse(localStorage.getItem(DELETED_KEY) || '[]'));
+
+function _saveDeleted() {
+  localStorage.setItem(DELETED_KEY, JSON.stringify([..._deleted]));
+}
+function deleteItem(id) {
+  if (!confirm('이 항목을 숨기겠습니까?')) return;
+  _deleted.add(id);
+  _saveDeleted();
+  fetchData();
+  loadDeleted();
+}
+function restoreItem(id) {
+  _deleted.delete(id);
+  _saveDeleted();
+  fetchData();
+  loadDeleted();
+}
 
 async function fetchData() {
   document.getElementById('updated-at').textContent = '불러오는 중...';
@@ -266,19 +300,25 @@ function srcBadge(src) {
 }
 
 function renderTable(key, rows) {
+  // 삭제된 항목 필터링 (deleted 탭 제외)
+  const visible = rows.filter(r => !_deleted.has(r.id));
   const cnt = document.getElementById('cnt-' + key);
-  if (cnt) cnt.textContent = rows.length;
+  if (cnt) cnt.textContent = visible.length;
   const tbody = document.getElementById('tbody-' + key);
   if (!tbody) return;
-  if (!rows.length) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:28px;color:#9ca3af">데이터 없음</td></tr>`;
+  const cols = key === 'top' ? 9 : 8;
+  if (!visible.length) {
+    tbody.innerHTML = `<tr><td colspan="${cols}" style="text-align:center;padding:28px;color:#9ca3af">데이터 없음</td></tr>`;
     return;
   }
-  tbody.innerHTML = rows.map(r => {
+  tbody.innerHTML = visible.map(r => {
     const inst      = r.institution ? r.institution.slice(0,14) : '';
     const budgetTxt = r.budget > 0
       ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
       : `<span style="color:#d1d5db;font-size:11px">-</span>`;
+    const delBtn = key === 'top'
+      ? `<td><button onclick="deleteItem(${r.id})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px">숨기기</button></td>`
+      : '';
     return `<tr>
       <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
       <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
@@ -288,6 +328,42 @@ function renderTable(key, rows) {
       <td style="text-align:center">${badge(r.score)}</td>
       <td style="white-space:nowrap">${r.category_tag}</td>
       <td class="reason-cell">${r.ai_reason}</td>
+      ${delBtn}
+    </tr>`;
+  }).join('');
+}
+
+function loadDeleted() {
+  const all = [...(_cache.top||[]), ...(_cache.new||[]), ...(_cache.raw||[])];
+  const seen = new Set();
+  const deleted = all.filter(r => {
+    if (seen.has(r.id)) return false;
+    seen.add(r.id);
+    return _deleted.has(r.id);
+  });
+  const cnt = document.getElementById('cnt-deleted');
+  if (cnt) cnt.textContent = deleted.length || '0';
+  const tbody = document.getElementById('tbody-deleted');
+  if (!tbody) return;
+  if (!deleted.length) {
+    tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:28px;color:#9ca3af">숨긴 항목 없음</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = deleted.map(r => {
+    const inst      = r.institution ? r.institution.slice(0,14) : '';
+    const budgetTxt = r.budget > 0
+      ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
+      : `<span style="color:#d1d5db;font-size:11px">-</span>`;
+    return `<tr style="opacity:.7">
+      <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
+      <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
+      <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
+      <td style="white-space:nowrap">${r.reg_date}</td>
+      <td class="deadline-cell">${r.end_date}</td>
+      <td style="text-align:center">${badge(r.score)}</td>
+      <td style="white-space:nowrap">${r.category_tag}</td>
+      <td class="reason-cell">${r.ai_reason}</td>
+      <td><button onclick="restoreItem(${r.id})" style="padding:3px 10px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:5px;cursor:pointer;font-size:11px">복구</button></td>
     </tr>`;
   }).join('');
 }
@@ -333,9 +409,11 @@ function showTab(name, btn) {
   document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   if (btn) btn.classList.add('active');
+  if (name === 'deleted') loadDeleted();
 }
 
 fetchData();
+loadDeleted();
 </script>
 </body>
 </html>
