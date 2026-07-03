@@ -1,24 +1,11 @@
 {
   "kpi": {
     "new_week": 62,
-    "top7": 6,
+    "top7": 3,
     "total": 103,
     "deadline": 3
   },
   "top": [
-    {
-      "id": 155,
-      "institution": "경기도 용인시",
-      "title": "[수의시담]생성형 AI 서비스 개인정보 유출방지시스템 도입",
-      "reg_date": "2026-06-18",
-      "end_date": "2026-06-18",
-      "score": 9,
-      "category_tag": "개인정보 유출방지, DLP, 생성형 AI",
-      "ai_reason": "개인정보 유출방지 시스템 도입은 이노티움의 DLP 및 관련 보안 솔루션 납품 가능성과 직접적으로 연관됨.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01588190&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
     {
       "id": 162,
       "institution": "과학기술정보통신부",
@@ -56,32 +43,6 @@
       "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
       "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
       "source": "KISA",
-      "budget": 0
-    },
-    {
-      "id": 104,
-      "institution": "한국건설기술연구원",
-      "title": "2026년 보안솔루션 유지보수",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-15",
-      "score": 7,
-      "category_tag": "보안솔루션 유지보수",
-      "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 181754000
-    },
-    {
-      "id": 144,
-      "institution": "한국항공우주연구원",
-      "title": "LLM 기반 위성영상 메타데이터 검색 서비스의 Zero Trust 보안 기술 연구",
-      "reg_date": "2026-06-15",
-      "end_date": "2026-06-26",
-      "score": 7,
-      "category_tag": "Zero Trust, 보안 기술 연구",
-      "ai_reason": "Zero Trust 보안 기술은 이노티움의 제로트러스트/N2SF 아키텍처 구축과 관련성이 있으나, 연구 중심 프로젝트로 직접 납품 가능성은 낮음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
-      "source": "G2B",
       "budget": 0
     }
   ],
@@ -1157,6 +1118,6 @@
       "budget": 0
     }
   ],
-  "updated_at": "2026-07-03 09:02",
+  "updated_at": "2026-07-03 09:14",
   "period": "2026-06-03 ~ 2026-07-03"
 }
