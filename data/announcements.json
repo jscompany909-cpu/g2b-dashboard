@@ -1,24 +1,11 @@
 {
   "kpi": {
-    "new_week": 62,
+    "new_week": 57,
     "top7": 3,
-    "total": 103,
-    "deadline": 3
+    "total": 106,
+    "deadline": 2
   },
   "top": [
-    {
-      "id": 162,
-      "institution": "과학기술정보통신부",
-      "title": "과기정통부 N2SF 적용을 위한 업무자료 등급분류",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-03",
-      "score": 9,
-      "category_tag": "N2SF 아키텍처 구축, 문서중앙화",
-      "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 54545455
-    },
     {
       "id": 167,
       "institution": "한국지역정보개발원",
@@ -44,6 +31,19 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
       "source": "KISA",
       "budget": 0
+    },
+    {
+      "id": 178,
+      "institution": "조달청 인천지방조달청",
+      "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
+      "reg_date": "2026-06-26",
+      "end_date": "2026-07-08",
+      "score": 7,
+      "category_tag": "보안솔루션 구축, 메타버스 시스템",
+      "ai_reason": "메타버스 시스템 보안솔루션 구축은 이노티움의 제품군 일부와 관련성이 있으나, 구체적인 요구사항에 따라 직접 납품 가능 여부는 불확실함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01603620&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 172727273
     }
   ],
   "new": [
@@ -100,19 +100,6 @@
       "budget": 0
     },
     {
-      "id": 104,
-      "institution": "한국건설기술연구원",
-      "title": "2026년 보안솔루션 유지보수",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-15",
-      "score": 7,
-      "category_tag": "보안솔루션 유지보수",
-      "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 181754000
-    },
-    {
       "id": 144,
       "institution": "한국항공우주연구원",
       "title": "LLM 기반 위성영상 메타데이터 검색 서비스의 Zero Trust 보안 기술 연구",
@@ -124,6 +111,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
+    },
+    {
+      "id": 178,
+      "institution": "조달청 인천지방조달청",
+      "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
+      "reg_date": "2026-06-26",
+      "end_date": "2026-07-08",
+      "score": 7,
+      "category_tag": "보안솔루션 구축, 메타버스 시스템",
+      "ai_reason": "메타버스 시스템 보안솔루션 구축은 이노티움의 제품군 일부와 관련성이 있으나, 구체적인 요구사항에 따라 직접 납품 가능 여부는 불확실함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01603620&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 172727273
     },
     {
       "id": 129,
@@ -167,32 +167,6 @@
   ],
   "deadline": [
     {
-      "id": 160,
-      "institution": "조달청 서울지방조달청",
-      "title": "사건기록용 고속복합기(개인정보비식별시스템 탑재)임차 사업",
-      "reg_date": "2026-06-19",
-      "end_date": "2026-07-03",
-      "score": 2,
-      "category_tag": "개인정보비식별, 고속복합기",
-      "ai_reason": "고속복합기 임차 사업은 이노티움의 핵심 제품군과 직접적 연관성이 낮으며, 개인정보비식별은 일부 관련성만 있음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01591557&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 162,
-      "institution": "과학기술정보통신부",
-      "title": "과기정통부 N2SF 적용을 위한 업무자료 등급분류",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-03",
-      "score": 9,
-      "category_tag": "N2SF 아키텍처 구축, 문서중앙화",
-      "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 54545455
-    },
-    {
       "id": 167,
       "institution": "한국지역정보개발원",
       "title": "주소정보관리시스템 백업장비(PTL) 도입",
@@ -204,6 +178,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
       "source": "G2B",
       "budget": 39600000
+    },
+    {
+      "id": 178,
+      "institution": "조달청 인천지방조달청",
+      "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
+      "reg_date": "2026-06-26",
+      "end_date": "2026-07-08",
+      "score": 7,
+      "category_tag": "보안솔루션 구축, 메타버스 시스템",
+      "ai_reason": "메타버스 시스템 보안솔루션 구축은 이노티움의 제품군 일부와 관련성이 있으나, 구체적인 요구사항에 따라 직접 납품 가능 여부는 불확실함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01603620&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 172727273
     }
   ],
   "inst_top10": [
@@ -251,7 +238,7 @@
   "cat_dist": [
     {
       "tag": "감리, 개인정보영향평가",
-      "cnt": 12
+      "cnt": 13
     },
     {
       "tag": "개인정보보호 컨설팅",
@@ -323,6 +310,45 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
       "source": "KISA",
       "budget": 0
+    },
+    {
+      "id": 177,
+      "institution": "개인정보보호위원회",
+      "title": "제6차 개인정보 보호의 날 기념식",
+      "reg_date": "2026-06-30",
+      "end_date": "2026-07-13",
+      "score": 0,
+      "category_tag": "개인정보 보호의 날, 행사",
+      "ai_reason": "행사 관련으로 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01608763&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 82454545
+    },
+    {
+      "id": 178,
+      "institution": "조달청 인천지방조달청",
+      "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
+      "reg_date": "2026-06-26",
+      "end_date": "2026-07-08",
+      "score": 7,
+      "category_tag": "보안솔루션 구축, 메타버스 시스템",
+      "ai_reason": "메타버스 시스템 보안솔루션 구축은 이노티움의 제품군 일부와 관련성이 있으나, 구체적인 요구사항에 따라 직접 납품 가능 여부는 불확실함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01603620&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 172727273
+    },
+    {
+      "id": 176,
+      "institution": "조달청 강원지방조달청",
+      "title": "생성형 AI 및 응용서비스 구축 감리 및 개인정보 영향평가 용역",
+      "reg_date": "2026-06-26",
+      "end_date": "2026-07-08",
+      "score": 0,
+      "category_tag": "감리, 개인정보영향평가",
+      "ai_reason": "감리 및 개인정보영향평가는 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01602663&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 218181818
     },
     {
       "id": 172,
@@ -1012,112 +1038,8 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01567061&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
-    },
-    {
-      "id": 108,
-      "institution": "차의과학대학교",
-      "title": "차의과학대학교 미래형 융복합교육 2.0 기반 전주기 교육 실행 체계 구축 용역업체 선정",
-      "reg_date": "2026-06-05",
-      "end_date": "-",
-      "score": 0,
-      "category_tag": "교육 체계 구축",
-      "ai_reason": "교육 실행 체계 구축은 이노티움의 사업 특성과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01560891&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 109,
-      "institution": "한양대학교 에리카산학협력단",
-      "title": "2026 한양대에리카 데이터보안활용사업단 온라인 공개강좌(K-MOOC) 교과목 콘텐츠 개발 용역(AI활용클라우드입문)",
-      "reg_date": "2026-06-05",
-      "end_date": "2026-06-08",
-      "score": 0,
-      "category_tag": "교육, 콘텐츠 개발",
-      "ai_reason": "교육 콘텐츠 개발은 이노티움의 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01551871&bidPbancOrd=001",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 110,
-      "institution": "조달청",
-      "title": "2026년 정보보호시스템 통합 유지관리 용역",
-      "reg_date": "2026-06-05",
-      "end_date": "2026-07-01",
-      "score": 0,
-      "category_tag": "유지관리, 용역",
-      "ai_reason": "유지관리 용역은 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561722&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 111,
-      "institution": "소방청",
-      "title": "2026년 소방청 개인정보보호 컨설팅",
-      "reg_date": "2026-06-05",
-      "end_date": "2026-07-16",
-      "score": 0,
-      "category_tag": "개인정보보호 컨설팅",
-      "ai_reason": "컨설팅 사업으로 이노티움의 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01563574&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 104,
-      "institution": "한국건설기술연구원",
-      "title": "2026년 보안솔루션 유지보수",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-15",
-      "score": 7,
-      "category_tag": "보안솔루션 유지보수",
-      "ai_reason": "보안솔루션 유지보수는 시스템 구축·도입과 연관성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561354&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 181754000
-    },
-    {
-      "id": 105,
-      "institution": "한국공항공사",
-      "title": "정보보호 및 개인정보 관리체계 인증 컨설팅",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-04",
-      "score": 0,
-      "category_tag": "보안 컨설팅, 인증 지원",
-      "ai_reason": "컨설팅 및 인증 지원은 이노티움의 사업 영역이 아님.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01559919&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 106,
-      "institution": "한양대학교 에리카산학협력단",
-      "title": "2026 한양대에리카 데이터보안활용사업단 온라인 공개강좌(K-MOOK) 교과목 콘텐츠 개발 용역(AI활용클라우드입문)",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-08",
-      "score": 0,
-      "category_tag": "교육, 온라인강좌, 콘텐츠개발",
-      "ai_reason": "본 사업은 교육 콘텐츠 개발로, 이노티움의 보안 소프트웨어/솔루션 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01551871&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 107,
-      "institution": "행정안전부 국가정보자원관리원",
-      "title": "2026년 백업센터 공용차량 임차",
-      "reg_date": "2026-06-04",
-      "end_date": "2026-06-10",
-      "score": 0,
-      "category_tag": "차량임차",
-      "ai_reason": "차량 임차는 보안 소프트웨어/솔루션 납품과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01561719&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
-  "updated_at": "2026-07-03 09:14",
-  "period": "2026-06-03 ~ 2026-07-03"
+  "updated_at": "2026-07-06 08:58",
+  "period": "2026-06-06 ~ 2026-07-06"
 }
