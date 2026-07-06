@@ -45,7 +45,7 @@ def get_summary():
 
     data = {
         "new_this_week": s(f"SELECT COUNT(*) FROM announcements WHERE reg_date >= ? AND {nd}", (week_ago,)),
-        "top":  r(f"SELECT title, score, budget, end_date, institution, source "
+        "top":  r(f"SELECT title, score, budget, end_date, institution, source, link "
                   f"FROM announcements WHERE score>=5 AND reg_date>=? "
                   f"AND (end_date>=? OR end_date='-') AND {nd} ORDER BY score DESC", (thirty_ago, today)),
         "urgent": r(f"SELECT title, score, end_date, institution "
@@ -71,26 +71,28 @@ def build_html(data):
     today_str = datetime.date.today().strftime("%Y년 %m월 %d일")
     top_rows  = "".join(
         f"""<tr>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;color:#6b7280;font-size:12px">{r['source']}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:13px">{r['institution'][:16] if r['institution'] else ''}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:13px">{r['title'][:45]}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;text-align:center;white-space:nowrap">
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#6b7280;font-size:11px;min-width:35px">{r['source']}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;font-size:12px;min-width:100px">{r['institution'][:18] if r['institution'] else ''}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;font-size:13px">
+            <a href="{r['link']}" style="color:#1e3a8a;text-decoration:none;font-weight:500" target="_blank">{r['title'][:50]}</a>
+          </td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:center;white-space:nowrap;min-width:50px">
             <span style="background:{'#e53e3e' if r['score']>=9 else '#dd6b20' if r['score']>=7 else '#38a169'};color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap;display:inline-block">{r['score']}점</span>
           </td>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;text-align:right;font-weight:700;color:#1e40af">{fmt_budget(r['budget'])}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;color:#e53e3e;font-weight:600">{r['end_date']}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap;font-weight:700;color:#1e40af;min-width:60px">{fmt_budget(r['budget'])}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#e53e3e;font-weight:600;min-width:90px">{r['end_date']}</td>
         </tr>"""
         for r in data.get("top", [])
     ) or "<tr><td colspan='6' style='padding:20px;text-align:center;color:#9ca3af'>이번 주 Top 후보 없음</td></tr>"
 
     urgent_rows = "".join(
         f"""<tr>
-          <td style="padding:8px 12px;border-bottom:1px solid #fef3c7;font-size:13px">{r['institution'][:20] if r['institution'] else ''}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #fef3c7;font-size:13px">{r['title'][:50]}</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #fef3c7;text-align:center">
-            <span style="background:#718096;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px">{r['score']}점</span>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;font-size:13px;min-width:100px">{r['institution'][:20] if r['institution'] else ''}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;font-size:13px">{r['title'][:55]}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;text-align:center;white-space:nowrap;min-width:50px">
+            <span style="background:#718096;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;white-space:nowrap">{r['score']}점</span>
           </td>
-          <td style="padding:8px 12px;border-bottom:1px solid #fef3c7;color:#e53e3e;font-weight:700">{r['end_date']}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;color:#e53e3e;font-weight:700;min-width:90px">{r['end_date']}</td>
         </tr>"""
         for r in data.get("urgent", [])
     ) or "<tr><td colspan='4' style='padding:20px;text-align:center;color:#9ca3af'>마감임박 공고 없음</td></tr>"

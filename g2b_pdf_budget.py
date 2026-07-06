@@ -13,6 +13,8 @@ import re
 import sqlite3
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
+import zipfile
 
 import pdfplumber
 from dotenv import load_dotenv
@@ -58,8 +60,40 @@ def fmt(amount: int) -> str:
     return f"{amount:,}원"
 
 
+def extract_from_hwpx(data: bytes) -> int:
+    """HWPX(ZIP+XML) 파일에서 금액 추출"""
+    try:
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            for name in z.namelist():
+                if re.search(r'Contents/.*\.xml', name, re.I):
+                    xml_str = z.read(name).decode("utf-8", errors="ignore")
+                    text = re.sub(r"<[^>]+>", " ", xml_str)
+                    amount = parse_amount(text)
+                    if amount > 0:
+                        return amount
+    except Exception:
+        pass
+    return 0
+
+
+def _try_download(page, ext: str) -> tuple:
+    """특정 확장자 파일 클릭 다운로드 시도, (bytes, filename) 반환"""
+    loc = page.locator(f"text={ext}").first
+    try:
+        with page.expect_download(timeout=25_000) as dl_info:
+            loc.click()
+        dl = dl_info.value
+        with open(dl.path(), "rb") as f:
+            data = f.read()
+        fname = dl.suggested_filename
+        dl.delete()
+        return data, fname
+    except Exception:
+        return None, ""
+
+
 def fetch_amount_from_pdf(bid_link: str) -> int:
-    """Playwright → PDF 클릭 다운로드 → 금액 추출"""
+    """Playwright → 첨부파일(PDF/HWPX/HWP) 다운로드 → 금액 추출"""
     with sync_playwright() as pw:
         browser = pw.chromium.launch(
             headless=True,
@@ -83,34 +117,52 @@ def fetch_amount_from_pdf(bid_link: str) -> int:
             page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
             page.wait_for_timeout(3_000)
 
-            # PDF 요소 찾기 — '.pdf' 텍스트 포함 첫 번째 요소
-            pdf_count = page.locator("text=.pdf").count()
-            if pdf_count == 0:
-                print("    첨부 PDF 없음")
-                return 0
+            # 우선순위: .pdf → .hwpx → .hwp 순으로 시도
+            for ext in (".pdf", ".hwpx", ".hwp"):
+                count = page.locator(f"text={ext}").count()
+                if count == 0:
+                    continue
 
-            pdf_loc = page.locator("text=.pdf").first
-            pdf_name = (pdf_loc.text_content() or "").strip()
-            print(f"    PDF 발견: {pdf_name[:60]}")
+                fname_preview = (page.locator(f"text={ext}").first.text_content() or "").strip()
+                print(f"    {ext} 발견: {fname_preview[:55]}")
 
-            # 다운로드 캡처
-            with page.expect_download(timeout=30_000) as dl_info:
-                pdf_loc.click()
-            download = dl_info.value
-            print(f"    다운로드: {download.suggested_filename} "
-                  f"({os.path.getsize(download.path()):,} bytes)")
+                file_bytes, fname = _try_download(page, ext)
+                if not file_bytes:
+                    print(f"    다운로드 실패")
+                    continue
 
-            # pdfplumber 텍스트 추출 → 금액 파싱
-            with open(download.path(), "rb") as f:
-                pdf_bytes = f.read()
-            download.delete()
+                print(f"    다운로드 완료: {fname} ({len(file_bytes):,} bytes)")
 
-            with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
-                for pg in pdf.pages[:6]:
-                    text = pg.extract_text() or ""
-                    amount = parse_amount(text)
+                # 형식별 파싱
+                if ext == ".pdf":
+                    try:
+                        with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
+                            for pg in pdf.pages[:6]:
+                                text = pg.extract_text() or ""
+                                amount = parse_amount(text)
+                                if amount > 0:
+                                    return amount
+                    except Exception as e:
+                        print(f"    PDF 파싱 오류: {e}")
+
+                elif ext == ".hwpx":
+                    amount = extract_from_hwpx(file_bytes)
                     if amount > 0:
                         return amount
+
+                elif ext == ".hwp":
+                    # HWP 바이너리에서 텍스트 영역 추정 파싱
+                    try:
+                        text = file_bytes.decode("utf-8", errors="ignore")
+                        amount = parse_amount(text)
+                        if amount > 0:
+                            return amount
+                        text2 = file_bytes.decode("cp949", errors="ignore")
+                        amount = parse_amount(text2)
+                        if amount > 0:
+                            return amount
+                    except Exception:
+                        pass
 
             print("    금액 패턴 없음")
             return 0
@@ -127,18 +179,19 @@ def run():
     conn.row_factory = sqlite3.Row
 
     targets = conn.execute(
-        "SELECT id, title, link FROM announcements "
+        "SELECT id, title, link, source FROM announcements "
         "WHERE score >= 7 AND (budget IS NULL OR budget = 0) "
-        "AND source = 'G2B' AND (is_deleted IS NULL OR is_deleted=0) "
+        "AND (is_deleted IS NULL OR is_deleted=0) "
         "ORDER BY score DESC"
     ).fetchall()
 
-    print(f"PDF 금액 추출 대상: {len(targets)}건 (7점+, G2B, 금액 미수집)")
+    print(f"금액 추출 대상: {len(targets)}건 (7점+, 전체 소스, 금액 미수집)")
     updated = 0
 
     for row in targets:
         rid, title, link = row["id"], row["title"], row["link"]
-        print(f"\n[{rid}] {title[:55]}")
+        source = row["source"] if len(row) > 3 else "?"
+        print(f"\n[{rid}][{source}] {title[:50]}")
 
         if not link:
             print("    링크 없음")
