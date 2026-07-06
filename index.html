@@ -317,7 +317,7 @@ function renderTable(key, rows) {
       ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
       : `<span style="color:#d1d5db;font-size:11px">-</span>`;
     const delBtn = key === 'top'
-      ? `<td><button onclick="deleteItem(${r.id})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px">숨기기</button></td>`
+      ? `<td><button onclick="deleteItem(${r.id})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px;white-space:nowrap">숨김</button></td>`
       : '';
     return `<tr>
       <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
