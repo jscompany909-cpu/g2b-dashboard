@@ -1,12 +1,32 @@
-name: Weekly G2B Collection
+name: Daily G2B Collection (검증 기간 ~2026-07-13)
 
 on:
   schedule:
-    - cron: '0 0 * * 1'   # 매주 월요일 09:00 KST (UTC 00:00)
-  workflow_dispatch:        # 수동 실행 버튼
+    - cron: '0 0 * * 1-5'  # 평일(월~금) 09:00 KST (UTC 00:00)
+  workflow_dispatch:         # 수동 실행 버튼
 
 jobs:
+  # ── 날짜 체크: 7/13 이후면 스킵 ────────────────────────────────────
+  date-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - id: check
+        run: |
+          TODAY=$(date +%Y%m%d)
+          DEADLINE=20260713
+          if [ "$TODAY" -le "$DEADLINE" ]; then
+            echo "should_run=true"  >> $GITHUB_OUTPUT
+            echo "오늘: $TODAY — 검증 기간 내 ($DEADLINE 까지)"
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "검증 기간 종료 ($DEADLINE 이후) — 실행 건너뜀"
+          fi
+
   collect:
+    needs: date-check
+    if: needs.date-check.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90
 
