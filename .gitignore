@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+_test_*.py
+_debug_*.py
+_check_*.py
+_rescore_all.py

@@ -1,0 +1,6 @@
+requests
+python-dotenv
+openai
+pdfplumber
+playwright
+beautifulsoup4
