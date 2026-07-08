@@ -1,24 +1,11 @@
 {
   "kpi": {
-    "new_week": 57,
+    "new_week": 58,
     "top7": 3,
-    "total": 106,
+    "total": 107,
     "deadline": 2
   },
   "top": [
-    {
-      "id": 167,
-      "institution": "한국지역정보개발원",
-      "title": "주소정보관리시스템 백업장비(PTL) 도입",
-      "reg_date": "2026-06-24",
-      "end_date": "2026-07-07",
-      "score": 9,
-      "category_tag": "백업솔루션, 랜섬웨어방어",
-      "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 39600000
-    },
     {
       "id": 175,
       "institution": "KISA",
@@ -31,6 +18,19 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10749&page=1",
       "source": "KISA",
       "budget": 0
+    },
+    {
+      "id": 179,
+      "institution": "KISA",
+      "title": "개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-08",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10755&page=1",
+      "source": "KISA",
+      "budget": 80000000
     },
     {
       "id": 178,
@@ -100,6 +100,19 @@
       "budget": 0
     },
     {
+      "id": 179,
+      "institution": "KISA",
+      "title": "개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-08",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10755&page=1",
+      "source": "KISA",
+      "budget": 80000000
+    },
+    {
       "id": 144,
       "institution": "한국항공우주연구원",
       "title": "LLM 기반 위성영상 메타데이터 검색 서비스의 Zero Trust 보안 기술 연구",
@@ -167,19 +180,6 @@
   ],
   "deadline": [
     {
-      "id": 167,
-      "institution": "한국지역정보개발원",
-      "title": "주소정보관리시스템 백업장비(PTL) 도입",
-      "reg_date": "2026-06-24",
-      "end_date": "2026-07-07",
-      "score": 9,
-      "category_tag": "백업솔루션, 랜섬웨어방어",
-      "ai_reason": "백업장비 도입은 랜섬웨어 방어 및 보안백업 솔루션과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594386&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 39600000
-    },
-    {
       "id": 178,
       "institution": "조달청 인천지방조달청",
       "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
@@ -191,6 +191,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01603620&bidPbancOrd=000",
       "source": "G2B",
       "budget": 172727273
+    },
+    {
+      "id": 135,
+      "institution": "(주)한국거래소 서울사옥",
+      "title": "KRX 스마트워크시스템 운영용역 및 유지보수",
+      "reg_date": "2026-06-11",
+      "end_date": "2026-07-22",
+      "score": 2,
+      "category_tag": "유지보수, 스마트워크",
+      "ai_reason": "유지보수와 스마트워크 관련으로 이노티움의 핵심 제품군과 직접적 연관성이 낮음.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01575407&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 0
     }
   ],
   "inst_top10": [
@@ -219,6 +232,10 @@
       "cnt": 3
     },
     {
+      "name": "KISA",
+      "cnt": 3
+    },
+    {
       "name": "한국지역정보개발원",
       "cnt": 2
     },
@@ -228,10 +245,6 @@
     },
     {
       "name": "한국은행",
-      "cnt": 2
-    },
-    {
-      "name": "차의과학대학교",
       "cnt": 2
     }
   ],
@@ -285,19 +298,32 @@
       "cnt": 2
     },
     {
+      "tag": "SBOM, 소프트웨어 공급망 보안",
+      "cnt": 2
+    },
+    {
       "tag": "회계, 세무, 용역",
       "cnt": 1
     },
     {
       "tag": "해외 현장체험학습, 교육",
       "cnt": 1
-    },
-    {
-      "tag": "컨설팅, 조사·분석",
-      "cnt": 1
     }
   ],
   "raw": [
+    {
+      "id": 179,
+      "institution": "KISA",
+      "title": "개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-08",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 해당.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10755&page=1",
+      "source": "KISA",
+      "budget": 80000000
+    },
     {
       "id": 175,
       "institution": "KISA",
@@ -1040,6 +1066,6 @@
       "budget": 0
     }
   ],
-  "updated_at": "2026-07-07 02:02",
-  "period": "2026-06-07 ~ 2026-07-07"
+  "updated_at": "2026-07-08 01:32",
+  "period": "2026-06-08 ~ 2026-07-08"
 }
