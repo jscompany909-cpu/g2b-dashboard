@@ -166,18 +166,26 @@ def fetch_g2b_raw_data():
         return all_items  # 1페이지뿐
 
     # 2~MAX_PAGES 병렬 수집 (동시 5개)
+    done = False
     with ThreadPoolExecutor(max_workers=5) as executor:
         futures = {
             executor.submit(_fetch_page, p, base_params, url, headers): p
             for p in range(2, MAX_PAGES + 1)
         }
         for future in as_completed(futures):
-            page_num, items = future.result()
+            try:
+                page_num, items = future.result()
+            except Exception:
+                # 취소된 future 또는 오류 — 스킵
+                continue
+            if done:
+                continue
             if items:
                 all_items.extend(items)
                 print(f"  ├─ {page_num}페이지 {len(items)}건 수신")
             if len(items) < 100:
-                # 마지막 페이지 도달 시 나머지 취소
+                # 마지막 페이지 도달 — 나머지 취소 후 루프 종료
+                done = True
                 for f in futures:
                     f.cancel()
 
