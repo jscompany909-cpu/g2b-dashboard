@@ -1,0 +1,69 @@
+name: G2B 이메일 알림 (평일 09:30 KST)
+
+on:
+  schedule:
+    - cron: '30 0 * * 1-5'   # 평일 09:30 KST (UTC 00:30)
+  workflow_dispatch:
+
+jobs:
+  date-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - id: check
+        run: |
+          TODAY=$(TZ=Asia/Seoul date +%Y%m%d)
+          DEADLINE=20260724
+          if [ "$TODAY" -le "$DEADLINE" ]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "검증 기간 종료 ($DEADLINE 이후)"
+          fi
+
+  notify:
+    needs: date-check
+    if: needs.date-check.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        fetch-depth: 0
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Send summary email
+      run: python g2b_email_notify.py
+      env:
+        PYTHONIOENCODING: utf-8
+        GMAIL_USER: ${{ secrets.GMAIL_USER }}
+        GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        NOTIFY_TO: jsbae@innotium.com
+
+    - name: Notify on failure
+      if: failure()
+      uses: dawidd6/action-send-mail@v4
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        secure: true
+        username: ${{ secrets.GMAIL_USER }}
+        password: ${{ secrets.GMAIL_APP_PASSWORD }}
+        subject: "[G2B 오류] 이메일 발송 실패 - ${{ github.run_id }}"
+        to: jsbae@innotium.com
+        from: ${{ secrets.GMAIL_USER }}
+        body: |
+          GitHub Actions 이메일 발송이 실패했습니다.
+          로그: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

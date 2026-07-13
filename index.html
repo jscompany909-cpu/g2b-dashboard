@@ -324,7 +324,7 @@ function renderTable(key, rows) {
       <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
       <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
       <td style="white-space:nowrap">${r.reg_date}</td>
-      <td class="deadline-cell">${r.end_date}</td>
+      <td class="deadline-cell">${r.end_date && r.end_date !== '-' ? r.end_date : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
       <td style="text-align:center">${badge(r.score)}</td>
       <td style="white-space:nowrap">${r.category_tag}</td>
       <td class="reason-cell">${r.ai_reason}</td>
@@ -359,7 +359,7 @@ function loadDeleted() {
       <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
       <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
       <td style="white-space:nowrap">${r.reg_date}</td>
-      <td class="deadline-cell">${r.end_date}</td>
+      <td class="deadline-cell">${r.end_date && r.end_date !== '-' ? r.end_date : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
       <td style="text-align:center">${badge(r.score)}</td>
       <td style="white-space:nowrap">${r.category_tag}</td>
       <td class="reason-cell">${r.ai_reason}</td>

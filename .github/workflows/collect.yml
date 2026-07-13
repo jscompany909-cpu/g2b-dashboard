@@ -1,0 +1,82 @@
+name: G2B 수집 (평일 08:00 KST)
+
+on:
+  schedule:
+    - cron: '0 23 * * 0-4'   # 평일 08:00 KST (전날 UTC 23:00)
+  workflow_dispatch:
+
+jobs:
+  date-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - id: check
+        run: |
+          TODAY=$(TZ=Asia/Seoul date +%Y%m%d)
+          DEADLINE=20260724
+          if [ "$TODAY" -le "$DEADLINE" ]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "오늘(KST): $TODAY — 검증 기간 내"
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "검증 기간 종료 ($DEADLINE 이후)"
+          fi
+
+  collect:
+    needs: date-check
+    if: needs.date-check.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        fetch-depth: 0
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Install Playwright Chromium
+      run: |
+        playwright install chromium
+        playwright install-deps chromium
+
+    - name: Create .env
+      run: |
+        echo "G2B_API_KEY=${{ secrets.G2B_API_KEY }}" > .env
+        echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> .env
+        echo "AZURE_OPENAI_KEY=${{ secrets.AZURE_OPENAI_KEY }}" >> .env
+        echo "AZURE_OPENAI_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT }}" >> .env
+        echo "AZURE_OPENAI_API_VERSION=${{ secrets.AZURE_OPENAI_API_VERSION }}" >> .env
+
+    - name: Run harness (collect + score + verify)
+      run: python g2b_harness.py
+      env:
+        PYTHONIOENCODING: utf-8
+
+    - name: Extract PDF budgets
+      run: python g2b_pdf_budget.py --no-export
+      env:
+        PYTHONIOENCODING: utf-8
+
+    - name: Export JSON
+      run: python g2b_export_json.py --ci
+      env:
+        PYTHONIOENCODING: utf-8
+
+    - name: Commit and push DB + JSON
+      run: |
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+        git add "정부과제_트렌드_창고.db" "data/announcements.json"
+        git diff --staged --quiet || git commit -m "chore: 일일 DB 업데이트 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
+        git push
