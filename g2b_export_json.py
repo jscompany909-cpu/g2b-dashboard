@@ -46,7 +46,10 @@ def build_json() -> dict:
 
     today      = datetime.date.today().isoformat()
     thirty_ago = (datetime.date.today() - datetime.timedelta(days=30)).isoformat()
+    week_ago   = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    d7         = (datetime.date.today() + datetime.timedelta(days=7)).isoformat()
     d14        = (datetime.date.today() + datetime.timedelta(days=14)).isoformat()
+    six_mo_ago = (datetime.date.today() - datetime.timedelta(days=180)).isoformat()
 
     def rows(sql, params=()):
         return [dict(r) for r in conn.execute(sql, params).fetchall()]
@@ -111,6 +114,48 @@ def build_json() -> dict:
             f"WHERE reg_date>=? AND {NOT_DELETED} ORDER BY reg_date DESC, score DESC",
             (thirty_ago,)
         ),
+        # ── 월별 공고 추이 (최근 6개월) ─────────────────────────────────
+        "monthly_trend": rows(
+            f"SELECT strftime('%Y-%m', reg_date) AS month, "
+            f"COUNT(*) AS total, "
+            f"SUM(CASE WHEN score>=5 THEN 1 ELSE 0 END) AS core "
+            f"FROM announcements WHERE reg_date>=? AND {NOT_DELETED} "
+            f"GROUP BY month ORDER BY month",
+            (six_mo_ago,)
+        ),
+
+        # ── 시사점 & 액션아이템 ────────────────────────────────────────
+        "insights": {
+            "top_category":       (rows(
+                f"SELECT category_tag, COUNT(*) AS cnt FROM announcements "
+                f"WHERE score>=5 AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
+                f"GROUP BY category_tag ORDER BY cnt DESC LIMIT 1", (week_ago,)) or [{}]
+            )[0].get("category_tag", "없음"),
+            "top_category_count": (rows(
+                f"SELECT category_tag, COUNT(*) AS cnt FROM announcements "
+                f"WHERE score>=5 AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
+                f"GROUP BY category_tag ORDER BY cnt DESC LIMIT 1", (week_ago,)) or [{}]
+            )[0].get("cnt", 0),
+            "urgent_7day": scalar(
+                f"SELECT COUNT(*) FROM announcements "
+                f"WHERE end_date BETWEEN ? AND ? AND end_date!='-' AND score>=5 AND {NOT_DELETED}",
+                (today, d7)
+            ),
+            "top_institution": (rows(
+                f"SELECT institution, COUNT(*) AS cnt FROM announcements "
+                f"WHERE score>=3 AND reg_date>=? AND {NOT_DELETED} "
+                f"GROUP BY institution ORDER BY cnt DESC LIMIT 1", (week_ago,)) or [{}]
+            )[0].get("institution", "없음"),
+            "total_budget": scalar(
+                f"SELECT SUM(COALESCE(budget,0)) FROM announcements "
+                f"WHERE score>=5 AND reg_date>=? AND {NOT_DELETED}", (thirty_ago,)
+            ) or 0,
+            "new_this_week": scalar(
+                f"SELECT COUNT(*) FROM announcements WHERE reg_date>=? AND {NOT_DELETED}", (week_ago,)
+            ),
+            "db_total": scalar(f"SELECT COUNT(*) FROM announcements WHERE {NOT_DELETED}"),
+        },
+
         "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "period": f"{thirty_ago} ~ {today}",
     }

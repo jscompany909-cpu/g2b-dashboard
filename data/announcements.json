@@ -910,6 +910,32 @@
       "budget": 0
     }
   ],
-  "updated_at": "2026-07-13 01:35",
+  "monthly_trend": [
+    {
+      "month": "2026-05",
+      "total": 36,
+      "core": 3
+    },
+    {
+      "month": "2026-06",
+      "total": 68,
+      "core": 6
+    },
+    {
+      "month": "2026-07",
+      "total": 17,
+      "core": 3
+    }
+  ],
+  "insights": {
+    "top_category": "SBOM, 소프트웨어 공급망 보안",
+    "top_category_count": 1,
+    "urgent_7day": 0,
+    "top_institution": "KISA",
+    "total_budget": 755963637,
+    "new_this_week": 5,
+    "db_total": 123
+  },
+  "updated_at": "2026-07-13 11:21",
   "period": "2026-06-13 ~ 2026-07-13"
 }
