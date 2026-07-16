@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 48,
+    "new_week": 44,
     "top7": 3,
-    "total": 123,
+    "total": 124,
     "deadline": 1
   },
   "top": [
@@ -113,19 +113,6 @@
       "budget": 80000000
     },
     {
-      "id": 144,
-      "institution": "한국항공우주연구원",
-      "title": "LLM 기반 위성영상 메타데이터 검색 서비스의 Zero Trust 보안 기술 연구",
-      "reg_date": "2026-06-15",
-      "end_date": "2026-06-26",
-      "score": 7,
-      "category_tag": "Zero Trust, 보안 기술 연구",
-      "ai_reason": "Zero Trust 보안 기술은 이노티움의 제로트러스트/N2SF 아키텍처 구축과 관련성이 있으나, 연구 중심 프로젝트로 직접 납품 가능성은 낮음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
       "id": 178,
       "institution": "조달청 인천지방조달청",
       "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
@@ -194,6 +181,10 @@
       "cnt": 4
     },
     {
+      "name": "KISA",
+      "cnt": 4
+    },
+    {
       "name": "해양경찰청",
       "cnt": 3
     },
@@ -211,10 +202,6 @@
     },
     {
       "name": "한국건설기술연구원",
-      "cnt": 3
-    },
-    {
-      "name": "KISA",
       "cnt": 3
     },
     {
@@ -285,6 +272,19 @@
     }
   ],
   "raw": [
+    {
+      "id": 197,
+      "institution": "KISA",
+      "title": "[사전규격공개] 개인정보 노출 및 불법유통 분석·대응체계 강화를 위한 기능개선",
+      "reg_date": "2026-07-15",
+      "end_date": "-",
+      "score": 0,
+      "category_tag": "보안 컨설팅, 침해사고 대응",
+      "ai_reason": "컨설팅 및 대응체계 강화는 이노티움 사업 특성과 무관함.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10775&page=1",
+      "source": "KISA",
+      "budget": 0
+    },
     {
       "id": 179,
       "institution": "KISA",
@@ -843,71 +843,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584793&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
-    },
-    {
-      "id": 144,
-      "institution": "한국항공우주연구원",
-      "title": "LLM 기반 위성영상 메타데이터 검색 서비스의 Zero Trust 보안 기술 연구",
-      "reg_date": "2026-06-15",
-      "end_date": "2026-06-26",
-      "score": 7,
-      "category_tag": "Zero Trust, 보안 기술 연구",
-      "ai_reason": "Zero Trust 보안 기술은 이노티움의 제로트러스트/N2SF 아키텍처 구축과 관련성이 있으나, 연구 중심 프로젝트로 직접 납품 가능성은 낮음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01571520&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 145,
-      "institution": "아주대학교 산학협력단",
-      "title": "2026학년도 데이터보안 활용융합분야 비교과 온라인 콘텐츠(취약점 탐지 및 대응기술) 제작업체 선정 입찰",
-      "reg_date": "2026-06-15",
-      "end_date": "-",
-      "score": 0,
-      "category_tag": "보안 교육, 취약점 탐지, 대응 기술",
-      "ai_reason": "교육 콘텐츠 제작 및 취약점 탐지·대응은 이노티움의 사업 범위에 포함되지 않음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579538&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 146,
-      "institution": "아주대학교 산학협력단",
-      "title": "2026학년도 데이터보안 활용융합분야 비교과 온라인 콘텐츠(보안위협 대응과 관리기술) 제작업체 선정 입찰",
-      "reg_date": "2026-06-15",
-      "end_date": "-",
-      "score": 0,
-      "category_tag": "보안 교육, 콘텐츠 제작",
-      "ai_reason": "보안 교육 콘텐츠 제작은 이노티움의 사업 범위에 포함되지 않음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01579569&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 147,
-      "institution": "한국수목원정원관리원",
-      "title": "2026년 정보보안·개인정보보호 수준진단 및 개선 컨설팅",
-      "reg_date": "2026-06-15",
-      "end_date": "2026-06-26",
-      "score": 0,
-      "category_tag": "컨설팅, 수준진단, 개인정보보호",
-      "ai_reason": "컨설팅 및 진단 사업으로 이노티움의 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01580263&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 148,
-      "institution": "창원대학교 산학협력단",
-      "title": "국립창원대학교 산학협력단 IP사업화 전주기 지원 프로그램 수행기관 모집",
-      "reg_date": "2026-06-15",
-      "end_date": "2026-06-29",
-      "score": 0,
-      "category_tag": "컨설팅, 교육, 전주기 지원",
-      "ai_reason": "사업화 전주기 지원 프로그램은 컨설팅·교육 중심으로 이노티움 사업과 무관.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01581988&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
   "monthly_trend": [
@@ -923,19 +858,19 @@
     },
     {
       "month": "2026-07",
-      "total": 17,
+      "total": 18,
       "core": 3
     }
   ],
   "insights": {
-    "top_category": "SBOM, 소프트웨어 공급망 보안",
-    "top_category_count": 1,
+    "top_category": "없음",
+    "top_category_count": 0,
     "urgent_7day": 0,
-    "top_institution": "KISA",
+    "top_institution": "없음",
     "total_budget": 755963637,
-    "new_this_week": 3,
-    "db_total": 123
+    "new_this_week": 1,
+    "db_total": 124
   },
-  "updated_at": "2026-07-14 23:58",
-  "period": "2026-06-14 ~ 2026-07-14"
+  "updated_at": "2026-07-16 00:04",
+  "period": "2026-06-16 ~ 2026-07-16"
 }
