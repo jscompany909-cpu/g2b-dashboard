@@ -2,7 +2,7 @@
   "kpi": {
     "new_week": 44,
     "top7": 3,
-    "total": 124,
+    "total": 126,
     "deadline": 1
   },
   "top": [
@@ -263,11 +263,11 @@
       "cnt": 2
     },
     {
-      "tag": "개인정보 보호수준 진단, 컨설팅",
+      "tag": "개인정보영향평가",
       "cnt": 2
     },
     {
-      "tag": "SBOM, 소프트웨어 공급망 보안",
+      "tag": "개인정보 보호수준 진단, 컨설팅",
       "cnt": 2
     }
   ],
@@ -284,6 +284,32 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10775&page=1",
       "source": "KISA",
       "budget": 0
+    },
+    {
+      "id": 198,
+      "institution": "연암공과대학교산학협력단",
+      "title": "연암공과대학교 전주기 학생 케어링 AI Counselor 시스템 설계 용역",
+      "reg_date": "2026-07-09",
+      "end_date": "2026-07-20",
+      "score": 0,
+      "category_tag": "컨설팅/설계",
+      "ai_reason": "시스템 설계 용역은 이노티움의 납품·구축 사업과 무관합니다.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01624816&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 90909091
+    },
+    {
+      "id": 199,
+      "institution": "조달청 충북지방조달청",
+      "title": "2026년 한국고용정보원 개인정보영향평가 사업",
+      "reg_date": "2026-07-09",
+      "end_date": "2026-07-22",
+      "score": 0,
+      "category_tag": "개인정보영향평가",
+      "ai_reason": "개인정보영향평가는 컨설팅·진단·평가 사업으로 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01621591&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 181818182
     },
     {
       "id": 179,
@@ -817,32 +843,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01586532&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
-    },
-    {
-      "id": 150,
-      "institution": "재단법인 경상북도 농식품유통교육진흥원",
-      "title": "농산물 전자상거래 시스템 개인정보영향평가 및 ISMS 인증 컨설팅",
-      "reg_date": "2026-06-16",
-      "end_date": "2026-06-29",
-      "score": 0,
-      "category_tag": "개인정보영향평가, ISMS 인증, 컨설팅",
-      "ai_reason": "컨설팅 및 인증 지원 사업으로 이노티움의 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01582558&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 151,
-      "institution": "서울대학교병원",
-      "title": "서울대학교병원 [전문용역수수료] 디지털 병리 솔루션 사업 개인정보 영향평가",
-      "reg_date": "2026-06-16",
-      "end_date": "-",
-      "score": 0,
-      "category_tag": "개인정보영향평가, PIA, 감리",
-      "ai_reason": "개인정보 영향평가는 컨설팅/감리 영역으로 이노티움의 사업 범위와 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01584793&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
   "monthly_trend": [
@@ -858,7 +858,7 @@
     },
     {
       "month": "2026-07",
-      "total": 18,
+      "total": 20,
       "core": 3
     }
   ],
@@ -869,8 +869,8 @@
     "top_institution": "없음",
     "total_budget": 755963637,
     "new_this_week": 1,
-    "db_total": 124
+    "db_total": 126
   },
-  "updated_at": "2026-07-16 00:04",
-  "period": "2026-06-16 ~ 2026-07-16"
+  "updated_at": "2026-07-17 00:07",
+  "period": "2026-06-17 ~ 2026-07-17"
 }
