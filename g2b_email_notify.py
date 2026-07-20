@@ -11,8 +11,10 @@ import os
 import sqlite3
 import smtplib
 import datetime
+from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.utils import formataddr
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -180,7 +182,7 @@ def send_email(html: str, subject: str):
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"]    = f"G2B 알리미 <{GMAIL_USER}>"
+    msg["From"]    = formataddr((str(Header("G2B 알리미", "utf-8")), GMAIL_USER))
     msg["To"]      = NOTIFY_TO
     msg.attach(MIMEText(html, "html", "utf-8"))
 
