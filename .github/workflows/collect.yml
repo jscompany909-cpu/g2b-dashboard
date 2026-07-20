@@ -79,4 +79,5 @@ jobs:
         git config user.name "github-actions[bot]"
         git add "정부과제_트렌드_창고.db" "data/announcements.json"
         git diff --staged --quiet || git commit -m "chore: 일일 DB 업데이트 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
+        git pull --rebase
         git push
