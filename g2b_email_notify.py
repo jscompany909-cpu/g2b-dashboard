@@ -180,7 +180,7 @@ def send_email(html: str, subject: str):
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"]    = f"이노티움 G2B 알리미 <{GMAIL_USER}>"
+    msg["From"]    = f"G2B 알리미 <{GMAIL_USER}>"
     msg["To"]      = NOTIFY_TO
     msg.attach(MIMEText(html, "html", "utf-8"))
 
