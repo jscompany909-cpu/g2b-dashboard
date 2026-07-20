@@ -1,11 +1,7 @@
-name: G2B 이메일 알림 (평일 09:30 KST 정각)
+name: G2B 이메일 발송 (Cloudflare Cron 트리거)
 
 on:
-  schedule:
-    # GitHub 지연 최대 1.5시간 감안 → 08:00 KST(23:00 UTC 전날)에 미리 시작
-    # 내부에서 09:30 KST 될 때까지 대기 후 정확히 발송
-    - cron: '0 23 * * 0-4'   # 평일 08:00 KST (UTC 전날 23:00)
-  workflow_dispatch:
+  workflow_dispatch:   # Cloudflare Workers가 정각에 호출
 
 jobs:
   date-check:
@@ -21,14 +17,14 @@ jobs:
             echo "should_run=true" >> $GITHUB_OUTPUT
           else
             echo "should_run=false" >> $GITHUB_OUTPUT
-            echo "검증 기간 종료 ($DEADLINE 이후)"
+            echo "검증 기간 종료"
           fi
 
   notify:
     needs: date-check
     if: needs.date-check.outputs.should_run == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 120   # 최대 2시간 대기 허용
+    timeout-minutes: 10
 
     steps:
     - name: Checkout
@@ -46,26 +42,7 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    # ── 09:30 KST 정각까지 대기 ──────────────────────────────────────
-    - name: Wait until 09:30 KST
-      run: |
-        echo "시작: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
-        TARGET_MIN=$((9 * 60 + 30))   # 09:30 = 570분
-        while true; do
-          H=$(TZ=Asia/Seoul date +%H)
-          M=$(TZ=Asia/Seoul date +%M)
-          NOW_MIN=$((10#$H * 60 + 10#$M))
-          if [ "$NOW_MIN" -ge "$TARGET_MIN" ]; then
-            echo "발송 시각 도달: $(TZ=Asia/Seoul date '+%H:%M KST')"
-            break
-          fi
-          REMAIN=$((TARGET_MIN - NOW_MIN))
-          echo "대기 중: $(TZ=Asia/Seoul date '+%H:%M KST') — ${REMAIN}분 후 발송"
-          sleep 60
-        done
-
-    # ── 이메일 발송 ───────────────────────────────────────────────────
-    - name: Send summary email at 09:30 KST
+    - name: Send email
       run: python g2b_email_notify.py
       env:
         PYTHONIOENCODING: utf-8
@@ -82,7 +59,7 @@ jobs:
         secure: true
         username: ${{ secrets.GMAIL_USER }}
         password: ${{ secrets.GMAIL_APP_PASSWORD }}
-        subject: "[G2B 오류] 이메일 발송 실패 - ${{ github.run_id }}"
+        subject: "[G2B 오류] 이메일 발송 실패"
         to: jsbae@innotium.com
         from: ${{ secrets.GMAIL_USER }}
         body: |

@@ -1,0 +1,7 @@
+name            = "g2b-cron"
+main            = "worker.js"
+compatibility_date = "2024-09-23"
+
+# 평일(월~금) 09:30 KST = UTC 00:30
+[triggers]
+crons = ["30 0 * * 1-5"]
