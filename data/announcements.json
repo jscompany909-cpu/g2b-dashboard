@@ -1084,14 +1084,14 @@
     }
   ],
   "insights": {
-    "top_category": "SBOM/소프트웨어 공급망 보안",
+    "top_category": "AI 기반 개발체계, 전주기 관리시스템",
     "top_category_count": 1,
     "urgent_7day": 2,
     "top_institution": "한국과학기술원",
     "total_budget": 1437781818,
-    "new_this_week": 17,
+    "new_this_week": 14,
     "db_total": 146
   },
-  "updated_at": "2026-07-20 23:51",
-  "period": "2026-06-20 ~ 2026-07-20"
+  "updated_at": "2026-07-21 00:02",
+  "period": "2026-06-21 ~ 2026-07-21"
 }
