@@ -1,9 +1,9 @@
 {
   "kpi": {
     "new_week": 55,
-    "top7": 6,
+    "top7": 5,
     "total": 146,
-    "deadline": 3
+    "deadline": 2
   },
   "top": [
     {
@@ -57,19 +57,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01615488&bidPbancOrd=000",
       "source": "G2B",
       "budget": 409090909
-    },
-    {
-      "id": 201,
-      "institution": "학교안전공제중앙회",
-      "title": "학교안전공제중앙회 개인정보처리시스템 안전성 확보 및 기능 개선 용역",
-      "reg_date": "2026-07-10",
-      "end_date": "2026-07-21",
-      "score": 7,
-      "category_tag": "개인정보보호 솔루션",
-      "ai_reason": "개인정보처리시스템의 안전성 확보와 기능 개선은 이노티움의 개인정보보호 솔루션 도입 가능성과 관련성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01628199&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 145454545
     },
     {
       "id": 212,
@@ -205,19 +192,6 @@
     }
   ],
   "deadline": [
-    {
-      "id": 201,
-      "institution": "학교안전공제중앙회",
-      "title": "학교안전공제중앙회 개인정보처리시스템 안전성 확보 및 기능 개선 용역",
-      "reg_date": "2026-07-10",
-      "end_date": "2026-07-21",
-      "score": 7,
-      "category_tag": "개인정보보호 솔루션",
-      "ai_reason": "개인정보처리시스템의 안전성 확보와 기능 개선은 이노티움의 개인정보보호 솔루션 도입 가능성과 관련성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01628199&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 145454545
-    },
     {
       "id": 135,
       "institution": "(주)한국거래소 서울사옥",
@@ -1086,12 +1060,12 @@
   "insights": {
     "top_category": "AI 기반 개발체계, 전주기 관리시스템",
     "top_category_count": 1,
-    "urgent_7day": 2,
+    "urgent_7day": 1,
     "top_institution": "한국과학기술원",
     "total_budget": 1437781818,
-    "new_this_week": 14,
+    "new_this_week": 9,
     "db_total": 146
   },
-  "updated_at": "2026-07-21 00:02",
-  "period": "2026-06-21 ~ 2026-07-21"
+  "updated_at": "2026-07-22 00:02",
+  "period": "2026-06-22 ~ 2026-07-22"
 }
