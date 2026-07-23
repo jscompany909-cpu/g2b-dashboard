@@ -1,9 +1,9 @@
 {
   "kpi": {
-    "new_week": 55,
+    "new_week": 53,
     "top7": 5,
-    "total": 146,
-    "deadline": 2
+    "total": 147,
+    "deadline": 1
   },
   "top": [
     {
@@ -73,19 +73,6 @@
     }
   ],
   "new": [
-    {
-      "id": 162,
-      "institution": "과학기술정보통신부",
-      "title": "과기정통부 N2SF 적용을 위한 업무자료 등급분류",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-03",
-      "score": 9,
-      "category_tag": "N2SF 아키텍처 구축, 문서중앙화",
-      "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 54545455
-    },
     {
       "id": 167,
       "institution": "한국지역정보개발원",
@@ -193,19 +180,6 @@
   ],
   "deadline": [
     {
-      "id": 135,
-      "institution": "(주)한국거래소 서울사옥",
-      "title": "KRX 스마트워크시스템 운영용역 및 유지보수",
-      "reg_date": "2026-06-11",
-      "end_date": "2026-07-22",
-      "score": 2,
-      "category_tag": "유지보수, 스마트워크",
-      "ai_reason": "유지보수와 스마트워크 관련으로 이노티움의 핵심 제품군과 직접적 연관성이 낮음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01575407&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
       "id": 204,
       "institution": "조달청 서울지방조달청",
       "title": "디지털의료제품 규제지원센터 SBOM 제작 도구 임차(2차)",
@@ -225,11 +199,11 @@
       "cnt": 14
     },
     {
-      "name": "조달청",
-      "cnt": 5
+      "name": "KISA",
+      "cnt": 6
     },
     {
-      "name": "KISA",
+      "name": "조달청",
       "cnt": 5
     },
     {
@@ -324,6 +298,19 @@
     }
   ],
   "raw": [
+    {
+      "id": 222,
+      "institution": "KISA",
+      "title": "개인정보 노출 및 불법유통 분석·대응체계 강화를 위한 기능개선",
+      "reg_date": "2026-07-22",
+      "end_date": "-",
+      "score": 0,
+      "category_tag": "개인정보 노출 분석, 대응체계 강화",
+      "ai_reason": "컨설팅·감사·관제·진단 중심으로 이노티움 사업과 무관함.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10789&page=1",
+      "source": "KISA",
+      "budget": 0
+    },
     {
       "id": 221,
       "institution": "KISA",
@@ -999,45 +986,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01598492&bidPbancOrd=000",
       "source": "G2B",
       "budget": 0
-    },
-    {
-      "id": 162,
-      "institution": "과학기술정보통신부",
-      "title": "과기정통부 N2SF 적용을 위한 업무자료 등급분류",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-03",
-      "score": 9,
-      "category_tag": "N2SF 아키텍처 구축, 문서중앙화",
-      "ai_reason": "N2SF 적용과 업무자료 등급분류는 이노티움의 제로트러스트 아키텍처 및 문서중앙화 솔루션 구축과 직접 관련.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594241&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 54545455
-    },
-    {
-      "id": 161,
-      "institution": "서울특별시 여성가족재단",
-      "title": "2026년 서울 디지털성범죄 안심지원센터 개인정보 보호 수준 강화 컨설팅 (협상에 의한 계약)",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-08",
-      "score": 0,
-      "category_tag": "보안 컨설팅, 개인정보영향평가",
-      "ai_reason": "컨설팅 및 평가 중심 사업으로 이노티움의 납품·구축 특성과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01594027&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 163,
-      "institution": "국가과학기술인력개발원",
-      "title": "「2026년 글로벌 R&D 전주기 스탠다드 교육」기획·운영 해외연수 용역",
-      "reg_date": "2026-06-22",
-      "end_date": "2026-07-03",
-      "score": 0,
-      "category_tag": "교육, 연수, 용역",
-      "ai_reason": "보안 컨설팅·교육·훈련 관련으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596063&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
   "monthly_trend": [
@@ -1053,19 +1001,19 @@
     },
     {
       "month": "2026-07",
-      "total": 40,
+      "total": 41,
       "core": 6
     }
   ],
   "insights": {
-    "top_category": "AI 기반 개발체계, 전주기 관리시스템",
-    "top_category_count": 1,
+    "top_category": "없음",
+    "top_category_count": 0,
     "urgent_7day": 1,
-    "top_institution": "한국과학기술원",
-    "total_budget": 1437781818,
-    "new_this_week": 9,
-    "db_total": 146
+    "top_institution": "없음",
+    "total_budget": 1383236363,
+    "new_this_week": 6,
+    "db_total": 147
   },
-  "updated_at": "2026-07-22 00:02",
-  "period": "2026-06-22 ~ 2026-07-22"
+  "updated_at": "2026-07-23 00:08",
+  "period": "2026-06-23 ~ 2026-07-23"
 }
