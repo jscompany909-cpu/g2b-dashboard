@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 53,
-    "top7": 5,
-    "total": 147,
+    "new_week": 52,
+    "top7": 6,
+    "total": 148,
     "deadline": 1
   },
   "top": [
@@ -44,6 +44,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01629498&bidPbancOrd=000",
       "source": "G2B",
       "budget": 127272727
+    },
+    {
+      "id": 223,
+      "institution": "KISA",
+      "title": "(재공고)개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-24",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 포함됩니다.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10792&page=1",
+      "source": "KISA",
+      "budget": 80000000
     },
     {
       "id": 189,
@@ -126,6 +139,19 @@
       "budget": 127272727
     },
     {
+      "id": 223,
+      "institution": "KISA",
+      "title": "(재공고)개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-24",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 포함됩니다.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10792&page=1",
+      "source": "KISA",
+      "budget": 80000000
+    },
+    {
       "id": 178,
       "institution": "조달청 인천지방조달청",
       "title": "군금연 메타버스 시스템 개선 및 보안솔루션 구축",
@@ -200,7 +226,7 @@
     },
     {
       "name": "KISA",
-      "cnt": 6
+      "cnt": 7
     },
     {
       "name": "조달청",
@@ -261,6 +287,10 @@
       "cnt": 3
     },
     {
+      "tag": "SBOM, 소프트웨어 공급망 보안",
+      "cnt": 3
+    },
+    {
       "tag": "차량임차",
       "cnt": 2
     },
@@ -291,13 +321,22 @@
     {
       "tag": "개인정보영향평가, 컨설팅",
       "cnt": 2
-    },
-    {
-      "tag": "개인정보영향평가, PIA, 감리",
-      "cnt": 2
     }
   ],
   "raw": [
+    {
+      "id": 223,
+      "institution": "KISA",
+      "title": "(재공고)개발기업 SBOM 기반 오픈소스 보안 취약점 분석 및 관리체계 운영 지원",
+      "reg_date": "2026-07-24",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "SBOM, 소프트웨어 공급망 보안",
+      "ai_reason": "SBOM 기반 보안 솔루션 구축은 이노티움의 납품 가능한 핵심 제품군에 포함됩니다.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10792&page=1",
+      "source": "KISA",
+      "budget": 80000000
+    },
     {
       "id": 222,
       "institution": "KISA",
@@ -960,32 +999,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01600998&bidPbancOrd=000",
       "source": "G2B",
       "budget": 563365000
-    },
-    {
-      "id": 164,
-      "institution": "한국은행",
-      "title": "한국은행 「프로젝트 한강」등 2개 사업 개인정보 영향평가",
-      "reg_date": "2026-06-23",
-      "end_date": "2026-07-06",
-      "score": 0,
-      "category_tag": "개인정보영향평가, PIA",
-      "ai_reason": "개인정보영향평가는 컨설팅·감사·진단 영역으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01596835&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
-    },
-    {
-      "id": 165,
-      "institution": "한국보건산업진흥원",
-      "title": "한국형 ARPA-H 프로젝트 전주기 PM중심연구개발 수행체계 고도화",
-      "reg_date": "2026-06-23",
-      "end_date": "2026-07-07",
-      "score": 0,
-      "category_tag": "컨설팅, 연구개발, PM체계",
-      "ai_reason": "이노티움의 납품·구축 사업과 무관하며 컨설팅 및 연구개발 중심.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01598492&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 0
     }
   ],
   "monthly_trend": [
@@ -1001,19 +1014,19 @@
     },
     {
       "month": "2026-07",
-      "total": 41,
-      "core": 6
+      "total": 42,
+      "core": 7
     }
   ],
   "insights": {
-    "top_category": "없음",
-    "top_category_count": 0,
+    "top_category": "SBOM, 소프트웨어 공급망 보안",
+    "top_category_count": 1,
     "urgent_7day": 1,
-    "top_institution": "없음",
-    "total_budget": 1383236363,
-    "new_this_week": 6,
-    "db_total": 147
+    "top_institution": "KISA",
+    "total_budget": 1463236363,
+    "new_this_week": 3,
+    "db_total": 148
   },
-  "updated_at": "2026-07-23 00:08",
-  "period": "2026-06-23 ~ 2026-07-23"
+  "updated_at": "2026-07-24 00:08",
+  "period": "2026-06-24 ~ 2026-07-24"
 }
