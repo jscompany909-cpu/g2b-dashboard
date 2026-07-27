@@ -287,16 +287,15 @@ def main():
     print(f"   Top 후보  : {kpi['top7']}건 (5점+)")
     print(f"   마감임박  : {kpi['deadline']}건 (14일 내)")
 
-    ci_mode = "--ci" in sys.argv          # GitHub Actions: push만, Redmine 건너뜀
-    push    = "-y" in sys.argv or "--yes" in sys.argv or ci_mode
+    ci_mode = "--ci" in sys.argv          # GitHub Actions: git·Redmine 모두 건너뜀 (workflow가 처리)
+    push    = "-y" in sys.argv or "--yes" in sys.argv
 
-    if push:
+    if ci_mode:
+        print("\nℹ️  CI 모드: git push·Redmine 건너뜀 (workflow에서 일괄 처리)")
+    elif push:
         git_push()
-        if not ci_mode:
-            print("\n🔗  Redmine 새기능 등록 중...")
-            push_to_redmine()
-        else:
-            print("\nℹ️  CI 모드: Redmine 등록 건너뜀 (사내망 접근 불가)")
+        print("\n🔗  Redmine 새기능 등록 중...")
+        push_to_redmine()
     else:
         ans = input("\n⬆️  GitHub push + Redmine 등록 할까요? (y/N): ").strip().lower()
         if ans == "y":

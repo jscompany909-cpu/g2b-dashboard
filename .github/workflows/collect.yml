@@ -58,12 +58,18 @@ jobs:
         echo "AZURE_OPENAI_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT }}" >> .env
         echo "AZURE_OPENAI_API_VERSION=${{ secrets.AZURE_OPENAI_API_VERSION }}" >> .env
 
+    - name: Configure git
+      run: |
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+
     - name: Run harness (collect + score + verify)
       run: python g2b_harness.py
       env:
         PYTHONIOENCODING: utf-8
 
     - name: Extract PDF budgets
+      continue-on-error: true
       run: python g2b_pdf_budget.py --no-export
       env:
         PYTHONIOENCODING: utf-8
@@ -75,9 +81,11 @@ jobs:
 
     - name: Commit and push DB + JSON
       run: |
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git config user.name "github-actions[bot]"
         git add "정부과제_트렌드_창고.db" "data/announcements.json"
-        git diff --staged --quiet || git commit -m "chore: 일일 DB 업데이트 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
-        git pull --rebase
-        git push
+        if git diff --staged --quiet; then
+          echo "ℹ️  변경사항 없음 — 커밋 스킵"
+          exit 0
+        fi
+        git commit -m "chore: 일일 DB 업데이트 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
+        git pull --rebase origin main
+        git push origin main

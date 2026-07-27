@@ -1,7 +1,9 @@
-name: G2B 이메일 발송 (Cloudflare Cron 트리거)
+name: G2B 이메일 발송 (평일 09:30 KST)
 
 on:
-  workflow_dispatch:   # Cloudflare Workers가 정각에 호출
+  schedule:
+    - cron: '30 0 * * 1-5'   # 평일 09:30 KST (UTC 00:30) — GitHub native 스케줄
+  workflow_dispatch:           # 수동 실행 또는 Cloudflare Worker 트리거
 
 jobs:
   date-check:

@@ -168,7 +168,7 @@ def build_html(data):
   <!-- 링크 -->
   <div style="padding:20px 32px;background:#f8fafc;border-top:1px solid #e2e8f0;text-align:center">
     <a href="{DASHBOARD}" style="display:inline-block;background:#1e3a8a;color:white;padding:12px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px">📊 대시보드 열기</a>
-    <p style="margin:12px 0 0;font-size:11px;color:#9ca3af">자동 발송 · 매주 월요일 오전 9시 · GitHub Actions</p>
+    <p style="margin:12px 0 0;font-size:11px;color:#9ca3af">자동 발송 · 평일 오전 9시 30분 · GitHub Actions</p>
   </div>
 
 </div>
