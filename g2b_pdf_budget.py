@@ -94,6 +94,10 @@ def _try_download(page, ext: str) -> tuple:
 
 def fetch_amount_from_pdf(bid_link: str) -> int:
     """Playwright → 첨부파일(PDF/HWPX/HWP) 다운로드 → 금액 추출"""
+    if not bid_link or not str(bid_link).startswith(('http://', 'https://')):
+        print(f"    URL 스킴 검증 실패 — 건너뜀: {bid_link!r}")
+        return 0
+
     with sync_playwright() as pw:
         browser = pw.chromium.launch(
             headless=True,
@@ -215,7 +219,8 @@ def run():
     # --no-export: GitHub Actions에서 export는 별도 step으로 처리
     if updated > 0 and "--no-export" not in sys.argv:
         print("\n대시보드 업데이트 중...")
-        subprocess.run([sys.executable, "g2b_export_json.py", "-y"], check=False)
+        _script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "g2b_export_json.py")
+        subprocess.run([sys.executable, _script, "-y"], check=False)
 
 
 if __name__ == "__main__":

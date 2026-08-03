@@ -4,9 +4,10 @@ g2b_email_notify.py — 주간 수집 결과를 이메일로 발송
 환경변수 (GitHub Secrets):
   GMAIL_USER        : 발신 Gmail 주소 (예: yourname@gmail.com)
   GMAIL_APP_PASSWORD: Gmail 앱 비밀번호 (16자리, 공백 제거)
-  NOTIFY_TO         : 수신 이메일 (기본 jsbae@innotium.com)
+  NOTIFY_TO         : 수신 이메일
 """
 
+import html
 import os
 import sqlite3
 import smtplib
@@ -22,7 +23,7 @@ load_dotenv()
 DB_PATH   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "정부과제_트렌드_창고.db")
 GMAIL_USER = os.environ.get("GMAIL_USER", "")
 GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
-NOTIFY_TO  = os.environ.get("NOTIFY_TO", "jsbae@innotium.com")
+NOTIFY_TO  = os.environ.get("NOTIFY_TO", "")
 DASHBOARD  = "https://jscompany909-cpu.github.io/g2b-dashboard/"
 
 
@@ -73,28 +74,28 @@ def build_html(data):
     today_str = datetime.date.today().strftime("%Y년 %m월 %d일")
     top_rows  = "".join(
         f"""<tr>
-          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#6b7280;font-size:11px;min-width:35px">{r['source']}</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;font-size:12px;min-width:100px">{r['institution'][:18] if r['institution'] else ''}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#6b7280;font-size:11px;min-width:35px">{html.escape(str(r.get('source','') or ''))}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;font-size:12px;min-width:100px">{html.escape(str(r.get('institution','') or '')[:18])}</td>
           <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;font-size:13px">
-            <a href="{r['link']}" style="color:#1e3a8a;text-decoration:none;font-weight:500" target="_blank">{r['title'][:50]}</a>
+            <a href="{html.escape(r['link'] if str(r.get('link','')).startswith(('http://','https://')) else '#')}" style="color:#1e3a8a;text-decoration:none;font-weight:500" target="_blank">{html.escape(str(r.get('title','') or '')[:50])}</a>
           </td>
           <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:center;white-space:nowrap;min-width:50px">
             <span style="background:{'#e53e3e' if r['score']>=9 else '#dd6b20' if r['score']>=7 else '#38a169'};color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap;display:inline-block">{r['score']}점</span>
           </td>
           <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap;font-weight:700;color:#1e40af;min-width:60px">{fmt_budget(r['budget'])}</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#e53e3e;font-weight:600;min-width:90px">{r['end_date']}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap;color:#e53e3e;font-weight:600;min-width:90px">{html.escape(str(r.get('end_date','-') or '-'))}</td>
         </tr>"""
         for r in data.get("top", [])
     ) or "<tr><td colspan='6' style='padding:20px;text-align:center;color:#9ca3af'>이번 주 Top 후보 없음</td></tr>"
 
     urgent_rows = "".join(
         f"""<tr>
-          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;font-size:13px;min-width:100px">{r['institution'][:20] if r['institution'] else ''}</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;font-size:13px">{r['title'][:55]}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;font-size:13px;min-width:100px">{html.escape(str(r.get('institution','') or '')[:20])}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;font-size:13px">{html.escape(str(r.get('title','') or '')[:55])}</td>
           <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;text-align:center;white-space:nowrap;min-width:50px">
             <span style="background:#718096;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;white-space:nowrap">{r['score']}점</span>
           </td>
-          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;color:#e53e3e;font-weight:700;min-width:90px">{r['end_date']}</td>
+          <td style="padding:8px 10px;border-bottom:1px solid #fef3c7;white-space:nowrap;color:#e53e3e;font-weight:700;min-width:90px">{html.escape(str(r.get('end_date','-') or '-'))}</td>
         </tr>"""
         for r in data.get("urgent", [])
     ) or "<tr><td colspan='4' style='padding:20px;text-align:center;color:#9ca3af'>마감임박 공고 없음</td></tr>"
@@ -175,7 +176,11 @@ def build_html(data):
 </body></html>"""
 
 
-def send_email(html: str, subject: str):
+def send_email(html_body: str, subject: str):
+    if not NOTIFY_TO:
+        print("❌ NOTIFY_TO 미설정")
+        return False
+
     if not GMAIL_USER or not GMAIL_PASS:
         print("❌ GMAIL_USER 또는 GMAIL_APP_PASSWORD 환경변수 없음")
         return False
@@ -184,7 +189,7 @@ def send_email(html: str, subject: str):
     msg["Subject"] = subject
     msg["From"]    = formataddr((str(Header("G2B 알리미", "utf-8")), GMAIL_USER))
     msg["To"]      = NOTIFY_TO
-    msg.attach(MIMEText(html, "html", "utf-8"))
+    msg.attach(MIMEText(html_body, "html", "utf-8"))
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
@@ -198,14 +203,18 @@ def send_email(html: str, subject: str):
 
 
 def main():
+    if not NOTIFY_TO:
+        print("❌ NOTIFY_TO 환경변수 없음 — 발송 중단")
+        return
+
     today_str = datetime.date.today().strftime("%Y.%m.%d")
     print("📧 주간 결과 이메일 생성 중...")
 
-    data    = get_summary()
-    html    = build_html(data)
-    subject = f"[G2B 주간 입찰] {today_str} — Top {len(data.get('top',[]))}건, 마감임박 {len(data.get('urgent',[]))}건"
+    data     = get_summary()
+    html_doc = build_html(data)
+    subject  = f"[G2B 주간 입찰] {today_str} — Top {len(data.get('top',[]))}건, 마감임박 {len(data.get('urgent',[]))}건"
 
-    send_email(html, subject)
+    send_email(html_doc, subject)
 
 
 if __name__ == "__main__":

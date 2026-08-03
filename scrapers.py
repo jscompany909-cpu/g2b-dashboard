@@ -9,6 +9,7 @@ import re
 import datetime
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urlencode
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -59,7 +60,7 @@ def fetch_kisa(max_pages: int = 10) -> list:
     for page in range(1, max_pages + 1):
         try:
             url = f"{base}/403?page={page}"
-            r   = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            r   = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=True)
             soup = BeautifulSoup(r.text, "html.parser")
             table = soup.select_one("table")
             if not table:
@@ -80,8 +81,13 @@ def fetch_kisa(max_pages: int = 10) -> list:
                 if not title or title.isdigit() or len(title) < 5:
                     continue
 
-                href     = link_el.get("href", "")
-                full_url = href if href.startswith("http") else base + href
+                href = link_el.get("href", "")
+                if href.startswith("http://") or href.startswith("https://"):
+                    full_url = href
+                elif href:
+                    full_url = base + href
+                else:
+                    continue
                 # cells: [번호, 제목, 날짜, 조회수, 첨부]
                 reg_date = cells[2].get_text(strip=True) if len(cells) > 2 else "-"
 
@@ -119,7 +125,7 @@ def fetch_nipa(max_pages: int = 10) -> list:
             # NIPA는 페이지 파라미터 없이 모든 항목을 한 번에 보여주는 구조
             # pageIndex 파라미터로 시도
             url  = f"{base}/home/2-3" + (f"?pageIndex={page}" if page > 1 else "")
-            r    = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            r    = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=True)
             soup = BeautifulSoup(r.text, "html.parser")
             table = soup.select_one("table")
             if not table:
@@ -144,8 +150,13 @@ def fetch_nipa(max_pages: int = 10) -> list:
                 if not title or title.isdigit() or len(title) < 5:
                     continue
 
-                href     = link_el.get("href", "")
-                full_url = href if href.startswith("http") else base + href
+                href = link_el.get("href", "")
+                if href.startswith("http://") or href.startswith("https://"):
+                    full_url = href
+                elif href:
+                    full_url = base + href
+                else:
+                    continue
                 # cells: [번호, 제목, 작성자, 첨부, 조회수, 날짜]
                 reg_date = cells[5].get_text(strip=True) if len(cells) > 5 else "-"
                 row_num  = cells[0].get_text(strip=True)
@@ -185,7 +196,7 @@ def fetch_iitp(max_pages: int = 10) -> list:
 
     # 쿠키/세션 토큰 초기화
     try:
-        session.get(LIST_URL, timeout=TIMEOUT)
+        session.get(LIST_URL, timeout=TIMEOUT, verify=True)
     except Exception as e:
         print(f"  ⚠️ IITP 세션 초기화 실패: {e}")
 
@@ -207,6 +218,7 @@ def fetch_iitp(max_pages: int = 10) -> list:
                          "Referer": LIST_URL,
                          "X-Requested-With": "XMLHttpRequest"},
                 timeout=TIMEOUT,
+                verify=True,
             )
             r.raise_for_status()
             data      = r.json()
@@ -222,7 +234,7 @@ def fetch_iitp(max_pages: int = 10) -> list:
                 item_id  = row.get("id", "")
                 reg_date = row.get("receipt_begin_date", "-")
                 end_date = row.get("receipt_end_date", "-")
-                link     = f"{BASE}/web/lay1/program/S1T44C51/iris/view.do?id={item_id}"
+                link     = f"{BASE}/web/lay1/program/S1T44C51/iris/view.do?{urlencode({'id': item_id})}"
                 items.append(_normalize(title, "IITP", reg_date, end_date, link, "IITP"))
 
             total_page = data.get("pagination", {}).get("totalpage", 1)
@@ -286,7 +298,7 @@ def _fetch_iitp_playwright(max_pages: int = 10) -> list:
                     item_id  = row.get("id", "")
                     reg_date = row.get("receipt_begin_date", "-")
                     end_date = row.get("receipt_end_date", "-")
-                    link     = f"{BASE}/web/lay1/program/S1T44C51/iris/view.do?id={item_id}"
+                    link     = f"{BASE}/web/lay1/program/S1T44C51/iris/view.do?{urlencode({'id': item_id})}"
                     items.append(_normalize(title, "IITP", reg_date, end_date, link, "IITP"))
 
                 print(f"  IITP(PW) {page_num}페이지: {len(rows_data)}건")

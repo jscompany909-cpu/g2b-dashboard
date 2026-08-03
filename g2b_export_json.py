@@ -7,6 +7,7 @@ g2b_export_json.py — DB → GitHub Pages JSON 내보내기 + Redmine 새기능
 """
 
 import datetime
+import html
 import json
 import os
 import sqlite3
@@ -19,9 +20,11 @@ DB_PATH   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "정부과�
 OUT_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 OUT_FILE  = os.path.join(OUT_DIR, "announcements.json")
 
-REDMINE_URL     = "http://192.168.14.19:3000"
-REDMINE_AUTH    = ("admin", "11111111")
-REDMINE_PROJECT = "g2b_project"
+REDMINE_URL     = os.environ.get("REDMINE_URL", "")
+REDMINE_USER    = os.environ.get("REDMINE_USER", "")
+REDMINE_PASS    = os.environ.get("REDMINE_PASS", "")
+REDMINE_AUTH    = (REDMINE_USER, REDMINE_PASS)
+REDMINE_PROJECT = os.environ.get("REDMINE_PROJECT", "g2b_project")
 TRACKER_ID      = 2   # 새기능
 
 
@@ -193,26 +196,37 @@ def _score_to_priority(score, end_date=None):
 
 
 def _build_description(row):
+    institution  = html.escape(str(row['institution'] or ''))
+    reg_date     = html.escape(str(row['reg_date'] or ''))
+    end_date     = html.escape(str(row['end_date'] or ''))
+    score        = html.escape(str(row['score']))
+    category_tag = html.escape(str(row['category_tag'] or ''))
+    source       = html.escape(str(row.get('source', 'G2B') or ''))
+    ai_reason    = html.escape(str(row['ai_reason'] or ''))
+    safe_link    = row['link'] if str(row.get('link', '')).startswith(('http://', 'https://')) else '#'
     return (
         "## 입찰 정보\n\n"
         "| 항목 | 내용 |\n"
         "|------|------|\n"
-        f"| 발주기관 | {row['institution']} |\n"
-        f"| 공고일   | {row['reg_date']} |\n"
-        f"| 마감일   | {row['end_date']} |\n"
-        f"| AI 점수  | {row['score']}점 |\n"
-        f"| 카테고리 | {row['category_tag']} |\n"
-        f"| 출처     | {row.get('source','G2B')} |\n\n"
+        f"| 발주기관 | {institution} |\n"
+        f"| 공고일   | {reg_date} |\n"
+        f"| 마감일   | {end_date} |\n"
+        f"| AI 점수  | {score}점 |\n"
+        f"| 카테고리 | {category_tag} |\n"
+        f"| 출처     | {source} |\n\n"
         "## AI 분석\n"
-        f"{row['ai_reason']}\n\n"
+        f"{ai_reason}\n\n"
         "## 링크\n"
-        f"{row['link']}\n"
+        f"{safe_link}\n"
     )
 
 
 def push_to_redmine():
     """Top 후보(5점+) 중 미등록 항목을 Redmine 새기능 트래커에 누적 등록"""
     if not os.path.exists(DB_PATH):
+        return
+    if not REDMINE_URL or not REDMINE_USER:
+        print("   Redmine: REDMINE_URL 또는 REDMINE_USER 미설정 — 건너뜀")
         return
 
     thirty_ago = (datetime.date.today() - datetime.timedelta(days=30)).isoformat()
@@ -244,7 +258,7 @@ def push_to_redmine():
             "issue": {
                 "project_id":  REDMINE_PROJECT,
                 "tracker_id":  TRACKER_ID,
-                "subject":     f"[{row['score']}점][G2B] {row['title']}",
+                "subject":     f"[{row['score']}점][G2B] {html.escape(row['title'][:80])}",
                 "description": _build_description(row),
                 "priority_id": _score_to_priority(row["score"], row.get("end_date", "-")),
             }

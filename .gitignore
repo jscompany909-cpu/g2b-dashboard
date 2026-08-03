@@ -6,3 +6,7 @@ _test_*.py
 _debug_*.py
 _check_*.py
 _rescore_all.py
+*.db
+G2B_설계서.md
+_push_deadline.py
+_update_secret.py

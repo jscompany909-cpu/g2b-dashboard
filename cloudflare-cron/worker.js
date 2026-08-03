@@ -3,7 +3,8 @@
  * 평일 09:30 KST 정각에 GitHub Actions 이메일 워크플로우를 트리거합니다.
  *
  * 환경변수 (Cloudflare Dashboard → Settings → Variables → Secrets):
- *   GITHUB_TOKEN : GitHub Personal Access Token (repo scope)
+ *   GITHUB_TOKEN   : GitHub Personal Access Token (repo scope)
+ *   TRIGGER_SECRET : POST /trigger 엔드포인트 인증 토큰
  */
 
 const REPO     = 'jscompany909-cpu/g2b-dashboard';
@@ -19,7 +20,15 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // Authenticate POST /trigger requests
     if (request.method === 'POST' && url.pathname === '/trigger') {
+      const authToken = request.headers.get('X-Trigger-Token');
+      if (!env.TRIGGER_SECRET || authToken !== env.TRIGGER_SECRET) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
       const result = await triggerWorkflow(env);
       return new Response(JSON.stringify(result), {
         status: result.ok ? 200 : 500,

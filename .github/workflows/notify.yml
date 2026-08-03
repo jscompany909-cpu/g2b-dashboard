@@ -8,6 +8,8 @@ on:
 jobs:
   date-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       should_run: ${{ steps.check.outputs.should_run }}
     steps:
@@ -25,6 +27,8 @@ jobs:
   notify:
     needs: date-check
     if: needs.date-check.outputs.should_run == 'true'
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -32,7 +36,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
     - name: Set up Python 3.11
@@ -50,7 +54,7 @@ jobs:
         PYTHONIOENCODING: utf-8
         GMAIL_USER: ${{ secrets.GMAIL_USER }}
         GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        NOTIFY_TO: jsbae@innotium.com
+        NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
 
     - name: Notify on failure
       if: failure()

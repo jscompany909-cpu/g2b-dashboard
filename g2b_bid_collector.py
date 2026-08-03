@@ -10,10 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # =====================================================================
-# 🖥️ [온프레미스 고정 설정] 
+# 🖥️ [온프레미스 고정 설정]
 # =====================================================================
-OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
-MODEL_NAME = "qwen2.5:7b" 
 
 G2B_API_KEY = os.environ.get("G2B_API_KEY")
 
@@ -24,19 +22,19 @@ def is_relevant(title):
 
 # 104개 사내 타겟 보안 매트릭스 키워드
 INNOTIUM_KEYWORDS = [
-    "HACKER", "RANSOM", "랜섬웨어", "랜섬웨어검사", "랜섬웨어탐지", "랜섬웨어탐지차단", 
+    "HACKER", "RANSOM", "랜섬웨어", "랜섬웨어검사", "랜섬웨어탐지", "랜섬웨어탐지차단",
     "해킹", "랜섬웨어방지솔루션", "랜섬웨어차단", "컴퓨터바이러스", "해킹방지", "랜섬웨어방어",
-    "BACKUP", "SMB", "데이터백업", "데이터이관", "랜섬웨어백업", "랜섬웨어백업솔루션", 
-    "문서복구", "문서이관", "백업", "백업솔루션", "백업파일", "보안백업", "자동백업", 
-    "컴퓨터데이터백업", "컴퓨터백업", "클라우드백업", "파일백업", "비가시성워터마크", 
-    "비가시성워터마크솔루션", "워터마크", "캡처방지", "프린트워터마크", "화면보안", "화면캡처", 
-    "화면캡처방지", "화면캡쳐", "화면캡쳐방지", "DLP", "화면워터마크", "DLP솔루션", "출력물보안", 
-    "출력물워터마크", "화면보안솔루션", "스마트워크", "DRM", "DRM솔루션", "N2SF", "N²SF", 
-    "제로트러스트", "Zero Trust", "ZTA", "개인정보", "개인정보등급분류", "개인정보보안솔루션", 
-    "개인정보보호", "개인정보보호솔루션", "개인정보전주기", "개인정보전주기관리", "기술정보전주기", 
-    "데이터등급분류", "데이터반출", "데이터암호화", "문서등급분류", "문서반출", "문서암호화", 
-    "문서외부반출", "문서외부반출시스템", "문서전주기", "문서전주기관리", "반출시스템", "암호화", 
-    "암호화솔루션", "외부반출", "전주기", "전주기관리", "AIECM", "AI문서중앙화", "ECM", "ECM문서관리", 
+    "BACKUP", "SMB", "데이터백업", "데이터이관", "랜섬웨어백업", "랜섬웨어백업솔루션",
+    "문서복구", "문서이관", "백업", "백업솔루션", "백업파일", "보안백업", "자동백업",
+    "컴퓨터데이터백업", "컴퓨터백업", "클라우드백업", "파일백업", "비가시성워터마크",
+    "비가시성워터마크솔루션", "워터마크", "캡처방지", "프린트워터마크", "화면보안", "화면캡처",
+    "화면캡처방지", "화면캡쳐", "화면캡쳐방지", "DLP", "화면워터마크", "DLP솔루션", "출력물보안",
+    "출력물워터마크", "화면보안솔루션", "스마트워크", "DRM", "DRM솔루션", "N2SF", "N²SF",
+    "제로트러스트", "Zero Trust", "ZTA", "개인정보", "개인정보등급분류", "개인정보보안솔루션",
+    "개인정보보호", "개인정보보호솔루션", "개인정보전주기", "개인정보전주기관리", "기술정보전주기",
+    "데이터등급분류", "데이터반출", "데이터암호화", "문서등급분류", "문서반출", "문서암호화",
+    "문서외부반출", "문서외부반출시스템", "문서전주기", "문서전주기관리", "반출시스템", "암호화",
+    "암호화솔루션", "외부반출", "전주기", "전주기관리", "AIECM", "AI문서중앙화", "ECM", "ECM문서관리",
     "문서보안솔루션", "문서보안프로그램", "문서중앙화", "문서중앙화솔루션", "문서협업솔루션", "이노티움문서중앙화",
     "노트북보안", "데이터유출방지", "시스템보호", "엔드포인트보안", "이노스마트플랫폼", "기업보안프로그램",
     "데이터보안", "보안솔루션", "통합보안솔루션", "SBOM", "공급망보안", "소프트웨어공급망",
@@ -49,12 +47,15 @@ def ask_azure_gpt4o_scoring(announcement_title):
     import re
     from openai import AzureOpenAI
 
+    if not os.environ.get("AZURE_OPENAI_ENDPOINT") or not os.environ.get("AZURE_OPENAI_KEY"):
+        return 0, "미설정", "Azure 환경변수 없음"
+
     client = AzureOpenAI(
-        azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT", "https://inno-ecm-test01.openai.azure.com"),
+        azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT"),
         api_key=os.environ.get("AZURE_OPENAI_KEY"),
-        api_version=os.environ.get("AZURE_OPENAI_API_VERSION", "2025-01-01-preview"),
+        api_version=os.environ.get("AZURE_OPENAI_API_VERSION"),
     )
-    deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
+    deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT")
 
     prompt = f"""당신은 이노티움(Innotium) 사업개발팀 전문가입니다.
 
@@ -123,7 +124,7 @@ def _fetch_page(page_num, base_params, url, headers):
     """단일 페이지 수집 (병렬 워커용)"""
     params = {**base_params, "pageNo": str(page_num)}
     try:
-        response = requests.get(url, params=params, headers=headers, timeout=20)
+        response = requests.get(url, params=params, headers=headers, timeout=20, verify=True)
         if response.status_code != 200:
             return page_num, []
         root = ET.fromstring(response.text)
@@ -143,7 +144,7 @@ def _fetch_page(page_num, base_params, url, headers):
 
 def fetch_g2b_raw_data():
     """나라장터 용역 입찰공고 병렬 수집 (5개 페이지 동시 요청)"""
-    url = "http://apis.data.go.kr/1230000/ad/BidPublicInfoService/getBidPblancListInfoServcPPSSrch"
+    url = "https://apis.data.go.kr/1230000/ad/BidPublicInfoService/getBidPblancListInfoServcPPSSrch"
     today = datetime.date.today()
     base_params = {
         "serviceKey": requests.utils.unquote(G2B_API_KEY),
@@ -309,7 +310,7 @@ def run_innotium_reinforced_pipeline():
     conn.close()
     print("=" * 60)
     print(f"✨ 신규 적재: {new_inserted_count}건")
-    print(f"✅ 완료. 대시보드: http://localhost:5000")
+    print(f"✅ 완료.")
 
 
 if __name__ == "__main__":
