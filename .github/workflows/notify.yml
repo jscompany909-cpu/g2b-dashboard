@@ -14,7 +14,7 @@ jobs:
       - id: check
         run: |
           TODAY=$(TZ=Asia/Seoul date +%Y%m%d)
-          DEADLINE=20260731
+          DEADLINE=20260814
           if [ "$TODAY" -le "$DEADLINE" ]; then
             echo "should_run=true" >> $GITHUB_OUTPUT
           else
