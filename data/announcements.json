@@ -1,9 +1,9 @@
 {
   "kpi": {
-    "new_week": 32,
-    "top7": 4,
-    "total": 150,
-    "deadline": 0
+    "new_week": 43,
+    "top7": 5,
+    "total": 161,
+    "deadline": 1
   },
   "top": [
     {
@@ -31,6 +31,19 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10792&page=1",
       "source": "KISA",
       "budget": 80000000
+    },
+    {
+      "id": 234,
+      "institution": "사단법인 보험개발원",
+      "title": "백업.복구 인프라 및 GPU 도입 사업",
+      "reg_date": "2026-07-22",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "백업, 복구, 랜섬웨어 방어",
+      "ai_reason": "랜섬웨어 탐지·차단 및 보안백업 솔루션 직접 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01644015&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1555909091
     },
     {
       "id": 212,
@@ -100,6 +113,19 @@
       "budget": 80000000
     },
     {
+      "id": 234,
+      "institution": "사단법인 보험개발원",
+      "title": "백업.복구 인프라 및 GPU 도입 사업",
+      "reg_date": "2026-07-22",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "백업, 복구, 랜섬웨어 방어",
+      "ai_reason": "랜섬웨어 탐지·차단 및 보안백업 솔루션 직접 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01644015&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1555909091
+    },
+    {
       "id": 201,
       "institution": "학교안전공제중앙회",
       "title": "학교안전공제중앙회 개인정보처리시스템 안전성 확보 및 기능 개선 용역",
@@ -137,13 +163,40 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10806&page=1",
       "source": "KISA",
       "budget": 27500000
+    },
+    {
+      "id": 230,
+      "institution": "조달청 광주지방조달청",
+      "title": "해킹메일 통합관리 체계 개발",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-04",
+      "score": 2,
+      "category_tag": "해킹메일, 통합관리",
+      "ai_reason": "해킹메일 관리 체계는 보안 솔루션과 일부 연관되지만, 이노티움의 핵심 제품군과 직접적인 납품 가능성은 낮음.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01640069&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
     }
   ],
-  "deadline": [],
+  "deadline": [
+    {
+      "id": 230,
+      "institution": "조달청 광주지방조달청",
+      "title": "해킹메일 통합관리 체계 개발",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-04",
+      "score": 2,
+      "category_tag": "해킹메일, 통합관리",
+      "ai_reason": "해킹메일 관리 체계는 보안 솔루션과 일부 연관되지만, 이노티움의 핵심 제품군과 직접적인 납품 가능성은 낮음.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01640069&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
+    }
+  ],
   "inst_top10": [
     {
       "name": "조달청 서울지방조달청",
-      "cnt": 14
+      "cnt": 15
     },
     {
       "name": "KISA",
@@ -155,6 +208,10 @@
     },
     {
       "name": "한국지역정보개발원",
+      "cnt": 4
+    },
+    {
+      "name": "조달청 대전지방조달청",
       "cnt": 4
     },
     {
@@ -176,10 +233,6 @@
     {
       "name": "한국지능정보사회진흥원",
       "cnt": 3
-    },
-    {
-      "name": "한국건설기술연구원",
-      "cnt": 3
     }
   ],
   "cat_dist": [
@@ -189,11 +242,11 @@
     },
     {
       "tag": "개인정보영향평가, PIA",
-      "cnt": 7
+      "cnt": 8
     },
     {
       "tag": "개인정보영향평가, 용역",
-      "cnt": 5
+      "cnt": 7
     },
     {
       "tag": "개인정보보호 컨설팅",
@@ -205,6 +258,14 @@
     },
     {
       "tag": "개인정보영향평가, PIA, 컨설팅",
+      "cnt": 4
+    },
+    {
+      "tag": "개인정보영향평가, 컨설팅",
+      "cnt": 3
+    },
+    {
+      "tag": "개인정보영향평가, PIA, 감리",
       "cnt": 3
     },
     {
@@ -233,14 +294,6 @@
     },
     {
       "tag": "보안 컨설팅, ISMS-P",
-      "cnt": 2
-    },
-    {
-      "tag": "교육, 온라인강좌, 콘텐츠개발",
-      "cnt": 2
-    },
-    {
-      "tag": "개인정보영향평가, 컨설팅",
       "cnt": 2
     }
   ],
@@ -285,6 +338,19 @@
       "budget": 80000000
     },
     {
+      "id": 234,
+      "institution": "사단법인 보험개발원",
+      "title": "백업.복구 인프라 및 GPU 도입 사업",
+      "reg_date": "2026-07-22",
+      "end_date": "-",
+      "score": 9,
+      "category_tag": "백업, 복구, 랜섬웨어 방어",
+      "ai_reason": "랜섬웨어 탐지·차단 및 보안백업 솔루션 직접 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01644015&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1555909091
+    },
+    {
       "id": 222,
       "institution": "KISA",
       "title": "개인정보 노출 및 불법유통 분석·대응체계 강화를 위한 기능개선",
@@ -298,6 +364,97 @@
       "budget": 0
     },
     {
+      "id": 235,
+      "institution": "조달청 대전지방조달청",
+      "title": "2026년 창업진흥원 개인정보 영향평가",
+      "reg_date": "2026-07-22",
+      "end_date": "2026-08-12",
+      "score": 0,
+      "category_tag": "개인정보영향평가, PIA, 감리",
+      "ai_reason": "개인정보영향평가는 컨설팅/감리 영역으로 이노티움의 사업 범위와 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01643914&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 175837273
+    },
+    {
+      "id": 236,
+      "institution": "전국재해구호협회",
+      "title": "전국재해구호협회 개인정보처리시스템 개인정보 영향평가",
+      "reg_date": "2026-07-22",
+      "end_date": "2026-08-03",
+      "score": 0,
+      "category_tag": "개인정보영향평가, PIA, 컨설팅",
+      "ai_reason": "개인정보 영향평가는 컨설팅/평가 서비스로 이노티움의 사업 범위와 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01644713&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 86363636
+    },
+    {
+      "id": 230,
+      "institution": "조달청 광주지방조달청",
+      "title": "해킹메일 통합관리 체계 개발",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-04",
+      "score": 2,
+      "category_tag": "해킹메일, 통합관리",
+      "ai_reason": "해킹메일 관리 체계는 보안 솔루션과 일부 연관되지만, 이노티움의 핵심 제품군과 직접적인 납품 가능성은 낮음.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01640069&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
+    },
+    {
+      "id": 229,
+      "institution": "조달청 서울지방조달청",
+      "title": "에이전틱 AI 분야 개인정보 침해위험 실증분석",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-06",
+      "score": 0,
+      "category_tag": "개인정보 침해위험 실증분석",
+      "ai_reason": "컨설팅·분석 중심 사업으로 이노티움의 납품·구축 특성과 무관.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01641487&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 272727273
+    },
+    {
+      "id": 231,
+      "institution": "조달청 대전지방조달청",
+      "title": "운행제한 업무지원 시스템 개인정보 영향평가 용역",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-11",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 용역",
+      "ai_reason": "개인정보영향평가는 컨설팅/감사/진단 전용으로 이노티움 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01633930&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 136363636
+    },
+    {
+      "id": 232,
+      "institution": "한국교육과정평가원",
+      "title": "AI기반 학력진단시스템, 국가기초학력포털 구축 2차사업 개인정보영향평가",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-07-22",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 컨설팅",
+      "ai_reason": "개인정보영향평가는 이노티움의 사업 영역이 아님.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01641752&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 147727273
+    },
+    {
+      "id": 233,
+      "institution": "한국산업기술시험원",
+      "title": "2026년도 정보시스템 취약점 분석·평가 및 개인정보 관리 강화 컨설팅",
+      "reg_date": "2026-07-21",
+      "end_date": "2026-08-03",
+      "score": 0,
+      "category_tag": "보안 컨설팅, 취약점 분석, 개인정보 영향평가",
+      "ai_reason": "컨설팅 및 진단 중심 사업으로 이노티움의 납품·구축 사업과 무관.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01643432&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 89772727
+    },
+    {
       "id": 221,
       "institution": "KISA",
       "title": "[사전규격공개] 한·중 개인정보보호 협력포럼 및 세미나 개최 운영 용역",
@@ -309,6 +466,45 @@
       "link": "https://www.kisa.or.kr/403/form?postSeq=10783&page=1",
       "source": "KISA",
       "budget": 0
+    },
+    {
+      "id": 226,
+      "institution": "재단법인 경상북도 농식품유통교육진흥원",
+      "title": "경북 농산물 전자상거래 시스템 개인정보 영향평가",
+      "reg_date": "2026-07-20",
+      "end_date": "2026-07-31",
+      "score": 0,
+      "category_tag": "개인정보영향평가, PIA",
+      "ai_reason": "개인정보영향평가는 컨설팅/진단 전용으로 이노티움 사업과 무관합니다.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01638644&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 67154545
+    },
+    {
+      "id": 227,
+      "institution": "한국사회보장정보원",
+      "title": "보건복지 개인정보보호센터  중장기 발전방안 연구 사업",
+      "reg_date": "2026-07-20",
+      "end_date": "2026-07-31",
+      "score": 0,
+      "category_tag": "보안 컨설팅, 연구 사업",
+      "ai_reason": "연구 및 컨설팅 중심 사업으로 이노티움의 납품·구축 사업과 무관.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01639957&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 54545455
+    },
+    {
+      "id": 228,
+      "institution": "한국문화원연합회",
+      "title": "2026년 문화품앗이 개인정보보호 기능개선 용역",
+      "reg_date": "2026-07-20",
+      "end_date": "2026-08-06",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 용역",
+      "ai_reason": "개인정보보호 기능개선 용역은 컨설팅·진단·평가 중심으로 이노티움의 납품 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01638884&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 43636364
     },
     {
       "id": 216,
@@ -675,8 +871,8 @@
     },
     {
       "month": "2026-07",
-      "total": 44,
-      "core": 8
+      "total": 55,
+      "core": 9
     }
   ],
   "insights": {
@@ -684,10 +880,10 @@
     "top_category_count": 1,
     "urgent_7day": 0,
     "top_institution": "KISA",
-    "total_budget": 869318181,
+    "total_budget": 2425227272,
     "new_this_week": 2,
-    "db_total": 150
+    "db_total": 161
   },
-  "updated_at": "2026-08-03 02:32",
+  "updated_at": "2026-08-03 07:28",
   "period": "2026-07-04 ~ 2026-08-03"
 }
