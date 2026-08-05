@@ -3,7 +3,7 @@
     "new_week": 43,
     "top7": 5,
     "total": 161,
-    "deadline": 1
+    "deadline": 0
   },
   "top": [
     {
@@ -178,21 +178,7 @@
       "budget": 145454545
     }
   ],
-  "deadline": [
-    {
-      "id": 230,
-      "institution": "조달청 광주지방조달청",
-      "title": "해킹메일 통합관리 체계 개발",
-      "reg_date": "2026-07-21",
-      "end_date": "2026-08-04",
-      "score": 2,
-      "category_tag": "해킹메일, 통합관리",
-      "ai_reason": "해킹메일 관리 체계는 보안 솔루션과 일부 연관되지만, 이노티움의 핵심 제품군과 직접적인 납품 가능성은 낮음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01640069&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 145454545
-    }
-  ],
+  "deadline": [],
   "inst_top10": [
     {
       "name": "조달청 서울지방조달청",
@@ -884,6 +870,6 @@
     "new_this_week": 1,
     "db_total": 161
   },
-  "updated_at": "2026-08-04 00:13",
-  "period": "2026-07-05 ~ 2026-08-04"
+  "updated_at": "2026-08-05 00:07",
+  "period": "2026-07-06 ~ 2026-08-05"
 }
