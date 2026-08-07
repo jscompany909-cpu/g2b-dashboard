@@ -2,7 +2,7 @@
   "kpi": {
     "new_week": 43,
     "top7": 5,
-    "total": 163,
+    "total": 164,
     "deadline": 0
   },
   "top": [
@@ -186,7 +186,7 @@
     },
     {
       "name": "KISA",
-      "cnt": 11
+      "cnt": 12
     },
     {
       "name": "조달청",
@@ -284,6 +284,19 @@
     }
   ],
   "raw": [
+    {
+      "id": 241,
+      "institution": "KISA",
+      "title": "[사전규격공개] 2028년도 개인정보 분야 대형 R&D 사업 사전 기획",
+      "reg_date": "2026-08-06",
+      "end_date": "-",
+      "score": 0,
+      "category_tag": "보안 컨설팅, R&D 기획",
+      "ai_reason": "본 사업은 R&D 기획 및 컨설팅 성격으로, 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10821&page=1",
+      "source": "KISA",
+      "budget": 0
+    },
     {
       "id": 239,
       "institution": "KISA",
@@ -829,19 +842,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620604&bidPbancOrd=000",
       "source": "G2B",
       "budget": 45454545
-    },
-    {
-      "id": 194,
-      "institution": "조달청 서울지방조달청",
-      "title": "2026년 개인정보 보호 및 활용조사",
-      "reg_date": "2026-07-07",
-      "end_date": "2026-07-21",
-      "score": 0,
-      "category_tag": "개인정보 보호 조사",
-      "ai_reason": "컨설팅·조사 중심 사업으로 이노티움의 납품·구축 특성과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620722&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 409090909
     }
   ],
   "monthly_trend": [
@@ -862,7 +862,7 @@
     },
     {
       "month": "2026-08",
-      "total": 2,
+      "total": 3,
       "core": 0
     }
   ],
@@ -872,9 +872,9 @@
     "urgent_7day": 0,
     "top_institution": "KISA",
     "total_budget": 2425227272,
-    "new_this_week": 3,
-    "db_total": 163
+    "new_this_week": 4,
+    "db_total": 164
   },
-  "updated_at": "2026-08-06 00:04",
-  "period": "2026-07-07 ~ 2026-08-06"
+  "updated_at": "2026-08-07 01:44",
+  "period": "2026-07-08 ~ 2026-08-07"
 }
