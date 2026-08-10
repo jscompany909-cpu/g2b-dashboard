@@ -1,9 +1,9 @@
 {
   "kpi": {
-    "new_week": 68,
-    "top7": 7,
-    "total": 194,
-    "deadline": 2
+    "new_week": 71,
+    "top7": 8,
+    "total": 200,
+    "deadline": 3
   },
   "top": [
     {
@@ -44,6 +44,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01664932&bidPbancOrd=000",
       "source": "G2B",
       "budget": 26636364
+    },
+    {
+      "id": 276,
+      "institution": "재단법인자동차손해배상진흥원",
+      "title": "개인정보 생명주기 관리 솔루션 도입",
+      "reg_date": "2026-08-06",
+      "end_date": "2026-08-19",
+      "score": 9,
+      "category_tag": "개인정보보호 솔루션",
+      "ai_reason": "개인정보 생명주기 관리 솔루션은 이노티움의 개인정보보호 솔루션 제품군과 직접적으로 관련되어 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01669721&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
     },
     {
       "id": 212,
@@ -165,15 +178,15 @@
       "budget": 26636364
     },
     {
-      "id": 201,
-      "institution": "학교안전공제중앙회",
-      "title": "학교안전공제중앙회 개인정보처리시스템 안전성 확보 및 기능 개선 용역",
-      "reg_date": "2026-07-10",
-      "end_date": "2026-07-21",
-      "score": 7,
+      "id": 276,
+      "institution": "재단법인자동차손해배상진흥원",
+      "title": "개인정보 생명주기 관리 솔루션 도입",
+      "reg_date": "2026-08-06",
+      "end_date": "2026-08-19",
+      "score": 9,
       "category_tag": "개인정보보호 솔루션",
-      "ai_reason": "개인정보처리시스템의 안전성 확보와 기능 개선은 이노티움의 개인정보보호 솔루션 도입 가능성과 관련성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01628199&bidPbancOrd=000",
+      "ai_reason": "개인정보 생명주기 관리 솔루션은 이노티움의 개인정보보호 솔루션 제품군과 직접적으로 관련되어 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01669721&bidPbancOrd=000",
       "source": "G2B",
       "budget": 145454545
     },
@@ -271,6 +284,19 @@
       "budget": 26636364
     },
     {
+      "id": 276,
+      "institution": "재단법인자동차손해배상진흥원",
+      "title": "개인정보 생명주기 관리 솔루션 도입",
+      "reg_date": "2026-08-06",
+      "end_date": "2026-08-19",
+      "score": 9,
+      "category_tag": "개인정보보호 솔루션",
+      "ai_reason": "개인정보 생명주기 관리 솔루션은 이노티움의 개인정보보호 솔루션 제품군과 직접적으로 관련되어 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01669721&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
+    },
+    {
       "id": 269,
       "institution": "조달청 광주지방조달청",
       "title": "개인정보 이노베이션 존 연계 허브 인프라 구축을 위한 전산장비 구매",
@@ -294,15 +320,15 @@
       "cnt": 12
     },
     {
+      "name": "조달청",
+      "cnt": 6
+    },
+    {
       "name": "해양경찰청",
       "cnt": 5
     },
     {
       "name": "조달청 대전지방조달청",
-      "cnt": 5
-    },
-    {
-      "name": "조달청",
       "cnt": 5
     },
     {
@@ -329,7 +355,7 @@
   "cat_dist": [
     {
       "tag": "감리, 개인정보영향평가",
-      "cnt": 23
+      "cnt": 24
     },
     {
       "tag": "개인정보영향평가, PIA",
@@ -341,11 +367,11 @@
     },
     {
       "tag": "개인정보영향평가, 컨설팅",
-      "cnt": 6
+      "cnt": 8
     },
     {
       "tag": "개인정보보호 컨설팅",
-      "cnt": 5
+      "cnt": 6
     },
     {
       "tag": "보안 컨설팅",
@@ -389,6 +415,71 @@
     }
   ],
   "raw": [
+    {
+      "id": 274,
+      "institution": "(주)공영홈쇼핑",
+      "title": "공영홈쇼핑 개인정보 보호수준 평가 컨설팅 용역(취소공고)",
+      "reg_date": "2026-08-07",
+      "end_date": "2026-08-18",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 컨설팅",
+      "ai_reason": "개인정보 보호수준 평가 컨설팅은 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01669715&bidPbancOrd=001",
+      "source": "G2B",
+      "budget": 44643273
+    },
+    {
+      "id": 275,
+      "institution": "(주)공영홈쇼핑",
+      "title": "공영홈쇼핑 개인정보 보호수준 평가 컨설팅 용역(확대공고)",
+      "reg_date": "2026-08-07",
+      "end_date": "2026-08-18",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 컨설팅",
+      "ai_reason": "컨설팅 및 평가 용역은 이노티움 사업 특성과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01671799&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 44643273
+    },
+    {
+      "id": 277,
+      "institution": "소방청",
+      "title": "2026년 소방청 개인정보보호 컨설팅 사업(재공고)",
+      "reg_date": "2026-08-07",
+      "end_date": "2026-08-19",
+      "score": 0,
+      "category_tag": "개인정보보호 컨설팅",
+      "ai_reason": "컨설팅 사업으로 이노티움의 납품·구축 특성과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01672008&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 54209091
+    },
+    {
+      "id": 279,
+      "institution": "조달청 인천지방조달청",
+      "title": "출입국심사 여권 판독 고도화 사업 감리 및 개인정보영향평가 용역",
+      "reg_date": "2026-08-07",
+      "end_date": "2026-08-19",
+      "score": 0,
+      "category_tag": "감리, 개인정보영향평가",
+      "ai_reason": "감리 및 개인정보영향평가는 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01670560&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145762727
+    },
+    {
+      "id": 276,
+      "institution": "재단법인자동차손해배상진흥원",
+      "title": "개인정보 생명주기 관리 솔루션 도입",
+      "reg_date": "2026-08-06",
+      "end_date": "2026-08-19",
+      "score": 9,
+      "category_tag": "개인정보보호 솔루션",
+      "ai_reason": "개인정보 생명주기 관리 솔루션은 이노티움의 개인정보보호 솔루션 제품군과 직접적으로 관련되어 납품 가능.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01669721&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 145454545
+    },
     {
       "id": 241,
       "institution": "KISA",
@@ -1079,6 +1170,19 @@
       "budget": 270000000
     },
     {
+      "id": 278,
+      "institution": "조달청",
+      "title": "백업센터 2·3전 기반환경 구축 전기공사 실시설계용역",
+      "reg_date": "2026-07-16",
+      "end_date": "2026-08-11",
+      "score": 0,
+      "category_tag": "전기공사, 실시설계",
+      "ai_reason": "보안 소프트웨어/솔루션 납품과 무관한 전기공사 설계용역.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01636687&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1115686364
+    },
+    {
       "id": 212,
       "institution": "한국과학기술원",
       "title": "연구인프라 전주기 관리시스템 구축 및 AI 기반 개발체계 실증(재)",
@@ -1233,45 +1337,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01629164&bidPbancOrd=000",
       "source": "G2B",
       "budget": 145000000
-    },
-    {
-      "id": 201,
-      "institution": "학교안전공제중앙회",
-      "title": "학교안전공제중앙회 개인정보처리시스템 안전성 확보 및 기능 개선 용역",
-      "reg_date": "2026-07-10",
-      "end_date": "2026-07-21",
-      "score": 7,
-      "category_tag": "개인정보보호 솔루션",
-      "ai_reason": "개인정보처리시스템의 안전성 확보와 기능 개선은 이노티움의 개인정보보호 솔루션 도입 가능성과 관련성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01628199&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 145454545
-    },
-    {
-      "id": 200,
-      "institution": "아주대학교 산학협력단",
-      "title": "[재공고] 2026학년도 데이터보안 활용융합분야 공동교과목 온라인 콘텐츠 개발업체 선정 입찰",
-      "reg_date": "2026-07-10",
-      "end_date": "-",
-      "score": 0,
-      "category_tag": "교육 콘텐츠 개발",
-      "ai_reason": "교육 콘텐츠 개발은 이노티움의 납품·구축 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01605675&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 95454545
-    },
-    {
-      "id": 203,
-      "institution": "조달청 서울지방조달청",
-      "title": "신규 금융상품 도입 관련 감리 및 개인정보영향평가 용역",
-      "reg_date": "2026-07-10",
-      "end_date": "2026-07-22",
-      "score": 0,
-      "category_tag": "감리, 개인정보영향평가",
-      "ai_reason": "이노티움 사업 특성상 컨설팅·감리·평가 용역은 직접 납품 대상이 아님.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01611007&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 139829091
     }
   ],
   "monthly_trend": [
@@ -1287,13 +1352,13 @@
     },
     {
       "month": "2026-07",
-      "total": 69,
+      "total": 70,
       "core": 11
     },
     {
       "month": "2026-08",
-      "total": 19,
-      "core": 2
+      "total": 24,
+      "core": 3
     }
   ],
   "insights": {
@@ -1302,9 +1367,9 @@
     "urgent_7day": 0,
     "top_institution": "한국항공우주연구원",
     "total_budget": 3630318182,
-    "new_this_week": 19,
-    "db_total": 194
+    "new_this_week": 24,
+    "db_total": 200
   },
-  "updated_at": "2026-08-09 23:38",
-  "period": "2026-07-10 ~ 2026-08-09"
+  "updated_at": "2026-08-10 23:42",
+  "period": "2026-07-11 ~ 2026-08-10"
 }
