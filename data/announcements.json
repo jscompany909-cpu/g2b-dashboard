@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 71,
+    "new_week": 73,
     "top7": 8,
-    "total": 200,
+    "total": 202,
     "deadline": 3
   },
   "top": [
@@ -317,7 +317,7 @@
     },
     {
       "name": "KISA",
-      "cnt": 12
+      "cnt": 13
     },
     {
       "name": "조달청",
@@ -363,7 +363,7 @@
     },
     {
       "tag": "개인정보영향평가, 용역",
-      "cnt": 10
+      "cnt": 11
     },
     {
       "tag": "개인정보영향평가, 컨설팅",
@@ -415,6 +415,32 @@
     }
   ],
   "raw": [
+    {
+      "id": 280,
+      "institution": "KISA",
+      "title": "2028년도 개인정보 분야 대형 R&D 사업 사전 기획",
+      "reg_date": "2026-08-12",
+      "end_date": "-",
+      "score": 0,
+      "category_tag": "보안 컨설팅, R&D 기획",
+      "ai_reason": "R&D 기획은 컨설팅·교육·진단 중심으로 이노티움 사업과 무관함.",
+      "link": "https://www.kisa.or.kr/403/form?postSeq=10833&page=1",
+      "source": "KISA",
+      "budget": 0
+    },
+    {
+      "id": 281,
+      "institution": "서일대학",
+      "title": "올케어학사성과관리시스템 구축에 따른 개인정보 영향평가 용역(수의시담)",
+      "reg_date": "2026-08-10",
+      "end_date": "2026-08-13",
+      "score": 0,
+      "category_tag": "개인정보영향평가, 용역",
+      "ai_reason": "개인정보영향평가는 컨설팅·감사·진단 전용으로 이노티움 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01674327&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 54545455
+    },
     {
       "id": 274,
       "institution": "(주)공영홈쇼핑",
@@ -1357,19 +1383,19 @@
     },
     {
       "month": "2026-08",
-      "total": 24,
+      "total": 26,
       "core": 3
     }
   ],
   "insights": {
-    "top_category": "기술자료 보안, 백업 시스템 유지보수",
+    "top_category": "개인정보보호 솔루션, 전산장비 구축",
     "top_category_count": 1,
-    "urgent_7day": 0,
-    "top_institution": "한국항공우주연구원",
+    "urgent_7day": 2,
+    "top_institution": "조달청 광주지방조달청",
     "total_budget": 3630318182,
-    "new_this_week": 19,
-    "db_total": 200
+    "new_this_week": 16,
+    "db_total": 202
   },
-  "updated_at": "2026-08-11 23:45",
-  "period": "2026-07-12 ~ 2026-08-11"
+  "updated_at": "2026-08-12 23:48",
+  "period": "2026-07-13 ~ 2026-08-12"
 }
