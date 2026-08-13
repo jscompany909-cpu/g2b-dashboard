@@ -1,6 +1,6 @@
 {
   "kpi": {
-    "new_week": 73,
+    "new_week": 70,
     "top7": 8,
     "total": 202,
     "deadline": 3
@@ -112,19 +112,6 @@
     }
   ],
   "new": [
-    {
-      "id": 204,
-      "institution": "조달청 서울지방조달청",
-      "title": "디지털의료제품 규제지원센터 SBOM 제작 도구 임차(2차)",
-      "reg_date": "2026-07-13",
-      "end_date": "2026-07-24",
-      "score": 9,
-      "category_tag": "SBOM/소프트웨어 공급망 보안",
-      "ai_reason": "SBOM 제작 도구는 이노티움의 소프트웨어 공급망 보안 솔루션과 직접적으로 관련되어 납품 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01629498&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 127272727
-    },
     {
       "id": 223,
       "institution": "KISA",
@@ -1324,45 +1311,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01632931&bidPbancOrd=000",
       "source": "G2B",
       "budget": 227272727
-    },
-    {
-      "id": 204,
-      "institution": "조달청 서울지방조달청",
-      "title": "디지털의료제품 규제지원센터 SBOM 제작 도구 임차(2차)",
-      "reg_date": "2026-07-13",
-      "end_date": "2026-07-24",
-      "score": 9,
-      "category_tag": "SBOM/소프트웨어 공급망 보안",
-      "ai_reason": "SBOM 제작 도구는 이노티움의 소프트웨어 공급망 보안 솔루션과 직접적으로 관련되어 납품 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01629498&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 127272727
-    },
-    {
-      "id": 205,
-      "institution": "국민건강보험공단",
-      "title": "2026년 정보시스템 기능개발 통합 사업 개인정보 영향평가 용역",
-      "reg_date": "2026-07-13",
-      "end_date": "2026-08-24",
-      "score": 0,
-      "category_tag": "개인정보영향평가, 용역",
-      "ai_reason": "개인정보영향평가는 컨설팅·진단 전용으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01628765&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 39990909
-    },
-    {
-      "id": 207,
-      "institution": "한국산업은행",
-      "title": "「자금세탁방지(AML) 시스템 고도화 사업」 및 「KDB Paperless 업무환경 구축 개발사업」개인정보 영향평가",
-      "reg_date": "2026-07-13",
-      "end_date": "2026-07-24",
-      "score": 0,
-      "category_tag": "개인정보영향평가, 컨설팅",
-      "ai_reason": "개인정보 영향평가는 컨설팅·감사 영역으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01629164&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 145000000
     }
   ],
   "monthly_trend": [
@@ -1388,14 +1336,14 @@
     }
   ],
   "insights": {
-    "top_category": "개인정보보호 솔루션, 전산장비 구축",
+    "top_category": "개인정보보호 솔루션",
     "top_category_count": 1,
-    "urgent_7day": 2,
-    "top_institution": "조달청 광주지방조달청",
-    "total_budget": 3630318182,
-    "new_this_week": 16,
+    "urgent_7day": 3,
+    "top_institution": "재단법인자동차손해배상진흥원",
+    "total_budget": 3503045455,
+    "new_this_week": 10,
     "db_total": 202
   },
-  "updated_at": "2026-08-12 23:48",
-  "period": "2026-07-13 ~ 2026-08-12"
+  "updated_at": "2026-08-13 23:45",
+  "period": "2026-07-14 ~ 2026-08-13"
 }
