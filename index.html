@@ -611,7 +611,8 @@ function renderVoucher() {
     </tr>`).join('');
   }
   const news = _vou.news || [];
-  document.getElementById('vou-news-cnt').textContent = `최근 ${_vou.new_days || 7}일 · ${news.length}건 (참고용)`;
+  document.getElementById('vou-news-cnt').textContent = `최근 ${_vou.new_days || 7}일 · ${news.length}건 (참고용)`
+    + (_vou.news_stale ? ` · ⚠️ 이번 수집 실패 — 직전 수집분 (${_vou.news_updated_at || '-'} 기준)` : '');
   document.getElementById('vou-news').innerHTML = news.length
     ? news.map(n => `<li><a href="${esc(safeUrl(n.url))}" target="_blank" rel="noopener">${esc(n.title)}</a>
         <div class="news-meta">${esc(n.agency)} · ${esc(n.reg_date)} · ${kwChips(n)}</div></li>`).join('')

@@ -29,6 +29,8 @@ BIZINFO_MAX_PAGES = 150      # 접수중 공고 약 1,300건 = 15건 × 90페이
 NIPA_LIST = "https://www.nipa.kr/home/2-2"
 NIPA_PAGES = 3
 REQ_DELAY = 0.4              # 요청 간 대기(초) — 공공 사이트 부하 배려
+NEWS_DELAY = 1.5             # Google 뉴스 RSS 요청 간 대기 — 연속 요청 시 HTTP 503 방지
+NEWS_BACKOFF = 5             # 뉴스 재시도 대기 5·10·15초
 
 # ── 스코어링 ──────────────────────────────────────────────────────────────────
 # 제목·사업명·기관명을 합친 문자열에서 부분일치. 대소문자 무시.
@@ -96,7 +98,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger("voucher")
 
 
-def fetch(url: str, timeout: int = 30, retries: int = 3) -> str:
+def fetch(url: str, timeout: int = 30, retries: int = 3, backoff: float = 2) -> str:
     last = None
     for i in range(retries):
         try:
@@ -105,7 +107,7 @@ def fetch(url: str, timeout: int = 30, retries: int = 3) -> str:
                 return r.read().decode("utf-8", errors="replace")
         except Exception as e:
             last = e
-            time.sleep(2 * (i + 1))
+            time.sleep(backoff * (i + 1))
     raise RuntimeError(f"요청 실패 {url}: {last}")
 
 
@@ -208,7 +210,7 @@ def collect_news(days: int, errors: list):
         url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q)
                + "&hl=ko&gl=KR&ceid=KR:ko")
         try:
-            root = ET.fromstring(fetch(url))
+            root = ET.fromstring(fetch(url, backoff=NEWS_BACKOFF))
         except Exception as e:
             errors.append(f"뉴스 '{q}': {e}")
             continue
@@ -226,7 +228,7 @@ def collect_news(days: int, errors: list):
             src = (it.find("source").text if it.find("source") is not None else "") or ""
             items.append(Item(source="뉴스", title=title, url=link, agency=src,
                               reg_date=f"{pub:%Y-%m-%d}"))
-        time.sleep(REQ_DELAY)
+        time.sleep(NEWS_DELAY)
     log.info(f"뉴스: {len(items)}건 확인 (최근 {days}일)")
     return items
 
@@ -283,19 +285,36 @@ def main() -> int:
     news_ranked = sorted((n for n in news if n.score >= MIN_SCORE), key=lambda x: x.reg_date, reverse=True)
 
     items = [{"id": item_id(n), **asdict(n)} for n in notices]
+    now = datetime.now(KST).strftime("%Y-%m-%d %H:%M")
+
+    # 뉴스 수집이 실패(0건 + 뉴스 오류)하면 직전 vouchers.json 의 뉴스를 유지한다
+    news_out, news_stale, news_updated_at = [asdict(n) for n in news_ranked], False, now
+    news_errors = [e for e in errors if e.startswith("뉴스")]
+    if not news_out and news_errors and OUT_FILE.exists():
+        try:
+            prev = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            prev = {}
+        if prev.get("news"):
+            news_out, news_stale = prev["news"], True
+            news_updated_at = prev.get("news_updated_at") or prev.get("updated_at", "-")
+            log.warning(f"뉴스 수집 실패({len(news_errors)}건) → 직전 수집분 {len(news_out)}건 유지 ({news_updated_at} 기준)")
+
     data = {
-        "updated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
+        "updated_at": now,
+        "news_updated_at": news_updated_at,
+        "news_stale": news_stale,
         "new_days": args.days,
         "scanned": {"bizinfo": len(biz), "nipa": len(nipa)},
         "kpi": {
             "hot": sum(1 for n in notices if n.t1),
             "new": sum(1 for n in notices if n.is_new),
             "total": len(notices),
-            "news": len(news_ranked),
+            "news": len(news_out),
         },
         "errors": errors,
         "items": items,
-        "news": [asdict(n) for n in news_ranked],
+        "news": news_out,
     }
     OUT_FILE.parent.mkdir(exist_ok=True)
     OUT_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

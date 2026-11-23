@@ -9,7 +9,7 @@
     "hot": 23,
     "new": 4,
     "total": 40,
-    "news": 0
+    "news": 4
   },
   "errors": [
     "뉴스 'AI 바우처 2027': 요청 실패 https://news.google.com/rss/search?q=AI%20%EB%B0%94%EC%9A%B0%EC%B2%98%202027&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
@@ -750,5 +750,76 @@
       "is_new": false
     }
   ],
-  "news": []
+  "news": [
+    {
+      "source": "뉴스",
+      "title": "올해 수출바우처 지원 사업, 화장품·뷰티 기업 가장 많고, 중동 수출기업에 집중 - cncnews.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc1FKNlROcEJzNnpqTmtBVmE2VUhZNmV1OGlBOFBKZm5JOTJuaVI2R29CWWlHcU11ZUFYNFhXcE5zbERfbGt2cF9RWUpMSGV0eXNXZVhPb3VYTWdIOGN5SEpJSnh5TVhNNnZnRHFBN3RWRGRWbDJ6aHh3RktabktGczQ4VDZiWkd5?oc=5",
+      "agency": "cncnews.co.kr",
+      "period": "",
+      "reg_date": "2026-11-21",
+      "end_date": "",
+      "category": "",
+      "score": 3,
+      "t1": [
+        "수출바우처"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "[최종국 칼럼] 2027년 혁신바우처·수출바우처, 준비된 중소기업에 기회가 온다! - 파이낸스투데이",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xcW9UZVNlWmpaQ2FpZzRuSkVSZkZqVGpXckktSmlfc1VJWktDWWZ4T1BoSXRXSUZGWE9DT3MxTjJaNHRJcFRrbENsdHE5bXJjbWRXNU0zU3U2Z2JyQ3FSZFlma0NKTldPTUJsag?oc=5",
+      "agency": "파이낸스투데이",
+      "period": "",
+      "reg_date": "2026-11-20",
+      "end_date": "",
+      "category": "",
+      "score": 6,
+      "t1": [
+        "수출바우처",
+        "혁신바우처"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "다현로앤컨설팅노무법인, 2027년 수출바우처 지원… 노무·ESG 등 6대 서비스 제공 - 파이낸스투데이",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9LeThjY1dlQW45UVpZQmlsY0ltOVpOMzV6eHIyUVE2RklaOUVIWHMtODhzdWloQWtBRWJlMWZXSFJDSDBFZVN5MkU4aXl0QVNHMjRXUFZrRThmQ1E4anNWS3FmeHFzcno2QmNWYg?oc=5",
+      "agency": "파이낸스투데이",
+      "period": "",
+      "reg_date": "2026-11-17",
+      "end_date": "",
+      "category": "",
+      "score": 5,
+      "t1": [
+        "수출바우처"
+      ],
+      "t2": [
+        "컨설팅",
+        "ESG"
+      ],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "정부 \"AI 기본법, 기업 혁신 뒷받침하도록 보완\" - 지디넷코리아",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZN0NwQWl5MlBNV1I0ZlhVeFhBbDM3cFhCQkJkaW1CZmxFWWpYQUdfelN5a1FRT3h3S1JmSW5KRjJ2ekxpNzByY3pBb1lER2RrMGdWaXV3?oc=5",
+      "agency": "지디넷코리아",
+      "period": "",
+      "reg_date": "2026-11-16",
+      "end_date": "",
+      "category": "",
+      "score": 3,
+      "t1": [
+        "AI 기본법"
+      ],
+      "t2": [],
+      "is_new": false
+    }
+  ],
+  "news_stale": true,
+  "news_updated_at": "2026-11-23 15:11"
 }

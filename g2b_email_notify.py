@@ -106,7 +106,8 @@ def section(title: str, color: str, body: str, more_href: str, more_label: str) 
   <tr><td style="padding:8px 28px 0">{body}</td></tr>"""
 
 
-def build(bids: dict, pre: dict) -> tuple[str, str]:
+def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
+    vou = vou or {}
     now = datetime.now(KST)
     top = bids.get("top", [])
     urgent = bids.get("deadline", [])
@@ -114,15 +115,21 @@ def build(bids: dict, pre: dict) -> tuple[str, str]:
     pre_active = sorted([n for n in pre_items if n.get("status") == "게시중"],
                         key=lambda n: (-n.get("score", 0), -n.get("budget_raw", 0)))
     new_week = (bids.get("insights") or {}).get("new_this_week", 0)
+    # 바우처: 핵심(TIER1) 우선, 신규 우선, 점수·마감 순
+    vou_items = vou.get("items", [])
+    vou_hot = [n for n in vou_items if n.get("t1")]
+    vou_pick = sorted(vou_items, key=lambda n: (not n.get("t1"), not n.get("is_new"),
+                                                -n.get("score", 0), n.get("end_date") or "9999"))
 
     kpis = [
         ("#ef4444", len(top), "입찰 Top 후보", "top"),
         ("#f59e0b", len(urgent), "14일 내 마감", "deadline"),
         ("#7c3aed", len(pre_active), "사전규격 게시중", "prespec"),
+        ("#d97706", len(vou_hot), "바우처 핵심", "voucher"),
         ("#3b82f6", new_week, "이번 주 신규", "new"),
     ]
     kpi_html = "".join(
-        f'<td width="25%" style="text-align:center;padding:16px 4px">'
+        f'<td width="20%" style="text-align:center;padding:16px 4px">'
         f'<a href="{esc(DASHBOARD)}#tab={tab}" style="text-decoration:none">'
         f'<div style="font-size:28px;font-weight:700;color:{c}">{v}</div>'
         f'<div style="font-size:11px;color:#6b7280;margin-top:4px">{label}</div></a></td>'
@@ -148,6 +155,24 @@ def build(bids: dict, pre: dict) -> tuple[str, str]:
         f'<td style="{TD};white-space:nowrap;color:#e53e3e;font-weight:700">{esc(r.get("end_date"))}</td></tr>'
         for r in urgent[:TOP_N]]
 
+    def vou_flags(n):
+        f = ""
+        if n.get("t1"):
+            f += ('<span style="background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:6px;'
+                  'font-size:10px;font-weight:700;margin-right:4px">핵심</span>')
+        if n.get("is_new"):
+            f += ('<span style="background:#dcfce7;color:#166534;padding:1px 6px;border-radius:6px;'
+                  'font-size:10px;font-weight:700;margin-right:4px">신규</span>')
+        return f
+
+    vou_rows = [
+        f'<tr><td style="{TD}">{vou_flags(n)}<a href="{esc(link("vou", n["id"]))}" style="color:#1e3a8a;'
+        f'text-decoration:none;font-weight:600">{esc(n.get("title"))}</a>'
+        f'<div style="color:#6b7280;font-size:11px;margin-top:2px">{esc(n.get("source"))} · {esc(n.get("agency"))}</div></td>'
+        f'<td style="{TD};text-align:center">{badge(int(n.get("score") or 0), hi=9, mid=6, lo=3)}</td>'
+        f'<td style="{TD};white-space:nowrap;color:#b45309;font-weight:600">{esc(n.get("end_date") or "상시/미정")}</td></tr>'
+        for n in vou_pick[:TOP_N]]
+
     body = "".join([
         section("🎯 입찰 Top 후보 (5점+)", "#1e3a8a",
                 table(["공고명", "점수", "금액", "마감"], top_rows, "Top 후보 없음"),
@@ -158,6 +183,10 @@ def build(bids: dict, pre: dict) -> tuple[str, str]:
         section("⏰ 마감임박 (14일 이내)", "#b45309",
                 table(["공고명", "점수", "마감"], urg_rows, "마감임박 공고 없음"),
                 f"{DASHBOARD}#tab=deadline", f"전체 {len(urgent)}건"),
+        section("💰 바우처·R&amp;D 지원사업", "#b45309",
+                table(["사업명", "관련도", "신청마감"], vou_rows,
+                      "바우처 데이터 없음" if not vou else "관련 지원사업 없음"),
+                f"{DASHBOARD}#tab=voucher", f"전체 {len(vou_items)}건 (핵심 {len(vou_hot)})"),
     ])
 
     errors = pre.get("errors") or []
@@ -178,7 +207,7 @@ def build(bids: dict, pre: dict) -> tuple[str, str]:
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:720px;background:#fff;border-radius:12px;overflow:hidden">
   <tr><td style="background:#1e3a8a;background:linear-gradient(135deg,#1e1b4b,#1e3a8a);padding:24px 28px;color:#fff">
     <div style="font-size:19px;font-weight:700">이노티움 입찰 인텔리전스 요약</div>
-    <div style="font-size:12px;opacity:.75;margin-top:6px">{now:%Y년 %m월 %d일} 기준 · 입찰공고(나라장터·KISA·NIPA·IITP) + 나라장터 사전규격</div>
+    <div style="font-size:12px;opacity:.75;margin-top:6px">{now:%Y년 %m월 %d일} 기준 · 입찰공고(나라장터·KISA·NIPA·IITP) + 나라장터 사전규격 + 바우처·지원사업(기업마당·NIPA)</div>
   </td></tr>
   <tr><td style="background:#f8fafc;border-bottom:1px solid #e2e8f0">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>{kpi_html}</tr></table>
@@ -188,13 +217,13 @@ def build(bids: dict, pre: dict) -> tuple[str, str]:
   <tr><td style="padding:26px 28px;text-align:center">
     <a href="{esc(DASHBOARD)}" style="display:inline-block;background:#1e3a8a;color:#fff;padding:13px 34px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px">📊 대시보드에서 전체 보기</a>
     <p style="margin:12px 0 0;font-size:11px;color:#9ca3af">공고명을 누르면 대시보드 상세 화면이 열리고, 거기서 원문(나라장터 등)으로 이동할 수 있습니다.<br>
-    데이터 기준: 입찰 {esc(bids.get("updated_at", "-"))} · 사전규격 {esc(pre.get("updated_at", "-"))} · 사전규격 의견마감일은 등록일+7일 추정</p>
+    데이터 기준: 입찰 {esc(bids.get("updated_at", "-"))} · 사전규격 {esc(pre.get("updated_at", "-"))} · 바우처 {esc(vou.get("updated_at", "-"))} · 사전규격 의견마감일은 등록일+7일 추정</p>
   </td></tr>
 </table></td></tr></table>
 </body></html>"""
 
     subject = (f"[G2B 입찰 요약] {now:%m/%d} — Top {len(top)} · 사전규격 게시중 {len(pre_active)}"
-               f" · 마감임박 {len(urgent)}")
+               f" · 마감임박 {len(urgent)} · 바우처 핵심 {len(vou_hot)}")
     return subject, doc
 
 
@@ -238,7 +267,7 @@ def main() -> int:
     if not bids:
         print("❌ data/announcements.json 없음 — 발송 중단")
         return 1
-    subject, doc = build(bids, pre)
+    subject, doc = build(bids, pre, load("vouchers.json"))
     out = ROOT / "output"
     out.mkdir(exist_ok=True)
     (out / "email_preview.html").write_text(doc, encoding="utf-8")
