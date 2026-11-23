@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-23 15:21",
+  "updated_at": "2026-11-23 15:43",
   "period": "2026-10-24 ~ 2026-11-23",
   "deadline_note": "의견마감일은 API 미제공 — 등록일+7일 추정",
   "kpi": {
-    "total": 58,
-    "active": 8,
+    "total": 59,
+    "active": 9,
     "tier1": 7
   },
   "errors": [],
@@ -814,6 +814,24 @@
       ],
       "score": 1,
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292290"
+    },
+    {
+      "biz_no": "R26BD00304869",
+      "title": "2027년 의성군 보안시스템 및 네트워크 유지보수 용역(긴급)",
+      "org": "경상북도 의성군",
+      "task": "일반용역",
+      "budget_raw": 192870000,
+      "budget": "1.9억",
+      "contract": "",
+      "reg_date": "2026-11-23",
+      "deadline": "2026-11-30",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304869"
     },
     {
       "biz_no": "R26BD00289951",

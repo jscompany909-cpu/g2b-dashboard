@@ -1,26 +1,19 @@
 {
-  "updated_at": "2026-11-23 15:29",
+  "updated_at": "2026-11-23 15:47",
+  "news_updated_at": "2026-11-23 15:47",
+  "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1292,
+    "bizinfo": 1310,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
     "new": 4,
     "total": 40,
-    "news": 4
+    "news": 5
   },
-  "errors": [
-    "뉴스 'AI 바우처 2027': 요청 실패 https://news.google.com/rss/search?q=AI%20%EB%B0%94%EC%9A%B0%EC%B2%98%202027&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 'AX 바우처': 요청 실패 https://news.google.com/rss/search?q=AX%20%EB%B0%94%EC%9A%B0%EC%B2%98&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 'AI 컴플라이언스 지원사업': 요청 실패 https://news.google.com/rss/search?q=AI%20%EC%BB%B4%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%EC%8A%A4%20%EC%A7%80%EC%9B%90%EC%82%AC%EC%97%85&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 'AI 신뢰성 인증 지원사업': 요청 실패 https://news.google.com/rss/search?q=AI%20%EC%8B%A0%EB%A2%B0%EC%84%B1%20%EC%9D%B8%EC%A6%9D%20%EC%A7%80%EC%9B%90%EC%82%AC%EC%97%85&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 'AI 기본법 기업 지원': 요청 실패 https://news.google.com/rss/search?q=AI%20%EA%B8%B0%EB%B3%B8%EB%B2%95%20%EA%B8%B0%EC%97%85%20%EC%A7%80%EC%9B%90&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 '수출바우처 2027': 요청 실패 https://news.google.com/rss/search?q=%EC%88%98%EC%B6%9C%EB%B0%94%EC%9A%B0%EC%B2%98%202027&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 '산업통상부 바우처': 요청 실패 https://news.google.com/rss/search?q=%EC%82%B0%EC%97%85%ED%86%B5%EC%83%81%EB%B6%80%20%EB%B0%94%EC%9A%B0%EC%B2%98&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable",
-    "뉴스 '혁신바우처 2027': 요청 실패 https://news.google.com/rss/search?q=%ED%98%81%EC%8B%A0%EB%B0%94%EC%9A%B0%EC%B2%98%202027&hl=ko&gl=KR&ceid=KR:ko: HTTP Error 503: Service Unavailable"
-  ],
+  "errors": [],
   "items": [
     {
       "id": "PBLN_000000000123922",
@@ -753,6 +746,25 @@
   "news": [
     {
       "source": "뉴스",
+      "title": "KISTI, 공공 AX 의사결정 지원 서비스'AXIS'… AI 신뢰성 인증 획득 - 전자신문",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1EVUNTeXZTdkVfRjJBMUo0a0NTQ2FnVkY5d2k0MVFEZWFxWmszT3pKY1c1TzJlYktHVmJWTHNGSzczdlljTmhjYXdCS0tjdw?oc=5",
+      "agency": "전자신문",
+      "period": "",
+      "reg_date": "2026-11-23",
+      "end_date": "",
+      "category": "",
+      "score": 5,
+      "t1": [
+        "AI 신뢰성"
+      ],
+      "t2": [
+        "AX",
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
       "title": "올해 수출바우처 지원 사업, 화장품·뷰티 기업 가장 많고, 중동 수출기업에 집중 - cncnews.co.kr",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc1FKNlROcEJzNnpqTmtBVmE2VUhZNmV1OGlBOFBKZm5JOTJuaVI2R29CWWlHcU11ZUFYNFhXcE5zbERfbGt2cF9RWUpMSGV0eXNXZVhPb3VYTWdIOGN5SEpJSnh5TVhNNnZnRHFBN3RWRGRWbDJ6aHh3RktabktGczQ4VDZiWkd5?oc=5",
       "agency": "cncnews.co.kr",
@@ -819,7 +831,5 @@
       "t2": [],
       "is_new": false
     }
-  ],
-  "news_stale": true,
-  "news_updated_at": "2026-11-23 15:11"
+  ]
 }
