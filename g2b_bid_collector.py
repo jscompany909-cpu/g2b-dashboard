@@ -156,16 +156,36 @@ def _fetch_page(page_num, base_params, url, headers):
         return page_num, []
 
 
+G2B_WINDOW_DAYS = 7   # API '입력범위값 초과(07)' 방지: 조회 기간을 7일 단위로 분할
+
+
 def fetch_g2b_raw_data():
-    """나라장터 용역 입찰공고 병렬 수집 (5개 페이지 동시 요청)"""
-    url = "https://apis.data.go.kr/1230000/ad/BidPublicInfoService/getBidPblancListInfoServcPPSSrch"
+    """나라장터 용역 입찰공고 수집 — 최근 30일을 7일 구간으로 나눠 조회 (일시는 YYYYMMDDHHMM)"""
     today = datetime.date.today()
+    start = today - datetime.timedelta(days=30)
+    all_items, seen = [], set()
+    while start <= today:
+        end = min(start + datetime.timedelta(days=G2B_WINDOW_DAYS - 1), today)
+        items = _fetch_g2b_window(start.strftime("%Y%m%d") + "0000", end.strftime("%Y%m%d") + "2359")
+        print(f"  ├─ {start} ~ {end}: {len(items)}건")
+        for it in items:
+            key = (it.get("bidNtceNo", ""), it.get("bidNtceOrd", ""), it.get("bidNtceNm", ""))
+            if key not in seen:
+                seen.add(key)
+                all_items.append(it)
+        start = end + datetime.timedelta(days=1)
+    return all_items
+
+
+def _fetch_g2b_window(bgn, end):
+    """단일 기간 구간 병렬 수집 (5개 페이지 동시 요청)"""
+    url = "https://apis.data.go.kr/1230000/ad/BidPublicInfoService/getBidPblancListInfoServcPPSSrch"
     base_params = {
         "serviceKey": requests.utils.unquote(G2B_API_KEY),
         "numOfRows": "100",
         "inqryDiv": "1",
-        "inqryBgnDt": (today - datetime.timedelta(days=30)).strftime("%Y%m%d"),
-        "inqryEndDt": today.strftime("%Y%m%d"),
+        "inqryBgnDt": bgn,
+        "inqryEndDt": end,
     }
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     MAX_PAGES = 100  # 100페이지 × 100건 = 최대 10000건
