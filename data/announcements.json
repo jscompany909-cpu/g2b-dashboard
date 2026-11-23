@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 102,
+    "new_week": 103,
     "top7": 6,
-    "total": 311,
+    "total": 312,
     "deadline": 6
   },
   "top": [
@@ -482,7 +482,7 @@
   "inst_top10": [
     {
       "name": "조달청 서울지방조달청",
-      "cnt": 31
+      "cnt": 32
     },
     {
       "name": "KISA",
@@ -579,7 +579,7 @@
       "cnt": 3
     },
     {
-      "tag": "개인정보영향평가, PIA, 감리",
+      "tag": "보안 컨설팅, 개인정보영향평가",
       "cnt": 3
     }
   ],
@@ -596,6 +596,19 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01845178&bidPbancOrd=000",
       "source": "G2B",
       "budget": 27272727
+    },
+    {
+      "id": 416,
+      "institution": "조달청 서울지방조달청",
+      "title": "KLID 개인정보 보호 관리체계 구축 컨설팅 용역",
+      "reg_date": "2026-11-23",
+      "end_date": "2026-12-08",
+      "score": 0,
+      "category_tag": "보안 컨설팅, 개인정보영향평가",
+      "ai_reason": "컨설팅 및 평가 중심 사업으로 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01842378&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 147810909
     },
     {
       "id": 411,
@@ -1934,7 +1947,7 @@
     },
     {
       "month": "2026-11",
-      "total": 73,
+      "total": 74,
       "core": 11
     }
   ],
@@ -1944,9 +1957,9 @@
     "urgent_7day": 3,
     "top_institution": "한전KDN(주)",
     "total_budget": 3539523659,
-    "new_this_week": 19,
-    "db_total": 311
+    "new_this_week": 20,
+    "db_total": 312
   },
-  "updated_at": "2026-11-23 05:56",
+  "updated_at": "2026-11-23 15:07",
   "period": "2026-10-24 ~ 2026-11-23"
 }
