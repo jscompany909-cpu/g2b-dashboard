@@ -1,0 +1,814 @@
+{
+  "updated_at": "2026-11-23 15:11",
+  "new_days": 7,
+  "scanned": {
+    "bizinfo": 1292,
+    "nipa": 30
+  },
+  "kpi": {
+    "hot": 23,
+    "new": 4,
+    "total": 40,
+    "news": 4
+  },
+  "errors": [],
+  "items": [
+    {
+      "id": "PBLN_000000000123922",
+      "source": "기업마당",
+      "title": "2026년 중소ㆍ중견기업 수입규제 대응 컨설팅 신청 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123922",
+      "agency": "산업통상부 · 대한상공회의소",
+      "period": "2026-03-01 ~ 2026-12-31",
+      "reg_date": "2026-07-03",
+      "end_date": "2026-12-31",
+      "category": "경영",
+      "score": 6,
+      "t1": [
+        "규제 대응"
+      ],
+      "t2": [
+        "컨설팅"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000120694",
+      "source": "기업마당",
+      "title": "[충북] 2026년 수출기업 해외규격인증 취득 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000120694",
+      "agency": "충청북도 · 청주상공회의소",
+      "period": "2026-04-03 ~ 2026-12-11",
+      "reg_date": "2026-04-10",
+      "end_date": "2026-12-11",
+      "category": "기술",
+      "score": 5,
+      "t1": [
+        "해외규격"
+      ],
+      "t2": [
+        "인증",
+        "수출"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126963",
+      "source": "기업마당",
+      "title": "의료기기ㆍ바이오 부품ㆍ모듈 인증시험 기술지원 참여기업 모집 수정 공고(AIㆍ빅데이터 기반 의료ㆍ바이오 첨단기기 연구제조센터 구축)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126963",
+      "agency": "산업통상부 · 범부처통합헬스케어협회",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-10-02",
+      "end_date": "",
+      "category": "기술",
+      "score": 5,
+      "t1": [],
+      "t2": [
+        "AI",
+        "인증",
+        "데이터"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126552",
+      "source": "기업마당",
+      "title": "2026년 산업혁신기반구축사업 제조 특화 온디바이스 AI 기반 자율제조 실증 기반 구축사업 기업지원 프로그램(애로기술 지원) 수혜기업 상시모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126552",
+      "agency": "산업통상부 · 한국로봇융합연구원",
+      "period": "상시 접수",
+      "reg_date": "2026-09-17",
+      "end_date": "",
+      "category": "기술",
+      "score": 5,
+      "t1": [],
+      "t2": [
+        "AI",
+        "자율제조",
+        "실증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000123682",
+      "source": "기업마당",
+      "title": "2026년 ICT 중소기업 정보보호 지원 사업 수요기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123682",
+      "agency": "과학기술정보통신부 · 한국인터넷진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-06-26",
+      "end_date": "",
+      "category": "기술",
+      "score": 5,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000121791",
+      "source": "기업마당",
+      "title": "2026년 수출 중소ㆍ중견기업 ESG 공급망 컨설팅 지원사업 참여기업 모집 추가 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121791",
+      "agency": "산업통상부 · 한국생산성본부",
+      "period": "선착순 접수",
+      "reg_date": "2026-05-11",
+      "end_date": "",
+      "category": "경영",
+      "score": 5,
+      "t1": [],
+      "t2": [
+        "컨설팅",
+        "수출",
+        "ESG"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000119910",
+      "source": "기업마당",
+      "title": "2026년 정보보호제품 신속확인 신규 제품 수수료 지원 사업 안내 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000119910",
+      "agency": "과학기술정보통신부 · 한국인터넷진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-03-25",
+      "end_date": "",
+      "category": "기술",
+      "score": 5,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000117953",
+      "source": "기업마당",
+      "title": "2026년 1:1 무료 수출컨설팅(이동코트라) 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000117953",
+      "agency": "산업통상부 · 대한무역투자진흥공사",
+      "period": "상시 접수",
+      "reg_date": "2026-01-29",
+      "end_date": "",
+      "category": "수출",
+      "score": 5,
+      "t1": [],
+      "t2": [
+        "컨설팅",
+        "수출"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000127905",
+      "source": "기업마당",
+      "title": "[경기] 이천시 2026년 6차 해외규격인증 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127905",
+      "agency": "경기도 · 경기도경제과학진흥원",
+      "period": "2026-11-12 ~ 2026-11-30",
+      "reg_date": "2026-11-13",
+      "end_date": "2026-11-30",
+      "category": "수출",
+      "score": 4,
+      "t1": [
+        "해외규격"
+      ],
+      "t2": [
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000124978",
+      "source": "기업마당",
+      "title": "2026년 해외규격인증획득지원사업(전략지원) 참여기업 모집 변경 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124978",
+      "agency": "중소벤처기업부 · 한국화학융합시험연구원",
+      "period": "2026-01-30 ~ 2026-11-30",
+      "reg_date": "2026-08-03",
+      "end_date": "2026-11-30",
+      "category": "수출",
+      "score": 4,
+      "t1": [
+        "해외규격"
+      ],
+      "t2": [
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000123800",
+      "source": "기업마당",
+      "title": "2026년 중소기업 정보보호 지원사업 수요기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123800",
+      "agency": "과학기술정보통신부 · 인천테크노파크",
+      "period": "2026-06-30 ~ 2026-11-30",
+      "reg_date": "2026-07-01",
+      "end_date": "2026-11-30",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000123587",
+      "source": "기업마당",
+      "title": "[부산ㆍ울산ㆍ경남] 2026년 동남 정보보호클러스터 보안 테스팅 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123587",
+      "agency": "경상남도 · 경남테크노파크",
+      "period": "2026-06-24 ~ 2026-11-30",
+      "reg_date": "2026-06-25",
+      "end_date": "2026-11-30",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [
+        "보안"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000121038",
+      "source": "기업마당",
+      "title": "2026년 IoT 보안인증 인증시험 수수료 지원 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121038",
+      "agency": "과학기술정보통신부 · 한국인터넷진흥원",
+      "period": "2026-02-03 ~ 2026-11-30",
+      "reg_date": "2026-04-20",
+      "end_date": "2026-11-30",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "인증",
+        "보안"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000128042",
+      "source": "기업마당",
+      "title": "[대전] 2026년 6차 해외규격인증 획득지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128042",
+      "agency": "대전광역시 · 대전일자리경제진흥원",
+      "period": "2026-11-19 ~ 2026-12-03",
+      "reg_date": "2026-11-20",
+      "end_date": "2026-12-03",
+      "category": "수출",
+      "score": 4,
+      "t1": [
+        "해외규격"
+      ],
+      "t2": [
+        "인증"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "PBLN_000000000126910",
+      "source": "기업마당",
+      "title": "AI기반 슬립테크 국제협력 실증 확산 지원사업 기업지원 공고(국제공인시험 지원)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126910",
+      "agency": "산업통상부 · 한국기계전기전자시험연구원",
+      "period": "2026-09-29 ~ 2026-12-31",
+      "reg_date": "2026-10-01",
+      "end_date": "2026-12-31",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "AI",
+        "실증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126343",
+      "source": "기업마당",
+      "title": "2026년 3차 물리ㆍ화학적 시험평가인증 지원사업 공고(메카노바이오활성소재 혁신의료기기 실증 기반구축)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126343",
+      "agency": "산업통상부 · 전북대학교산학협력단",
+      "period": "2026-09-09 ~ 2026-12-31",
+      "reg_date": "2026-09-10",
+      "end_date": "2026-12-31",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "실증",
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000128016",
+      "source": "기업마당",
+      "title": "AI융합 의료기기 신뢰성 강화 및 성능 평가ㆍ실증 통합지원 사업 재공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128016",
+      "agency": "산업통상부 · 충북테크노파크",
+      "period": "상시 접수",
+      "reg_date": "2026-11-19",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "AI",
+        "실증"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "PBLN_000000000127988",
+      "source": "기업마당",
+      "title": "[강원] 2026년 ICT 중소기업 정보보호 지원사업 수요기업 모집 재공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127988",
+      "agency": "과학기술정보통신부 · 강원테크노파크",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-11-18",
+      "end_date": "",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": true
+    },
+    {
+      "id": "PBLN_000000000127846",
+      "source": "기업마당",
+      "title": "[경남] 2026년 ICT 중소기업 정보보호 지원 사업 정보보호 컨설팅 수요기업 추가 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127846",
+      "agency": "경상남도 · 경남테크노파크",
+      "period": "모집 완료시",
+      "reg_date": "2026-11-11",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [
+        "컨설팅"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000127551",
+      "source": "기업마당",
+      "title": "[세종] 2026년 중소기업 정보보호 지원사업 수요기업 모집 상시 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127551",
+      "agency": "과학기술정보통신부 · 세종테크노파크",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-10-29",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126754",
+      "source": "기업마당",
+      "title": "[대전] 2026년 중소기업 정보보호 지원 사업 수요기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126754",
+      "agency": "과학기술정보통신부 · 대전정보문화산업진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-09-23",
+      "end_date": "",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126504",
+      "source": "기업마당",
+      "title": "2026년 3차 메카노바이오활성소재 혁신의료기기 실증 기반구축 생물학적 시험평가인증 지원사업 공고(산업혁신기반구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126504",
+      "agency": "산업통상부 · 국가독성과학연구소",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-09-16",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "실증",
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000125775",
+      "source": "기업마당",
+      "title": "[전북] 2026년 3차 인공지능 전환 도입 컨설팅 지원사업 수시 모집 공고(AX실증산단 구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125775",
+      "agency": "전북특별자치도 · 전북테크노파크",
+      "period": "수시 접수",
+      "reg_date": "2026-08-25",
+      "end_date": "",
+      "category": "경영",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "AX",
+        "인공지능",
+        "실증",
+        "컨설팅"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000123291",
+      "source": "기업마당",
+      "title": "[전북] 군산시 2026년 2차 AX얼라이언스 산ㆍ학ㆍ연 종합프로그램 지원 수혜기업 모집 공고(군산국가산업단지 스마트그린 AX실증산단 구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123291",
+      "agency": "산업통상부 · 전북지역산업진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-06-17",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "AX",
+        "실증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000122268",
+      "source": "기업마당",
+      "title": "2026년 2차 메카노바이오활성소재 혁신의료기기 실증 기반구축 생물학적 시험평가인증 지원사업 공고(산업혁신기반구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122268",
+      "agency": "산업통상부 · 국가독성과학연구소",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-05-21",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "실증",
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000121677",
+      "source": "기업마당",
+      "title": "[충남] 2026년 대전상공회의소 ESG 경영 컨설팅 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121677",
+      "agency": "충청남도 · 대전상공회의소",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-05-07",
+      "end_date": "",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "ESG 경영"
+      ],
+      "t2": [
+        "컨설팅"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000121611",
+      "source": "기업마당",
+      "title": "2026년 2차 EU CBAM 대응 기업지원 컨설팅 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121611",
+      "agency": "기후에너지환경부 · 한국환경공단",
+      "period": "모집 완료시",
+      "reg_date": "2026-05-06",
+      "end_date": "",
+      "category": "경영",
+      "score": 4,
+      "t1": [
+        "CBAM"
+      ],
+      "t2": [
+        "컨설팅"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000120871",
+      "source": "기업마당",
+      "title": "[경북] 2026년 초거대 AI 기술 컨설팅 신규 대상기업 모집 공고(초거대 AI 클라우드 팜 실증 및 확산 환경 조성사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000120871",
+      "agency": "경상북도 · 경북IT융합산업기술원",
+      "period": "상시 접수",
+      "reg_date": "2026-04-16",
+      "end_date": "",
+      "category": "기술",
+      "score": 4,
+      "t1": [],
+      "t2": [
+        "AI",
+        "실증",
+        "컨설팅",
+        "클라우드"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000117480",
+      "source": "기업마당",
+      "title": "[전북] 2026년 해외규격인증 획득 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000117480",
+      "agency": "전북특별자치도 · 전북특별자치도경제통상진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-01-15",
+      "end_date": "",
+      "category": "수출",
+      "score": 4,
+      "t1": [
+        "해외규격"
+      ],
+      "t2": [
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000127731",
+      "source": "기업마당",
+      "title": "2026년 onephai 플랫폼 활용 피지컬 AI 기술개발 및 실증 지원사업 지원기업 모집 공고(인간친화형 로봇 스케일업 밸리 혁신 생태계 구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127731",
+      "agency": "대전광역시 · 대전테크노파크",
+      "period": "2026-11-05 ~ 2026-11-24",
+      "reg_date": "2026-11-06",
+      "end_date": "2026-11-24",
+      "category": "기술",
+      "score": 3,
+      "t1": [],
+      "t2": [
+        "AI",
+        "기술개발",
+        "실증"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126426",
+      "source": "기업마당",
+      "title": "[경남] 2026년 ICT 중소기업 정보보호 지원 사업 수요기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126426",
+      "agency": "경상남도 · 경남테크노파크",
+      "period": "2026-09-11 ~ 2026-11-30",
+      "reg_date": "2026-09-14",
+      "end_date": "2026-11-30",
+      "category": "경영",
+      "score": 3,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000128022",
+      "source": "기업마당",
+      "title": "2027년 AI데이터센터 서비스 이용자 정기모집(1트랙) 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128022",
+      "agency": "과학기술정보통신부 · 인공지능산업융합사업단",
+      "period": "2026-11-13 ~ 2026-12-04",
+      "reg_date": "2026-11-19",
+      "end_date": "2026-12-04",
+      "category": "기술",
+      "score": 3,
+      "t1": [],
+      "t2": [
+        "AI",
+        "데이터"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "PBLN_000000000127847",
+      "source": "기업마당",
+      "title": "[전북] 2026년 ICT 중소기업 정보보호 지원 사업 전북지역 기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127847",
+      "agency": "전북특별자치도 · 전북테크노파크",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-11-11",
+      "end_date": "",
+      "category": "기술",
+      "score": 3,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000126839",
+      "source": "기업마당",
+      "title": "[경남] 2026년 3차 중소기업 해외인증 획득 지원사업 참가 업체 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126839",
+      "agency": "경상남도 · 경남무역",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-09-29",
+      "end_date": "",
+      "category": "수출",
+      "score": 3,
+      "t1": [
+        "해외인증"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000124174",
+      "source": "기업마당",
+      "title": "2026년 중소기업 정보보호 특화지원사업 수요기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124174",
+      "agency": "인천광역시 · 인천테크노파크",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-07-09",
+      "end_date": "",
+      "category": "경영",
+      "score": 3,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000123769",
+      "source": "기업마당",
+      "title": "[인천] 2026년 중동 상황 위기 대응 긴급 수출바우처 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123769",
+      "agency": "인천광역시 · 인천테크노파크",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-06-30",
+      "end_date": "",
+      "category": "수출",
+      "score": 3,
+      "t1": [
+        "수출바우처"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000122609",
+      "source": "기업마당",
+      "title": "2026년 경북AI데이터센터 테스트베드 실증지원 공고(데이터센터 테스트베드 조성 지원)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122609",
+      "agency": "경상북도 · 포항테크노파크",
+      "period": "상시 접수",
+      "reg_date": "2026-05-29",
+      "end_date": "",
+      "category": "기술",
+      "score": 3,
+      "t1": [],
+      "t2": [
+        "AI",
+        "실증",
+        "데이터"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000122104",
+      "source": "기업마당",
+      "title": "2026년 중소사업자 개인정보 안전조치 모니터링 지원 사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122104",
+      "agency": "개인정보보호위원회 · 개인정보보호협회",
+      "period": "상시 접수",
+      "reg_date": "2026-05-18",
+      "end_date": "",
+      "category": "경영",
+      "score": 3,
+      "t1": [
+        "개인정보"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000120097",
+      "source": "기업마당",
+      "title": "2026년 데이터 품질인증 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000120097",
+      "agency": "과학기술정보통신부 · 한국데이터산업진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-03-30",
+      "end_date": "",
+      "category": "기술",
+      "score": 3,
+      "t1": [],
+      "t2": [
+        "인증",
+        "데이터"
+      ],
+      "is_new": false
+    },
+    {
+      "id": "PBLN_000000000118245",
+      "source": "기업마당",
+      "title": "[경북] 2026년 중소벤처기업 지식재산권 및 해외인증 지원사업 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000118245",
+      "agency": "경상북도 · 경상북도경제진흥원",
+      "period": "예산 소진시까지",
+      "reg_date": "2026-02-05",
+      "end_date": "",
+      "category": "기술",
+      "score": 3,
+      "t1": [
+        "해외인증"
+      ],
+      "t2": [],
+      "is_new": false
+    }
+  ],
+  "news": [
+    {
+      "source": "뉴스",
+      "title": "올해 수출바우처 지원 사업, 화장품·뷰티 기업 가장 많고, 중동 수출기업에 집중 - cncnews.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc1FKNlROcEJzNnpqTmtBVmE2VUhZNmV1OGlBOFBKZm5JOTJuaVI2R29CWWlHcU11ZUFYNFhXcE5zbERfbGt2cF9RWUpMSGV0eXNXZVhPb3VYTWdIOGN5SEpJSnh5TVhNNnZnRHFBN3RWRGRWbDJ6aHh3RktabktGczQ4VDZiWkd5?oc=5",
+      "agency": "cncnews.co.kr",
+      "period": "",
+      "reg_date": "2026-11-21",
+      "end_date": "",
+      "category": "",
+      "score": 3,
+      "t1": [
+        "수출바우처"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "[최종국 칼럼] 2027년 혁신바우처·수출바우처, 준비된 중소기업에 기회가 온다! - 파이낸스투데이",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xcW9UZVNlWmpaQ2FpZzRuSkVSZkZqVGpXckktSmlfc1VJWktDWWZ4T1BoSXRXSUZGWE9DT3MxTjJaNHRJcFRrbENsdHE5bXJjbWRXNU0zU3U2Z2JyQ3FSZFlma0NKTldPTUJsag?oc=5",
+      "agency": "파이낸스투데이",
+      "period": "",
+      "reg_date": "2026-11-20",
+      "end_date": "",
+      "category": "",
+      "score": 6,
+      "t1": [
+        "수출바우처",
+        "혁신바우처"
+      ],
+      "t2": [],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "다현로앤컨설팅노무법인, 2027년 수출바우처 지원… 노무·ESG 등 6대 서비스 제공 - 파이낸스투데이",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9LeThjY1dlQW45UVpZQmlsY0ltOVpOMzV6eHIyUVE2RklaOUVIWHMtODhzdWloQWtBRWJlMWZXSFJDSDBFZVN5MkU4aXl0QVNHMjRXUFZrRThmQ1E4anNWS3FmeHFzcno2QmNWYg?oc=5",
+      "agency": "파이낸스투데이",
+      "period": "",
+      "reg_date": "2026-11-17",
+      "end_date": "",
+      "category": "",
+      "score": 5,
+      "t1": [
+        "수출바우처"
+      ],
+      "t2": [
+        "컨설팅",
+        "ESG"
+      ],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
+      "title": "정부 \"AI 기본법, 기업 혁신 뒷받침하도록 보완\" - 지디넷코리아",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZN0NwQWl5MlBNV1I0ZlhVeFhBbDM3cFhCQkJkaW1CZmxFWWpYQUdfelN5a1FRT3h3S1JmSW5KRjJ2ekxpNzByY3pBb1lER2RrMGdWaXV3?oc=5",
+      "agency": "지디넷코리아",
+      "period": "",
+      "reg_date": "2026-11-16",
+      "end_date": "",
+      "category": "",
+      "score": 3,
+      "t1": [
+        "AI 기본법"
+      ],
+      "t2": [],
+      "is_new": false
+    }
+  ]
+}

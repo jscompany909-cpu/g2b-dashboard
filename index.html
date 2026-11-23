@@ -27,10 +27,20 @@ body { font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f
 .refresh-btn:hover { background: rgba(255,255,255,.25); }
 
 .kpi-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
   gap: 14px; padding: 18px 28px;
 }
-@media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 1100px) { .kpi-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 600px)  { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+.vou-flag { display:inline-block; padding:1px 6px; border-radius:6px; font-size:10px; font-weight:700; margin-right:4px; white-space:nowrap; }
+.vou-flag.hot { background:#fef3c7; color:#92400e; }
+.vou-flag.new { background:#dcfce7; color:#166534; }
+.news-list { list-style:none; background:white; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+.news-list li { padding:10px 14px; border-bottom:1px solid #f1f5f9; font-size:13px; }
+.news-list li:last-child { border-bottom:none; }
+.news-list a { color:#1e3a8a; text-decoration:none; font-weight:600; }
+.news-list a:hover { text-decoration:underline; }
+.news-meta { font-size:11px; color:#9ca3af; margin-top:3px; }
 .kpi-card { cursor: pointer; }
 
 /* 상세 패널 */
@@ -156,6 +166,10 @@ td a:hover { text-decoration: underline; }
     <div class="kpi-label">📝 사전규격 게시중</div>
     <div class="kpi-value" style="color:#7c3aed"><span id="kpi-pre">-</span><span class="kpi-sub"> 건</span></div>
   </div>
+  <div class="kpi-card" style="border-color:#d97706" onclick="goTab('voucher')">
+    <div class="kpi-label">💰 바우처 핵심</div>
+    <div class="kpi-value" style="color:#d97706"><span id="kpi-vou">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
   <div class="kpi-card" style="border-color:#3b82f6" onclick="goTab('new')">
     <div class="kpi-label">📅 최근 30일 신규</div>
     <div class="kpi-value" style="color:#3b82f6"><span id="kpi-new">-</span><span class="kpi-sub"> 건</span></div>
@@ -176,11 +190,32 @@ td a:hover { text-decoration: underline; }
 <div class="tab-bar">
   <button class="tab-btn active" data-tab="top" onclick="goTab('top')">🎯 Top 후보<span class="badge" id="cnt-top">-</span></button>
   <button class="tab-btn" data-tab="prespec" onclick="goTab('prespec')">📝 사전규격<span class="badge" id="cnt-prespec">-</span></button>
+  <button class="tab-btn" data-tab="voucher" onclick="goTab('voucher')">💰 바우처<span class="badge" id="cnt-voucher">-</span></button>
   <button class="tab-btn" data-tab="new" onclick="goTab('new')">📋 전체 신규<span class="badge" id="cnt-new">-</span></button>
   <button class="tab-btn" data-tab="deadline" onclick="goTab('deadline')">⏰ 마감임박<span class="badge" id="cnt-deadline">-</span></button>
   <button class="tab-btn" data-tab="stats" onclick="goTab('stats')">📊 통계</button>
   <button class="tab-btn" data-tab="raw" onclick="goTab('raw')">🔍 Raw<span class="badge" id="cnt-raw">-</span></button>
   <button class="tab-btn" data-tab="deleted" onclick="goTab('deleted')">🗑️ 숨김<span class="badge" id="cnt-deleted" style="background:#fee2e2;color:#dc2626">0</span></button>
+</div>
+
+<!-- Tab: Voucher -->
+<div id="tab-voucher" class="tab-content">
+  <p class="tab-desc" style="border-color:#d97706;background:#fffbeb;color:#92400e">💰 <strong>바우처·R&amp;D 지원사업</strong> — 기업마당 접수중 공고 전체 + NIPA 사업공고에서 AX 컴플라이언스·핵심 바우처 관련만(3점+, 마감 미경과).
+    <span id="vou-meta"></span>
+    <label style="margin-left:10px;white-space:nowrap"><input type="checkbox" id="vou-hot-only" onchange="renderVoucher()"> 핵심만</label>
+    <label style="margin-left:8px;white-space:nowrap"><input type="checkbox" id="vou-new-only" onchange="renderVoucher()"> 신규만</label></p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>출처 · 기관</th><th>사업명</th><th>분야</th>
+      <th onclick="sortVou('reg_date')">등록일 ↕</th>
+      <th onclick="sortVou('end_date')">신청마감 ↕</th>
+      <th onclick="sortVou('score')">관련도 ↕</th>
+      <th>매칭 키워드</th>
+    </tr></thead>
+    <tbody id="tbody-voucher"></tbody>
+  </table></div>
+  <h3 style="font-size:14px;color:#374151;margin:22px 0 10px">📰 동향 뉴스 <span id="vou-news-cnt" style="font-size:12px;color:#9ca3af;font-weight:400"></span></h3>
+  <ul class="news-list" id="vou-news"></ul>
 </div>
 
 <!-- Tab: Prespec -->
@@ -301,8 +336,8 @@ td a:hover { text-decoration: underline; }
 </aside>
 
 <script>
-let _cache = {}, _pre = {}, _charts = {}, _sort = {}, _preSort = {key:'score', asc:false};
-let _bidById = new Map(), _preById = new Map();
+let _cache = {}, _pre = {}, _vou = {}, _charts = {}, _sort = {}, _preSort = {key:'score', asc:false}, _vouSort = {key:'score', asc:false};
+let _bidById = new Map(), _preById = new Map(), _vouById = new Map();
 
 // ── 공통 유틸 ────────────────────────────────────────────────────────
 function esc(v) {
@@ -340,8 +375,21 @@ async function fetchJSON(path) {
 
 async function fetchData() {
   document.getElementById('updated-at').textContent = '불러오는 중...';
-  const [bids, pre] = await Promise.allSettled([
-    fetchJSON('./data/announcements.json'), fetchJSON('./data/prespec.json')]);
+  const [bids, pre, vou] = await Promise.allSettled([
+    fetchJSON('./data/announcements.json'), fetchJSON('./data/prespec.json'), fetchJSON('./data/vouchers.json')]);
+
+  if (vou.status === 'fulfilled') {
+    _vou = vou.value;
+    _vouById = new Map((_vou.items || []).map(n => [String(n.id), n]));
+    document.getElementById('kpi-vou').textContent = _vou.kpi ? _vou.kpi.hot : '-';
+    const sc = _vou.scanned || {};
+    document.getElementById('vou-meta').textContent =
+      `기준 ${_vou.updated_at || '-'} · 기업마당 ${sc.bizinfo ?? '-'}건 · NIPA ${sc.nipa ?? '-'}건 검토 · 신규=최근 ${_vou.new_days || 7}일 등록.`;
+  } else {
+    _vou = {};
+    document.getElementById('kpi-vou').textContent = '-';
+  }
+  renderVoucher();
 
   if (pre.status === 'fulfilled') {
     _pre = pre.value;
@@ -407,7 +455,7 @@ function formatBudget(won) {
   return Math.round(won / 1000).toLocaleString() + '천';
 }
 
-const SRC_COLOR = {'G2B':'#1e40af','KISA':'#065f46','NIPA':'#92400e','IITP':'#6b21a8','사전규격':'#6d28d9'};
+const SRC_COLOR = {'G2B':'#1e40af','KISA':'#065f46','NIPA':'#92400e','IITP':'#6b21a8','사전규격':'#6d28d9','기업마당':'#b45309'};
 function srcBadge(src) {
   const c = SRC_COLOR[src] || '#374151';
   return `<span style="background:${c};color:white;padding:1px 5px;border-radius:6px;font-size:10px;font-weight:700;margin-right:3px">${esc(src||'G2B')}</span>`;
@@ -518,6 +566,52 @@ function renderPrespec() {
     </tr>`).join('');
 }
 
+// ── 바우처 테이블 ────────────────────────────────────────────────────
+function vouBadge(s) {
+  const c = s>=9?'#e53e3e':s>=6?'#dd6b20':s>=3?'#38a169':'#718096';
+  return `<span style="background:${c};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">${esc(s)}점</span>`;
+}
+function vouFlags(n) {
+  return (n.t1 && n.t1.length ? '<span class="vou-flag hot">핵심</span>' : '')
+       + (n.is_new ? '<span class="vou-flag new">신규</span>' : '');
+}
+function sortVou(key) {
+  _vouSort = { key, asc: _vouSort.key === key ? !_vouSort.asc : false };
+  renderVoucher();
+}
+function renderVoucher() {
+  const tbody = document.getElementById('tbody-voucher');
+  const hot = document.getElementById('vou-hot-only').checked;
+  const nw  = document.getElementById('vou-new-only').checked;
+  let rows = (_vou.items || []).filter(n => (!hot || (n.t1 && n.t1.length)) && (!nw || n.is_new));
+  const {key, asc} = _vouSort;
+  rows = [...rows].sort((a,b) => {
+    const va = a[key] || '', vb = b[key] || '';
+    const c = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb), 'ko');
+    return (asc ? c : -c) || String(a.end_date || '9999').localeCompare(String(b.end_date || '9999'));
+  });
+  document.getElementById('cnt-voucher').textContent = (_vou.items || []).length;
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:28px;color:#9ca3af">${_vou.items ? '조건에 맞는 공고 없음' : '바우처 데이터 파일이 없습니다'}</td></tr>`;
+  } else {
+    tbody.innerHTML = rows.map(n => `<tr>
+      <td>${srcBadge(n.source)}<div style="font-size:11px;color:#6b7280;margin-top:3px">${esc(n.agency)}</div></td>
+      <td>${vouFlags(n)}${titleCell('vou', n.id, n.title, n.url)}</td>
+      <td style="white-space:nowrap;font-size:11px;color:#6b7280">${esc(n.category || '-')}</td>
+      <td style="white-space:nowrap">${esc(n.reg_date || '-')}</td>
+      <td class="deadline-cell">${n.end_date ? esc(n.end_date) : `<span style="color:#9ca3af;font-weight:400;font-size:11px">${esc(n.period || '상시/미정')}</span>`}</td>
+      <td style="text-align:center">${vouBadge(n.score)}</td>
+      <td>${kwChips(n)}</td>
+    </tr>`).join('');
+  }
+  const news = _vou.news || [];
+  document.getElementById('vou-news-cnt').textContent = `최근 ${_vou.new_days || 7}일 · ${news.length}건 (참고용)`;
+  document.getElementById('vou-news').innerHTML = news.length
+    ? news.map(n => `<li><a href="${esc(safeUrl(n.url))}" target="_blank" rel="noopener">${esc(n.title)}</a>
+        <div class="news-meta">${esc(n.agency)} · ${esc(n.reg_date)} · ${kwChips(n)}</div></li>`).join('')
+    : '<li style="color:#9ca3af;text-align:center">관련 뉴스 없음</li>';
+}
+
 // ── 상세 패널 ────────────────────────────────────────────────────────
 function dl(pairs) {
   return '<dl class="dt-grid">' + pairs.filter(p => p[1] !== undefined && p[1] !== null && p[1] !== '')
@@ -559,8 +653,25 @@ function openDetail(kind, key) {
       <strong>나라장터 이동 방법</strong> — 나라장터는 개별 공고 직접 링크를 지원하지 않아 <em>사전규격공개 목록</em>이 열립니다.
       사업명을 복사해 목록의 <em>사업명</em> 칸에 붙여넣고 검색하세요.<br>
       <button class="btn-ghost" style="margin-top:8px;padding:6px 12px" onclick="copyText(this, ${esc(JSON.stringify(n.title))})">사업명 복사</button></div>`;
+  } else if (kind === 'vou') {
+    const n = _vouById.get(String(key));
+    if (!n) return false;
+    kindLabel = `바우처·지원사업 · ${n.source}`;
+    title = n.title; url = n.url;
+    body = dl([
+      ['소관 · 수행', n.agency],
+      ['출처', n.source],
+      ['분야', n.category],
+      ['신청기간', n.period],
+      ['신청마감', n.end_date || '상시/미정'],
+      ['등록일', n.reg_date],
+      ['구분', vouFlags(n) || '-', true],
+      ['관련도', vouBadge(n.score), true],
+      ['매칭 키워드', kwChips(n) || '-', true],
+    ]) + `<div class="dt-reason" style="border-color:#d97706">관련도 = 핵심 키워드 ×3 + 관련 키워드 ×1 + 소관부처·수행기관 가산. 지원 자격·예산·제출서류는 원문 공고에서 확인하세요.</div>`;
   } else return false;
-  document.getElementById('dt-origin').textContent = kind === 'pre' ? '나라장터 사전규격 목록 열기 ↗' : '원문 사이트에서 보기 ↗';
+  document.getElementById('dt-origin').textContent =
+    kind === 'pre' ? '나라장터 사전규격 목록 열기 ↗' : kind === 'vou' ? '원문 공고 보기 ↗' : '원문 사이트에서 보기 ↗';
 
   document.getElementById('dt-kind').textContent = kindLabel;
   document.getElementById('dt-title').textContent = title;
@@ -595,7 +706,8 @@ function applyHash() {
   if (h.startsWith('d=')) {
     const v = h.slice(2), i = v.indexOf('-');
     const kind = v.slice(0, i), key = v.slice(i + 1);
-    showTab(kind === 'pre' ? 'prespec' : (_currentTab === 'prespec' ? 'top' : _currentTab));
+    const tabOf = {pre: 'prespec', vou: 'voucher'};
+    showTab(tabOf[kind] || (['prespec','voucher'].includes(_currentTab) ? 'top' : _currentTab));
     if (!openDetail(kind, key)) {
       closeDetail();
       alert('해당 공고를 현재 데이터에서 찾을 수 없습니다 (기간 경과 또는 숨김).');
