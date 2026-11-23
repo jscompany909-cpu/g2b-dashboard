@@ -1,0 +1,1071 @@
+{
+  "updated_at": "2026-11-23 14:29",
+  "period": "2026-10-24 ~ 2026-11-23",
+  "deadline_note": "의견마감일은 API 미제공 — 등록일+7일 추정",
+  "kpi": {
+    "total": 58,
+    "active": 8,
+    "tier1": 7
+  },
+  "errors": [],
+  "items": [
+    {
+      "biz_no": "R26BD00290303",
+      "title": "27년 사이버 보안관제 및 국가 망 보안체계(N2SF) 적용 기반 마련 컨설팅 사업",
+      "org": "한국원자력안전재단",
+      "task": "일반용역",
+      "budget_raw": 504110000,
+      "budget": "5.0억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-10-26",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "N2SF"
+      ],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 4,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290303"
+    },
+    {
+      "biz_no": "R26BD00300353",
+      "title": "2027년-2028년 사이버보안시스템 통합 유지관리 및 보안관제운영 용역",
+      "org": "한국생산기술연구원",
+      "task": "일반용역",
+      "budget_raw": 517944020,
+      "budget": "5.2억",
+      "contract": "",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제",
+        "보안시스템",
+        "사이버보안"
+      ],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300353"
+    },
+    {
+      "biz_no": "R26BD00291948",
+      "title": "기관 문서중앙화 시스템 고도화 용역",
+      "org": "주식회사한국중소벤처기업유통원",
+      "task": "일반용역",
+      "budget_raw": 152267570,
+      "budget": "1.5억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-29",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "문서중앙화"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291948"
+    },
+    {
+      "biz_no": "R26BD00302631",
+      "title": "문서중앙화시스템 유지관리 용역",
+      "org": "한국석유공사",
+      "task": "일반용역",
+      "budget_raw": 106843000,
+      "budget": "1.1억",
+      "contract": "",
+      "reg_date": "2026-11-18",
+      "deadline": "2026-11-25",
+      "status": "게시중",
+      "t1": [
+        "문서중앙화"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00302631"
+    },
+    {
+      "biz_no": "R26BD00293953",
+      "title": "대구보훈병원 망분리 네트워크 스위치 2종 구매 계약",
+      "org": "한국보훈복지의료공단 대구보훈병원",
+      "task": "물품",
+      "budget_raw": 99600000,
+      "budget": "100백만",
+      "contract": "",
+      "reg_date": "2026-11-03",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "망분리"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00293953"
+    },
+    {
+      "biz_no": "R26BD00291614",
+      "title": "고정밀 산업용 DLP 3D 프린터 구매",
+      "org": "국립군산대학교 산학협력단",
+      "task": "물품",
+      "budget_raw": 99000000,
+      "budget": "99백만",
+      "contract": "",
+      "reg_date": "2026-10-28",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "DLP"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291614"
+    },
+    {
+      "biz_no": "R26BD00290630",
+      "title": "문서중앙화시스템 원격지 백업 구축 용역",
+      "org": "전남광주통합특별시교육청 전남청사",
+      "task": "일반용역",
+      "budget_raw": 94400000,
+      "budget": "94백만",
+      "contract": "",
+      "reg_date": "2026-10-26",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "문서중앙화"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290630"
+    },
+    {
+      "biz_no": "R26BD00292318",
+      "title": "인터넷 망분리(SBC) 구축 사업",
+      "org": "전북대학교병원",
+      "task": "물품",
+      "budget_raw": 1,
+      "budget": "1원",
+      "contract": "",
+      "reg_date": "2026-10-29",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [
+        "망분리"
+      ],
+      "t2": [],
+      "score": 3,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292318"
+    },
+    {
+      "biz_no": "R26BD00297696",
+      "title": "AI 기반 보안관제센터 운영 사업(27~29년) 용역",
+      "org": "한국예탁결제원",
+      "task": "일반용역",
+      "budget_raw": 8100799755,
+      "budget": "81.0억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-10",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제",
+        "AI 기반"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297696"
+    },
+    {
+      "biz_no": "R26BD00290408",
+      "title": "2027년 사이버보안관제센터 위탁운영 용역",
+      "org": "해양경찰청",
+      "task": "일반용역",
+      "budget_raw": 768101200,
+      "budget": "7.7억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-10-26",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제",
+        "사이버보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290408"
+    },
+    {
+      "biz_no": "R26BD00300441",
+      "title": "2027년 정보통신시설 및 정보보안시스템 통합유지관리 용역(긴급)",
+      "org": "서울특별시 강북구",
+      "task": "일반용역",
+      "budget_raw": 520289000,
+      "budget": "5.2억",
+      "contract": "",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300441"
+    },
+    {
+      "biz_no": "R26BD00297222",
+      "title": "2027~2028년 정보보안시스템 통합 유지보수",
+      "org": "재단법인 한국자활복지개발원",
+      "task": "일반용역",
+      "budget_raw": 403350000,
+      "budget": "4.0억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-09",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297222"
+    },
+    {
+      "biz_no": "R26BD00304262",
+      "title": "2027년 정보보안시스템 유지보수(긴급)",
+      "org": "전북특별자치도",
+      "task": "일반용역",
+      "budget_raw": 304625000,
+      "budget": "3.0억",
+      "contract": "",
+      "reg_date": "2026-11-20",
+      "deadline": "2026-11-27",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304262"
+    },
+    {
+      "biz_no": "R26BD00301691",
+      "title": "2027년 국립대구과학관 정보보안시스템 통합유지보수 사업",
+      "org": "국립대구과학관",
+      "task": "일반용역",
+      "budget_raw": 182978180,
+      "budget": "1.8억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-17",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00301691"
+    },
+    {
+      "biz_no": "R26BD00299310",
+      "title": "2027년 정보보안시스템 유지관리 용역",
+      "org": "경상북도 영천시",
+      "task": "기술용역",
+      "budget_raw": 178995000,
+      "budget": "1.8억",
+      "contract": "",
+      "reg_date": "2026-11-12",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00299310"
+    },
+    {
+      "biz_no": "R26BD00304213",
+      "title": "[혁신]다층적 정보보안시스템 구축 사업",
+      "org": "대구보건대학산학협력단",
+      "task": "물품",
+      "budget_raw": 173800000,
+      "budget": "1.7억",
+      "contract": "",
+      "reg_date": "2026-11-20",
+      "deadline": "2026-11-27",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304213"
+    },
+    {
+      "biz_no": "R26BD00292976",
+      "title": "2027년 화성시 사이버보안관제 용역",
+      "org": "경기도 화성시",
+      "task": "일반용역",
+      "budget_raw": 143778190,
+      "budget": "1.4억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-30",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제",
+        "사이버보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292976"
+    },
+    {
+      "biz_no": "R26BD00294175",
+      "title": "2027년도 정보보안시스템 등 통합 유지관리",
+      "org": "한국형사법무정책연구원",
+      "task": "일반용역",
+      "budget_raw": 62400000,
+      "budget": "62백만",
+      "contract": "",
+      "reg_date": "2026-11-03",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00294175"
+    },
+    {
+      "biz_no": "R26BD00293822",
+      "title": "2027~2028년 문화체육관광 사이버안전센터 보안관제 위탁운영",
+      "org": "문화체육관광부",
+      "task": "일반용역",
+      "budget_raw": 6527688200,
+      "budget": "65.3억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-02",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00293822"
+    },
+    {
+      "biz_no": "R26BD00301112",
+      "title": "2027~2028 IITP 정보자원 및 정보보안 운영 유지관리",
+      "org": "한국연구재단 정보통신기획평가원",
+      "task": "일반용역",
+      "budget_raw": 3629465960,
+      "budget": "36.3억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-16",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00301112"
+    },
+    {
+      "biz_no": "R26BD00292819",
+      "title": "2027~2028년도 시도교육청 보안관제 종합시스템 유지관리",
+      "org": "한국교육학술정보원",
+      "task": "일반용역",
+      "budget_raw": 2834289480,
+      "budget": "28.3억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-30",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292819"
+    },
+    {
+      "biz_no": "R26BD00299537",
+      "title": "(긴급) 2027년~2028년 경기도 사이버침해대응센터 보안관제 용역",
+      "org": "경기도",
+      "task": "일반용역",
+      "budget_raw": 2777082000,
+      "budget": "27.8억",
+      "contract": "",
+      "reg_date": "2026-11-12",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00299537"
+    },
+    {
+      "biz_no": "R26BD00297408",
+      "title": "2027~2028년 보안관제 위탁운영",
+      "org": "식품의약품안전처",
+      "task": "일반용역",
+      "budget_raw": 2466357000,
+      "budget": "24.7억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-10",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297408"
+    },
+    {
+      "biz_no": "R26BD00295455",
+      "title": "사이버침해대응센터 보안관제 및 정보보호시스템 유지보수 용역",
+      "org": "세종특별자치시",
+      "task": "일반용역",
+      "budget_raw": 2327121690,
+      "budget": "23.3억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-05",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295455"
+    },
+    {
+      "biz_no": "R26BD00304720",
+      "title": "사이버침해대응센터 보안관제 용역(2027년~2028년)",
+      "org": "울산광역시",
+      "task": "일반용역",
+      "budget_raw": 1649110000,
+      "budget": "16.5억",
+      "contract": "",
+      "reg_date": "2026-11-23",
+      "deadline": "2026-11-30",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304720"
+    },
+    {
+      "biz_no": "R26BD00295624",
+      "title": "2027년~2028년 정보통신시스템 유지보수 및 보안관제 용역(긴급)",
+      "org": "서울특별시 중구",
+      "task": "일반용역",
+      "budget_raw": 1528552000,
+      "budget": "15.3억",
+      "contract": "",
+      "reg_date": "2026-11-05",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295624"
+    },
+    {
+      "biz_no": "R26BD00300284",
+      "title": "사이버침해대응센터 보안관제 용역",
+      "org": "세종특별자치시",
+      "task": "일반용역",
+      "budget_raw": 1485008690,
+      "budget": "14.9억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300284"
+    },
+    {
+      "biz_no": "R26BD00300114",
+      "title": "(긴급)2027년도 사이버침해대응센터 보안관제 용역",
+      "org": "대구광역시",
+      "task": "일반용역",
+      "budget_raw": 1385800000,
+      "budget": "13.9억",
+      "contract": "",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300114"
+    },
+    {
+      "biz_no": "R26BD00297427",
+      "title": "2027년 정보보호시스템 유지보수 및 보안관제 운영 용역",
+      "org": "경상남도",
+      "task": "일반용역",
+      "budget_raw": 1234085780,
+      "budget": "12.3억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-10",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297427"
+    },
+    {
+      "biz_no": "R26BD00298333",
+      "title": "2027~2028년 세종교육사이버안전센터 보안관제 용역",
+      "org": "세종특별자치시교육청 세종특별자치시교육청교육원",
+      "task": "일반용역",
+      "budget_raw": 944048990,
+      "budget": "9.4억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-11",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00298333"
+    },
+    {
+      "biz_no": "R26BD00295473",
+      "title": "2027~2028년 보안관제시스템 유지관리용역",
+      "org": "충청북도교육청 충청북도교육연구정보원",
+      "task": "일반용역",
+      "budget_raw": 937885890,
+      "budget": "9.4억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-05",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295473"
+    },
+    {
+      "biz_no": "R26BD00291541",
+      "title": "2027~2028년 정보보호시스템 유지관리 및 사이버 보안관제 운영",
+      "org": "경기도 성남시",
+      "task": "일반용역",
+      "budget_raw": 898840170,
+      "budget": "9.0억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-28",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291541"
+    },
+    {
+      "biz_no": "R26BD00291367",
+      "title": "‘27～’28년 통합보안관제시스템 유지보수",
+      "org": "국토교통부",
+      "task": "일반용역",
+      "budget_raw": 875597480,
+      "budget": "8.8억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-28",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291367"
+    },
+    {
+      "biz_no": "R26BD00290401",
+      "title": "2027-2028 김포시 사이버 보안관제 용역",
+      "org": "경기도 김포시",
+      "task": "일반용역",
+      "budget_raw": 840550910,
+      "budget": "8.4억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-10-26",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290401"
+    },
+    {
+      "biz_no": "R26BD00293317",
+      "title": "(긴급)2027년 사이버침해대응센터(광주청사) 보안관제 용역(협상)",
+      "org": "전남광주통합특별시 광주청사",
+      "task": "기술용역",
+      "budget_raw": 807540000,
+      "budget": "8.1억",
+      "contract": "",
+      "reg_date": "2026-11-02",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00293317"
+    },
+    {
+      "biz_no": "R26BD00297343",
+      "title": "2027년 사이버침해대응센터 24시간 보안관제 용역",
+      "org": "경상북도",
+      "task": "일반용역",
+      "budget_raw": 800000000,
+      "budget": "8.0억",
+      "contract": "",
+      "reg_date": "2026-11-09",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297343"
+    },
+    {
+      "biz_no": "R26BD00295165",
+      "title": "2027년도 과학기술사이버안전센터 보안관제시스템 통합 유지보수",
+      "org": "한국과학기술정보연구원",
+      "task": "일반용역",
+      "budget_raw": 700000000,
+      "budget": "7.0억",
+      "contract": "",
+      "reg_date": "2026-11-04",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295165"
+    },
+    {
+      "biz_no": "R26BD00299246",
+      "title": "27년 방위사업청 보안관제 위탁용역",
+      "org": "방위사업청",
+      "task": "일반용역",
+      "budget_raw": 665504140,
+      "budget": "6.7억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-12",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00299246"
+    },
+    {
+      "biz_no": "R26BD00302622",
+      "title": "사이버 보안관제 위탁운영 사업 용역",
+      "org": "한국농어촌공사",
+      "task": "일반용역",
+      "budget_raw": 566000000,
+      "budget": "5.7억",
+      "contract": "",
+      "reg_date": "2026-11-18",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00302622"
+    },
+    {
+      "biz_no": "R26BD00292096",
+      "title": "2027년 정보통신 및 정보보안 통합 유지관리 용역",
+      "org": "서울특별시 성동구",
+      "task": "일반용역",
+      "budget_raw": 530739000,
+      "budget": "5.3억",
+      "contract": "",
+      "reg_date": "2026-10-29",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292096"
+    },
+    {
+      "biz_no": "R26BD00303376",
+      "title": "2027년 정보통신보안시스템 통합유지보수 용역",
+      "org": "경상남도",
+      "task": "일반용역",
+      "budget_raw": 291508980,
+      "budget": "2.9억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-19",
+      "deadline": "2026-11-26",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00303376"
+    },
+    {
+      "biz_no": "R26BD00301148",
+      "title": "부산항만공사 사이버 보안관제 컨설팅 및 시범운영 용역",
+      "org": "부산항만공사",
+      "task": "일반용역",
+      "budget_raw": 279477000,
+      "budget": "2.8억",
+      "contract": "",
+      "reg_date": "2026-11-16",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00301148"
+    },
+    {
+      "biz_no": "R26BD00300324",
+      "title": "2027년 전산장비 및 정보보안 운영지원 사업",
+      "org": "법제처",
+      "task": "일반용역",
+      "budget_raw": 260686440,
+      "budget": "2.6억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300324"
+    },
+    {
+      "biz_no": "R26BD00292290",
+      "title": "2027년 대학입학전형 종합지원시스템 보안관제 및 정보보호 업무지원 사업",
+      "org": "한국대학교육협의회",
+      "task": "일반용역",
+      "budget_raw": 195784400,
+      "budget": "2.0억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-10-29",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00292290"
+    },
+    {
+      "biz_no": "R26BD00289951",
+      "title": "2027년 고양시 사이버 침해대응 보안관제 용역",
+      "org": "경기도 고양시",
+      "task": "일반용역",
+      "budget_raw": 170123610,
+      "budget": "1.7억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-25",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00289951"
+    },
+    {
+      "biz_no": "R26BD00294053",
+      "title": "2027년 사이버 보안관제 및 정보보호시스템 유지관리",
+      "org": "국방부 전쟁기념사업회",
+      "task": "일반용역",
+      "budget_raw": 150000000,
+      "budget": "1.5억",
+      "contract": "",
+      "reg_date": "2026-11-03",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00294053"
+    },
+    {
+      "biz_no": "R26BD00290493",
+      "title": "2027년 보은군 정보보안·IPT시스템 통합유지관리 용역",
+      "org": "충청북도 보은군",
+      "task": "일반용역",
+      "budget_raw": 136651100,
+      "budget": "1.4억",
+      "contract": "제한경쟁",
+      "reg_date": "2026-10-26",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290493"
+    },
+    {
+      "biz_no": "R26BD00301029",
+      "title": "홈페이지 기능 개선 및 정보보안 강화",
+      "org": "(재)공간정보품질관리원",
+      "task": "일반용역",
+      "budget_raw": 132000000,
+      "budget": "1.3억",
+      "contract": "",
+      "reg_date": "2026-11-17",
+      "deadline": "2026-11-24",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00301029"
+    },
+    {
+      "biz_no": "R26BD00297198",
+      "title": "2027년 하남시 정보보안 시스템 통합 유지관리 용역",
+      "org": "경기도 하남시",
+      "task": "일반용역",
+      "budget_raw": 120038000,
+      "budget": "1.2억",
+      "contract": "",
+      "reg_date": "2026-11-09",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297198"
+    },
+    {
+      "biz_no": "R26BD00304313",
+      "title": "정보보안 위협 대응 및 네트워크 안정성 강화를 위한 노후 스위치 교체",
+      "org": "한국핵융합에너지연구원",
+      "task": "물품",
+      "budget_raw": 110950000,
+      "budget": "1.1억",
+      "contract": "",
+      "reg_date": "2026-11-20",
+      "deadline": "2026-11-27",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304313"
+    },
+    {
+      "biz_no": "R26BD00290869",
+      "title": "(수정,긴급)2026년 정보보안 관리수준 강화 컨설팅",
+      "org": "한국에너지공단",
+      "task": "일반용역",
+      "budget_raw": 90000000,
+      "budget": "90백만",
+      "contract": "",
+      "reg_date": "2026-10-27",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290869"
+    },
+    {
+      "biz_no": "R26BD00293914",
+      "title": "원격보안관제 용역",
+      "org": "인하대학교",
+      "task": "일반용역",
+      "budget_raw": 79200000,
+      "budget": "79백만",
+      "contract": "",
+      "reg_date": "2026-11-03",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00293914"
+    },
+    {
+      "biz_no": "R26BD00295960",
+      "title": "디지털트윈 통합플랫폼 정보보안경영시스템(ISO27001) 컨설팅 및 인증 용역",
+      "org": "(재)원주의료기기산업진흥원",
+      "task": "일반용역",
+      "budget_raw": 70000000,
+      "budget": "70백만",
+      "contract": "",
+      "reg_date": "2026-11-06",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295960"
+    },
+    {
+      "biz_no": "R26BD00295748",
+      "title": "2027년 세종시문화관광재단 전산·정보보안 시스템 통합유지보수 용역",
+      "org": "재단법인세종시문화관광재단",
+      "task": "일반용역",
+      "budget_raw": 70000000,
+      "budget": "70백만",
+      "contract": "",
+      "reg_date": "2026-11-05",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295748"
+    },
+    {
+      "biz_no": "R26BD00296241",
+      "title": "숭의여자대학교 전산 정보보안 운영 인력 용역",
+      "org": "숭의여자대학",
+      "task": "일반용역",
+      "budget_raw": 54300000,
+      "budget": "54백만",
+      "contract": "",
+      "reg_date": "2026-11-06",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "정보보안"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00296241"
+    },
+    {
+      "biz_no": "R26BD00290719",
+      "title": "2027년 정보시스템 보안관제 서비스 용역",
+      "org": "재단법인 서울시복지재단",
+      "task": "일반용역",
+      "budget_raw": 52404000,
+      "budget": "52백만",
+      "contract": "",
+      "reg_date": "2026-10-27",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00290719"
+    },
+    {
+      "biz_no": "R26BD00300343",
+      "title": "24년도 네트워크 보안시스템 유지관리(WIPS) 2027 연장",
+      "org": "중소기업은행",
+      "task": "일반용역",
+      "budget_raw": 43711800,
+      "budget": "44백만",
+      "contract": "",
+      "reg_date": "2026-11-13",
+      "deadline": "마감",
+      "status": "마감",
+      "t1": [],
+      "t2": [
+        "보안시스템"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00300343"
+    },
+    {
+      "biz_no": "R26BD00302372",
+      "title": "인터넷보안관제스시템 및 보안소프트웨어 유지보수",
+      "org": "(재)양산시복지재단",
+      "task": "일반용역",
+      "budget_raw": 32300400,
+      "budget": "32백만",
+      "contract": "",
+      "reg_date": "2026-11-18",
+      "deadline": "2026-11-25",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00302372"
+    }
+  ]
+}

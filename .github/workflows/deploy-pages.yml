@@ -1,9 +1,12 @@
 name: Deploy to GitHub Pages
 
+# 대시보드 화면(index.html)과 데이터(data/)만 공개한다. 소스·DB는 배포하지 않는다.
 on:
   push:
     branches: [main]
+    paths: ['index.html', 'data/**']
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -19,12 +22,19 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main          # 파이프라인이 방금 push한 데이터까지 포함
+      - name: Build site
+        run: |
+          mkdir _site
+          cp index.html _site/
+          cp -r data _site/
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
       - id: deployment
         uses: actions/deploy-pages@v4

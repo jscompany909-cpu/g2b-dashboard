@@ -27,10 +27,42 @@ body { font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f
 .refresh-btn:hover { background: rgba(255,255,255,.25); }
 
 .kpi-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   gap: 14px; padding: 18px 28px;
 }
-@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+.kpi-card { cursor: pointer; }
+
+/* 상세 패널 */
+.row-link { color: #1e3a8a; font-weight: 600; cursor: pointer; text-decoration: none; }
+.row-link:hover { text-decoration: underline; }
+.ext { margin-left: 6px; font-size: 11px; color: #9ca3af !important; font-weight: 400 !important; white-space: nowrap; }
+.ext:hover { color: #1e3a8a !important; }
+.dt-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.45); display: none; z-index: 50; }
+.dt-backdrop.open { display: block; }
+.dt-panel {
+  position: fixed; top: 0; right: 0; height: 100%; width: min(560px, 100%);
+  background: white; z-index: 51; box-shadow: -6px 0 24px rgba(0,0,0,.15);
+  transform: translateX(100%); transition: transform .2s ease; display: flex; flex-direction: column;
+}
+.dt-panel.open { transform: translateX(0); }
+.dt-head { padding: 18px 22px; background: linear-gradient(135deg,#1e1b4b,#1e3a8a); color: white; }
+.dt-kind { font-size: 11px; opacity: .7; }
+.dt-title { font-size: 16px; font-weight: 700; margin-top: 6px; line-height: 1.45; }
+.dt-close { float: right; background: none; border: none; color: white; font-size: 22px; cursor: pointer; line-height: 1; }
+.dt-body { padding: 18px 22px; overflow-y: auto; flex: 1; }
+.dt-grid { display: grid; grid-template-columns: 110px 1fr; gap: 9px 12px; font-size: 13px; }
+.dt-grid dt { color: #6b7280; }
+.dt-grid dd { color: #111827; word-break: break-all; }
+.dt-reason { margin-top: 16px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 0 6px 6px 0; font-size: 13px; line-height: 1.6; color: #374151; }
+.dt-foot { padding: 16px 22px; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+.btn-primary { flex: 1; text-align: center; background: #1e3a8a; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; }
+.btn-primary:hover { background: #1e40af; }
+.btn-ghost { padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; cursor: pointer; font-family: inherit; font-size: 13px; color: #374151; }
+.status-on  { background:#ede9fe; color:#6d28d9; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; white-space:nowrap; }
+.status-off { background:#f1f5f9; color:#64748b; padding:2px 8px; border-radius:10px; font-size:11px; white-space:nowrap; }
+.kw-chip { display:inline-block; background:#eef2ff; color:#3730a3; padding:1px 7px; border-radius:8px; font-size:11px; margin:1px 2px 1px 0; }
+.kw-chip.t2 { background:#f1f5f9; color:#475569; }
 .kpi-card {
   background: white; border-radius: 10px; padding: 16px 18px;
   box-shadow: 0 1px 5px rgba(0,0,0,.07); border-left: 4px solid;
@@ -101,31 +133,36 @@ td a:hover { text-decoration: underline; }
 <div class="header">
   <div>
     <h1>이노티움 입찰 인텔리전스 대시보드</h1>
-    <div class="header-sub">나라장터 · KISA · NIPA · IITP 30일 수집 | GitHub Pages 정적 버전</div>
+    <div class="header-sub">입찰공고(나라장터 · KISA · NIPA · IITP) + 나라장터 사전규격 · 최근 30일</div>
   </div>
   <div class="header-right">
     <div id="updated-at" style="font-size:14px;opacity:.9;font-weight:600">로딩 중...</div>
+    <div id="updated-pre" style="font-size:11px;opacity:.75;margin-top:2px"></div>
     <button class="refresh-btn" onclick="fetchData()">⟳ 새로고침</button>
   </div>
 </div>
 
 <!-- KPI -->
 <div class="kpi-grid">
-  <div class="kpi-card" style="border-color:#3b82f6">
-    <div class="kpi-label">📅 최근 30일 신규</div>
-    <div class="kpi-value" style="color:#3b82f6"><span id="kpi-new">-</span><span class="kpi-sub"> 건</span></div>
-  </div>
-  <div class="kpi-card" style="border-color:#ef4444">
+  <div class="kpi-card" style="border-color:#ef4444" onclick="goTab('top')">
     <div class="kpi-label">🎯 TOP 후보 (5점+)</div>
     <div class="kpi-value" style="color:#ef4444"><span id="kpi-top">-</span><span class="kpi-sub"> 건</span></div>
   </div>
-  <div class="kpi-card" style="border-color:#10b981">
-    <div class="kpi-label">🗄️ DB 누적</div>
-    <div class="kpi-value" style="color:#10b981"><span id="kpi-total">-</span><span class="kpi-sub"> 건</span></div>
-  </div>
-  <div class="kpi-card" style="border-color:#f59e0b">
+  <div class="kpi-card" style="border-color:#f59e0b" onclick="goTab('deadline')">
     <div class="kpi-label">⏰ 14일 내 마감</div>
     <div class="kpi-value" style="color:#f59e0b"><span id="kpi-deadline">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#7c3aed" onclick="goTab('prespec')">
+    <div class="kpi-label">📝 사전규격 게시중</div>
+    <div class="kpi-value" style="color:#7c3aed"><span id="kpi-pre">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#3b82f6" onclick="goTab('new')">
+    <div class="kpi-label">📅 최근 30일 신규</div>
+    <div class="kpi-value" style="color:#3b82f6"><span id="kpi-new">-</span><span class="kpi-sub"> 건</span></div>
+  </div>
+  <div class="kpi-card" style="border-color:#10b981" onclick="goTab('raw')">
+    <div class="kpi-label">🗄️ DB 누적</div>
+    <div class="kpi-value" style="color:#10b981"><span id="kpi-total">-</span><span class="kpi-sub"> 건</span></div>
   </div>
 </div>
 
@@ -137,12 +174,31 @@ td a:hover { text-decoration: underline; }
 
 <!-- Tabs -->
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="showTab('top',this)">🎯 Top 후보<span class="badge" id="cnt-top">-</span></button>
-  <button class="tab-btn" onclick="showTab('new',this)">📋 전체 신규<span class="badge" id="cnt-new">-</span></button>
-  <button class="tab-btn" onclick="showTab('deadline',this)">⏰ 마감임박<span class="badge" id="cnt-deadline">-</span></button>
-  <button class="tab-btn" onclick="showTab('stats',this)">📊 통계</button>
-  <button class="tab-btn" onclick="showTab('raw',this)">🔍 Raw<span class="badge" id="cnt-raw">-</span></button>
-  <button class="tab-btn" onclick="showTab('deleted',this)">🗑️ 숨김<span class="badge" id="cnt-deleted" style="background:#fee2e2;color:#dc2626">0</span></button>
+  <button class="tab-btn active" data-tab="top" onclick="goTab('top')">🎯 Top 후보<span class="badge" id="cnt-top">-</span></button>
+  <button class="tab-btn" data-tab="prespec" onclick="goTab('prespec')">📝 사전규격<span class="badge" id="cnt-prespec">-</span></button>
+  <button class="tab-btn" data-tab="new" onclick="goTab('new')">📋 전체 신규<span class="badge" id="cnt-new">-</span></button>
+  <button class="tab-btn" data-tab="deadline" onclick="goTab('deadline')">⏰ 마감임박<span class="badge" id="cnt-deadline">-</span></button>
+  <button class="tab-btn" data-tab="stats" onclick="goTab('stats')">📊 통계</button>
+  <button class="tab-btn" data-tab="raw" onclick="goTab('raw')">🔍 Raw<span class="badge" id="cnt-raw">-</span></button>
+  <button class="tab-btn" data-tab="deleted" onclick="goTab('deleted')">🗑️ 숨김<span class="badge" id="cnt-deleted" style="background:#fee2e2;color:#dc2626">0</span></button>
+</div>
+
+<!-- Tab: Prespec -->
+<div id="tab-prespec" class="tab-content">
+  <p class="tab-desc" style="border-color:#7c3aed;background:#f5f3ff;color:#5b21b6">📝 <strong>사전규격</strong> — 본공고 전 규격 사전공개 단계. 게시중이면 의견 제출 가능.
+    <span id="pre-period"></span> · 의견마감일은 API 미제공으로 <strong>등록일+7일 추정</strong>.
+    <label style="margin-left:10px;white-space:nowrap"><input type="checkbox" id="pre-active-only" onchange="renderPrespec()"> 게시중만</label></p>
+  <div class="table-wrap"><table>
+    <thead><tr>
+      <th>발주기관</th><th>사업명</th><th>예산</th>
+      <th onclick="sortPre('reg_date')">등록일 ↕</th>
+      <th onclick="sortPre('deadline')">의견마감(추정) ↕</th>
+      <th>상태</th>
+      <th onclick="sortPre('score')">관련도 ↕</th>
+      <th>매칭 키워드</th>
+    </tr></thead>
+    <tbody id="tbody-prespec"></tbody>
+  </table></div>
 </div>
 
 <!-- Tab: Top -->
@@ -229,72 +285,119 @@ td a:hover { text-decoration: underline; }
   </table></div>
 </div>
 
+<!-- 상세 패널 -->
+<div id="dt-backdrop" class="dt-backdrop" onclick="closeDetail()"></div>
+<aside id="dt-panel" class="dt-panel" aria-hidden="true">
+  <div class="dt-head">
+    <button class="dt-close" onclick="closeDetail()" aria-label="닫기">×</button>
+    <div class="dt-kind" id="dt-kind"></div>
+    <div class="dt-title" id="dt-title"></div>
+  </div>
+  <div class="dt-body" id="dt-body"></div>
+  <div class="dt-foot">
+    <a id="dt-origin" class="btn-primary" href="#" target="_blank" rel="noopener">원문 사이트에서 보기 ↗</a>
+    <button class="btn-ghost" onclick="copyDetailLink()" id="dt-copy">링크 복사</button>
+  </div>
+</aside>
+
 <script>
-let _cache = {}, _charts = {}, _sort = {};
+let _cache = {}, _pre = {}, _charts = {}, _sort = {}, _preSort = {key:'score', asc:false};
+let _bidById = new Map(), _preById = new Map();
+
+// ── 공통 유틸 ────────────────────────────────────────────────────────
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function safeUrl(u) { return /^https?:\/\//i.test(String(u || '')) ? String(u) : '#'; }
 
 // ── 삭제/복원 (localStorage 기반) ──────────────────────────────────
 const DELETED_KEY = 'g2b_deleted_ids';
-let _deleted = new Set(JSON.parse(localStorage.getItem(DELETED_KEY) || '[]'));
+let _deleted = new Set();
+try { _deleted = new Set(JSON.parse(localStorage.getItem(DELETED_KEY) || '[]')); } catch(e) {}
 
 function _saveDeleted() {
-  localStorage.setItem(DELETED_KEY, JSON.stringify([..._deleted]));
+  try { localStorage.setItem(DELETED_KEY, JSON.stringify([..._deleted])); } catch(e) {}
 }
 function deleteItem(id) {
   if (!confirm('이 항목을 숨기겠습니까?')) return;
   _deleted.add(id);
   _saveDeleted();
-  fetchData();
+  renderAllBids();
   loadDeleted();
 }
 function restoreItem(id) {
   _deleted.delete(id);
   _saveDeleted();
-  fetchData();
+  renderAllBids();
   loadDeleted();
+}
+
+async function fetchJSON(path) {
+  const r = await fetch(path + '?_=' + Date.now());
+  if (!r.ok) throw new Error(path + ' 없음');
+  return r.json();
 }
 
 async function fetchData() {
   document.getElementById('updated-at').textContent = '불러오는 중...';
-  try {
-    // GitHub Pages: 같은 repo의 data/announcements.json 읽기
-    const d = await fetch('./data/announcements.json?_=' + Date.now()).then(r => {
-      if (!r.ok) throw new Error('파일 없음');
-      return r.json();
-    });
+  const [bids, pre] = await Promise.allSettled([
+    fetchJSON('./data/announcements.json'), fetchJSON('./data/prespec.json')]);
+
+  if (pre.status === 'fulfilled') {
+    _pre = pre.value;
+    _preById = new Map((_pre.items || []).map(n => [String(n.biz_no), n]));
+    document.getElementById('kpi-pre').textContent = _pre.kpi ? _pre.kpi.active : '-';
+    document.getElementById('updated-pre').textContent = '사전규격 기준: ' + (_pre.updated_at || '-');
+    document.getElementById('pre-period').textContent = '(' + (_pre.period || '') + ')';
+  } else {
+    _pre = {};
+    document.getElementById('kpi-pre').textContent = '-';
+    document.getElementById('updated-pre').textContent = '사전규격 데이터 없음';
+  }
+  renderPrespec();
+
+  if (bids.status === 'fulfilled') {
+    const d = bids.value;
     _cache = d;
+    _bidById = new Map();
+    ['raw','new','deadline','top'].forEach(k => (d[k] || []).forEach(r => _bidById.set(String(r.id), r)));
     document.getElementById('kpi-new').textContent      = d.kpi.new_week;
     document.getElementById('kpi-top').textContent      = d.kpi.top7;
     document.getElementById('kpi-total').textContent    = d.kpi.total;
     document.getElementById('kpi-deadline').textContent = d.kpi.deadline;
-    document.getElementById('updated-at').textContent   = '데이터 기준: ' + d.updated_at;
-
-    renderTable('top',      d.top);
-    renderTable('new',      d.new);
-    renderTable('deadline', d.deadline);
-    renderTable('raw',      d.raw);
+    document.getElementById('updated-at').textContent   = '입찰 기준: ' + d.updated_at;
+    renderAllBids();
     renderCharts(d);
     renderInsights(d);
-  } catch(e) {
-    document.getElementById('updated-at').textContent = '⚠️ 데이터 없음';
+  } else {
+    document.getElementById('updated-at').textContent = '⚠️ 입찰 데이터 없음';
     ['top','new','deadline','raw'].forEach(key => {
       const tbody = document.getElementById('tbody-' + key);
-      if (tbody) tbody.innerHTML = `<tr><td colspan="8">
-        <div class="no-data">
-          <h2>데이터 파일이 없습니다</h2>
-          <p>PC에서 아래 명령을 실행하고 GitHub에 push하세요.</p>
-          <code>python g2b_export_json.py</code>
-        </div>
-      </td></tr>`;
+      if (tbody) tbody.innerHTML = `<tr><td colspan="9"><div class="no-data"><h2>데이터 파일이 없습니다</h2></div></td></tr>`;
     });
   }
+  loadDeleted();
+  applyHash();
 }
 
-// ── 테이블 ──────────────────────────────────────────────────────────
+function renderAllBids() {
+  if (!_cache.top) return;
+  renderTable('top',      _cache.top);
+  renderTable('new',      _cache.new);
+  renderTable('deadline', _cache.deadline);
+  renderTable('raw',      _cache.raw);
+}
+
+// ── 입찰 테이블 ──────────────────────────────────────────────────────
 const KEYS = ['institution','title','reg_date','end_date','score','category_tag','ai_reason'];
 
 function badge(s) {
   const c = s>=9?'#e53e3e':s>=7?'#dd6b20':s>=5?'#38a169':'#718096';
-  return `<span style="background:${c};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">${s}점</span>`;
+  return `<span style="background:${c};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">${esc(s)}점</span>`;
+}
+function preBadge(s) {
+  const c = s>=6?'#e53e3e':s>=3?'#dd6b20':s>=1?'#38a169':'#718096';
+  return `<span style="background:${c};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">${esc(s)}점</span>`;
 }
 
 function formatBudget(won) {
@@ -304,15 +407,36 @@ function formatBudget(won) {
   return Math.round(won / 1000).toLocaleString() + '천';
 }
 
-const SRC_COLOR = {'G2B':'#1e40af','KISA':'#065f46','NIPA':'#92400e','IITP':'#6b21a8'};
+const SRC_COLOR = {'G2B':'#1e40af','KISA':'#065f46','NIPA':'#92400e','IITP':'#6b21a8','사전규격':'#6d28d9'};
 function srcBadge(src) {
   const c = SRC_COLOR[src] || '#374151';
-  return `<span style="background:${c};color:white;padding:1px 5px;border-radius:6px;font-size:10px;font-weight:700;margin-right:3px">${src||'G2B'}</span>`;
+  return `<span style="background:${c};color:white;padding:1px 5px;border-radius:6px;font-size:10px;font-weight:700;margin-right:3px">${esc(src||'G2B')}</span>`;
+}
+
+function titleCell(kind, key, title, url) {
+  return `<a class="row-link" href="#d=${kind}-${encodeURIComponent(key)}">${esc(title)}</a>`
+       + `<a class="ext" href="${esc(safeUrl(url))}" target="_blank" rel="noopener" title="원문 바로가기">원문↗</a>`;
+}
+
+function bidRow(r, extraTd) {
+  const inst      = r.institution ? r.institution.slice(0,14) : '';
+  const budgetTxt = r.budget > 0
+    ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
+    : `<span style="color:#d1d5db;font-size:11px">-</span>`;
+  return `
+    <td style="white-space:nowrap">${srcBadge(r.source)}${esc(inst)}</td>
+    <td>${titleCell('bid', r.id, r.title, r.link)}</td>
+    <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
+    <td style="white-space:nowrap">${esc(r.reg_date)}</td>
+    <td class="deadline-cell">${r.end_date && r.end_date !== '-' ? esc(r.end_date) : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
+    <td style="text-align:center">${badge(r.score)}</td>
+    <td style="white-space:nowrap">${esc(r.category_tag)}</td>
+    <td class="reason-cell">${esc(r.ai_reason)}</td>
+    ${extraTd || ''}`;
 }
 
 function renderTable(key, rows) {
-  // 삭제된 항목 필터링 (deleted 탭 제외)
-  const visible = rows.filter(r => !_deleted.has(r.id));
+  const visible = (rows || []).filter(r => !_deleted.has(r.id));
   const cnt = document.getElementById('cnt-' + key);
   if (cnt) cnt.textContent = visible.length;
   const tbody = document.getElementById('tbody-' + key);
@@ -323,35 +447,15 @@ function renderTable(key, rows) {
     return;
   }
   tbody.innerHTML = visible.map(r => {
-    const inst      = r.institution ? r.institution.slice(0,14) : '';
-    const budgetTxt = r.budget > 0
-      ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
-      : `<span style="color:#d1d5db;font-size:11px">-</span>`;
     const delBtn = key === 'top'
-      ? `<td><button onclick="deleteItem(${r.id})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px;white-space:nowrap">숨김</button></td>`
+      ? `<td><button onclick="deleteItem(${Number(r.id)})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px;white-space:nowrap">숨김</button></td>`
       : '';
-    return `<tr>
-      <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
-      <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
-      <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
-      <td style="white-space:nowrap">${r.reg_date}</td>
-      <td class="deadline-cell">${r.end_date && r.end_date !== '-' ? r.end_date : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
-      <td style="text-align:center">${badge(r.score)}</td>
-      <td style="white-space:nowrap">${r.category_tag}</td>
-      <td class="reason-cell">${r.ai_reason}</td>
-      ${delBtn}
-    </tr>`;
+    return `<tr>${bidRow(r, delBtn)}</tr>`;
   }).join('');
 }
 
 function loadDeleted() {
-  const all = [...(_cache.top||[]), ...(_cache.new||[]), ...(_cache.raw||[])];
-  const seen = new Set();
-  const deleted = all.filter(r => {
-    if (seen.has(r.id)) return false;
-    seen.add(r.id);
-    return _deleted.has(r.id);
-  });
+  const deleted = [..._bidById.values()].filter(r => _deleted.has(r.id));
   const cnt = document.getElementById('cnt-deleted');
   if (cnt) cnt.textContent = deleted.length || '0';
   const tbody = document.getElementById('tbody-deleted');
@@ -360,23 +464,8 @@ function loadDeleted() {
     tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:28px;color:#9ca3af">숨긴 항목 없음</td></tr>`;
     return;
   }
-  tbody.innerHTML = deleted.map(r => {
-    const inst      = r.institution ? r.institution.slice(0,14) : '';
-    const budgetTxt = r.budget > 0
-      ? `<span style="color:#1e40af;font-weight:700;white-space:nowrap">${formatBudget(r.budget)}</span>`
-      : `<span style="color:#d1d5db;font-size:11px">-</span>`;
-    return `<tr style="opacity:.7">
-      <td style="white-space:nowrap">${srcBadge(r.source)}${inst}</td>
-      <td><a href="${r.link}" target="_blank" rel="noopener">${r.title}</a></td>
-      <td style="text-align:right;white-space:nowrap">${budgetTxt}</td>
-      <td style="white-space:nowrap">${r.reg_date}</td>
-      <td class="deadline-cell">${r.end_date && r.end_date !== '-' ? r.end_date : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
-      <td style="text-align:center">${badge(r.score)}</td>
-      <td style="white-space:nowrap">${r.category_tag}</td>
-      <td class="reason-cell">${r.ai_reason}</td>
-      <td><button onclick="restoreItem(${r.id})" style="padding:3px 10px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:5px;cursor:pointer;font-size:11px">복구</button></td>
-    </tr>`;
-  }).join('');
+  tbody.innerHTML = deleted.map(r => `<tr style="opacity:.7">${bidRow(r,
+    `<td><button onclick="restoreItem(${Number(r.id)})" style="padding:3px 10px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:5px;cursor:pointer;font-size:11px">복구</button></td>`)}</tr>`).join('');
 }
 
 function sortTab(key, idx) {
@@ -389,6 +478,134 @@ function sortTab(key, idx) {
   });
   renderTable(key, sorted);
 }
+
+// ── 사전규격 테이블 ──────────────────────────────────────────────────
+function preStatus(s) {
+  return s === '게시중' ? `<span class="status-on">게시중</span>` : `<span class="status-off">${esc(s || '-')}</span>`;
+}
+function kwChips(n) {
+  return (n.t1 || []).map(k => `<span class="kw-chip">${esc(k)}</span>`).join('')
+       + (n.t2 || []).map(k => `<span class="kw-chip t2">${esc(k)}</span>`).join('');
+}
+function sortPre(key) {
+  _preSort = { key, asc: _preSort.key === key ? !_preSort.asc : false };
+  renderPrespec();
+}
+function renderPrespec() {
+  const tbody = document.getElementById('tbody-prespec');
+  const only  = document.getElementById('pre-active-only').checked;
+  let rows = (_pre.items || []).filter(n => !only || n.status === '게시중');
+  const {key, asc} = _preSort;
+  rows = [...rows].sort((a,b) => {
+    const va = a[key], vb = b[key];
+    const c = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb), 'ko');
+    return (asc ? c : -c) || (b.budget_raw - a.budget_raw);
+  });
+  document.getElementById('cnt-prespec').textContent = rows.length;
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:28px;color:#9ca3af">${_pre.items ? '데이터 없음' : '사전규격 데이터 파일이 없습니다'}</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(n => `<tr>
+      <td style="white-space:nowrap">${srcBadge('사전규격')}${esc((n.org || '').slice(0,14))}</td>
+      <td>${titleCell('pre', n.biz_no, n.title, n.url)}</td>
+      <td style="text-align:right;white-space:nowrap;color:#1e40af;font-weight:700">${esc(n.budget)}</td>
+      <td style="white-space:nowrap">${esc(n.reg_date)}</td>
+      <td style="white-space:nowrap;color:#7c3aed;font-weight:600">${esc(n.deadline)}</td>
+      <td>${preStatus(n.status)}</td>
+      <td style="text-align:center">${preBadge(n.score)}</td>
+      <td>${kwChips(n)}</td>
+    </tr>`).join('');
+}
+
+// ── 상세 패널 ────────────────────────────────────────────────────────
+function dl(pairs) {
+  return '<dl class="dt-grid">' + pairs.filter(p => p[1] !== undefined && p[1] !== null && p[1] !== '')
+    .map(([k, v, raw]) => `<dt>${esc(k)}</dt><dd>${raw ? v : esc(v)}</dd>`).join('') + '</dl>';
+}
+function openDetail(kind, key) {
+  let kindLabel, title, body, url;
+  if (kind === 'bid') {
+    const r = _bidById.get(String(key));
+    if (!r) return false;
+    kindLabel = `입찰공고 · ${r.source || 'G2B'}`;
+    title = r.title; url = r.link;
+    body = dl([
+      ['발주기관', r.institution],
+      ['출처', r.source || 'G2B'],
+      ['금액', r.budget > 0 ? formatBudget(r.budget) + ` (${Number(r.budget).toLocaleString()}원)` : '미기재'],
+      ['공고일', r.reg_date],
+      ['마감일', r.end_date && r.end_date !== '-' ? r.end_date : '미정'],
+      ['AI 점수', badge(r.score), true],
+      ['카테고리', r.category_tag],
+    ]) + (r.ai_reason ? `<div class="dt-reason"><strong>AI 분석</strong><br>${esc(r.ai_reason)}</div>` : '');
+  } else if (kind === 'pre') {
+    const n = _preById.get(String(key));
+    if (!n) return false;
+    kindLabel = '나라장터 사전규격공개';
+    title = n.title; url = n.url;
+    body = dl([
+      ['발주기관', n.org],
+      ['사전규격번호', n.biz_no],
+      ['업무구분', n.task],
+      ['계약방법', n.contract],
+      ['예산', n.budget_raw > 0 ? `${n.budget} (${Number(n.budget_raw).toLocaleString()}원)` : n.budget],
+      ['등록일', n.reg_date],
+      ['의견마감', n.status === '게시중' ? `${n.deadline} (등록일+7일 추정)` : n.deadline],
+      ['상태', preStatus(n.status), true],
+      ['관련도', preBadge(n.score), true],
+      ['매칭 키워드', kwChips(n) || '-', true],
+    ]) + `<div class="dt-reason" style="border-color:#7c3aed">사전규격은 본공고 전 단계입니다. 게시중이면 나라장터에서 규격서를 확인하고 의견을 제출할 수 있습니다.<br><br>
+      <strong>나라장터 이동 방법</strong> — 나라장터는 개별 공고 직접 링크를 지원하지 않아 <em>사전규격공개 목록</em>이 열립니다.
+      사업명을 복사해 목록의 <em>사업명</em> 칸에 붙여넣고 검색하세요.<br>
+      <button class="btn-ghost" style="margin-top:8px;padding:6px 12px" onclick="copyText(this, ${esc(JSON.stringify(n.title))})">사업명 복사</button></div>`;
+  } else return false;
+  document.getElementById('dt-origin').textContent = kind === 'pre' ? '나라장터 사전규격 목록 열기 ↗' : '원문 사이트에서 보기 ↗';
+
+  document.getElementById('dt-kind').textContent = kindLabel;
+  document.getElementById('dt-title').textContent = title;
+  document.getElementById('dt-body').innerHTML = body;
+  const a = document.getElementById('dt-origin');
+  a.href = safeUrl(url);
+  a.style.display = safeUrl(url) === '#' ? 'none' : '';
+  document.getElementById('dt-panel').classList.add('open');
+  document.getElementById('dt-panel').setAttribute('aria-hidden', 'false');
+  document.getElementById('dt-backdrop').classList.add('open');
+  return true;
+}
+function closeDetail() {
+  document.getElementById('dt-panel').classList.remove('open');
+  document.getElementById('dt-panel').setAttribute('aria-hidden', 'true');
+  document.getElementById('dt-backdrop').classList.remove('open');
+  if (location.hash.startsWith('#d=')) history.replaceState(null, '', location.pathname + location.search + '#tab=' + _currentTab);
+}
+function copyText(btn, text) {
+  const label = btn.textContent;
+  navigator.clipboard?.writeText(text).then(() => { btn.textContent = '복사됨'; setTimeout(() => btn.textContent = label, 1500); });
+}
+function copyDetailLink() {
+  const btn = document.getElementById('dt-copy');
+  navigator.clipboard?.writeText(location.href).then(() => { btn.textContent = '복사됨'; setTimeout(() => btn.textContent = '링크 복사', 1500); });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+// ── 해시 라우팅: #tab=xxx, #d=bid-123 / #d=pre-R26BD... ───────────────
+function applyHash() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h.startsWith('d=')) {
+    const v = h.slice(2), i = v.indexOf('-');
+    const kind = v.slice(0, i), key = v.slice(i + 1);
+    showTab(kind === 'pre' ? 'prespec' : (_currentTab === 'prespec' ? 'top' : _currentTab));
+    if (!openDetail(kind, key)) {
+      closeDetail();
+      alert('해당 공고를 현재 데이터에서 찾을 수 없습니다 (기간 경과 또는 숨김).');
+    }
+  } else if (h.startsWith('tab=')) {
+    closeDetail();
+    showTab(h.slice(4));
+  }
+}
+window.addEventListener('hashchange', applyHash);
 
 // ── 시사점 & 액션아이템 ──────────────────────────────────────────────
 function fmtBudget(b) {
@@ -403,6 +620,7 @@ function renderInsights(d) {
   if (!ins) return;
   const container = document.getElementById('insights-container');
   if (!container) return;
+  const preActive = _pre.kpi ? _pre.kpi.active : 0;
 
   const items = [
     { color:'#ef4444', icon:'🔥',
@@ -411,6 +629,9 @@ function renderInsights(d) {
     { color:'#f59e0b', icon:'⏰',
       title:`7일 내 마감 핵심 공고 ${ins.urgent_7day}건`,
       body:'긴급 영업 액션 필요. 마감임박 탭에서 상세 확인 후 사업개발팀 즉시 공유.' },
+    { color:'#7c3aed', icon:'📝',
+      title:`사전규격 게시중 ${preActive}건`,
+      body:'본공고 전 단계. 규격서 검토 후 의견 제출로 우리 제품 사양 반영 기회.' },
     { color:'#3b82f6', icon:'🏛️',
       title:`주목할 발주처: ${ins.top_institution}`,
       body:'이번 주 가장 활발하게 관련 공고를 게시한 기관. 담당자 네트워크 점검 권장.' },
@@ -424,8 +645,8 @@ function renderInsights(d) {
 
   container.innerHTML = items.map(it => `
     <div style="border-left:4px solid ${it.color};background:#f8fafc;padding:12px 14px;border-radius:0 6px 6px 0">
-      <div style="font-size:12px;font-weight:700;color:${it.color}">${it.icon} ${it.title}</div>
-      <div style="font-size:11px;color:#6b7280;margin-top:5px;line-height:1.5">${it.body}</div>
+      <div style="font-size:12px;font-weight:700;color:${it.color}">${it.icon} ${esc(it.title)}</div>
+      <div style="font-size:11px;color:#6b7280;margin-top:5px;line-height:1.5">${esc(it.body)}</div>
     </div>`).join('');
 }
 
@@ -433,6 +654,7 @@ function renderInsights(d) {
 const PAL = ['#3b82f6','#ef4444','#10b981','#f59e0b','#8b5cf6','#ec4899','#14b8a6','#f97316','#6366f1','#84cc16','#06b6d4','#a855f7','#d946ef','#0ea5e9','#22c55e'];
 
 function renderCharts(d) {
+  if (typeof Chart === 'undefined') return;
   if (_charts.inst) _charts.inst.destroy();
   if (_charts.cat)  _charts.cat.destroy();
   if (_charts.monthly) _charts.monthly.destroy();
@@ -440,7 +662,7 @@ function renderCharts(d) {
   _charts.inst = new Chart(document.getElementById('c-inst'), {
     type: 'bar',
     data: {
-      labels: d.inst_top10.map(r=>r.name.slice(0,14)),
+      labels: d.inst_top10.map(r=>String(r.name||'').slice(0,14)),
       datasets: [{ label:'건수', data: d.inst_top10.map(r=>r.cnt), backgroundColor:'#3b82f6', borderRadius:4 }]
     },
     options: { indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true,ticks:{stepSize:1}}} }
@@ -455,7 +677,6 @@ function renderCharts(d) {
     options: { plugins:{ legend:{ position:'right', labels:{ font:{size:11}, boxWidth:12 } } } }
   });
 
-  // 월별 공고 추이
   if (d.monthly_trend && d.monthly_trend.length) {
     _charts.monthly = new Chart(document.getElementById('c-monthly'), {
       type: 'line',
@@ -480,16 +701,18 @@ function renderCharts(d) {
 }
 
 // ── 탭 ──────────────────────────────────────────────────────────────
-function showTab(name, btn) {
+let _currentTab = 'top';
+function showTab(name) {
+  if (!document.getElementById('tab-' + name)) name = 'top';
+  _currentTab = name;
   document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.toggle('active', e.dataset.tab === name));
   document.getElementById('tab-'+name).classList.add('active');
-  if (btn) btn.classList.add('active');
   if (name === 'deleted') loadDeleted();
 }
+function goTab(name) { location.hash = 'tab=' + name; }
 
 fetchData();
-loadDeleted();
 </script>
 </body>
 </html>
