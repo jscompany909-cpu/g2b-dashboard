@@ -56,10 +56,16 @@ body { font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f
   transform: translateX(100%); transition: transform .2s ease; display: flex; flex-direction: column;
 }
 .dt-panel.open { transform: translateX(0); }
-.dt-head { padding: 18px 22px; background: linear-gradient(135deg,#1e1b4b,#1e3a8a); color: white; }
+.dt-head { position: relative; padding: 18px 56px 18px 22px; background: linear-gradient(135deg,#1e1b4b,#1e3a8a); color: white; }
 .dt-kind { font-size: 11px; opacity: .7; }
 .dt-title { font-size: 16px; font-weight: 700; margin-top: 6px; line-height: 1.45; }
-.dt-close { float: right; background: none; border: none; color: white; font-size: 22px; cursor: pointer; line-height: 1; }
+.dt-close {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,.12); border: none; color: white;
+  font-size: 22px; line-height: 1; cursor: pointer;
+}
+.dt-close:hover { background: rgba(255,255,255,.25); }
 .dt-body { padding: 18px 22px; overflow-y: auto; flex: 1; }
 .dt-grid { display: grid; grid-template-columns: 110px 1fr; gap: 9px 12px; font-size: 13px; }
 .dt-grid dt { color: #6b7280; }
