@@ -18,6 +18,9 @@ concurrency:
   group: g2b-pipeline
   cancel-in-progress: false
 
+env:
+  TZ: Asia/Seoul   # 러너는 UTC — 날짜 경계·updated_at을 KST로
+
 jobs:
   collect:
     runs-on: ubuntu-24.04   # ubuntu-latest(26.04)는 Playwright 미지원
