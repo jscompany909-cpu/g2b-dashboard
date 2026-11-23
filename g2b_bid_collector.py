@@ -125,10 +125,24 @@ def _fetch_page(page_num, base_params, url, headers):
     params = {**base_params, "pageNo": str(page_num)}
     try:
         response = requests.get(url, params=params, headers=headers, timeout=20, verify=True)
+
+        def _diag(reason):
+            # 오류 원인 진단용 — 응답 본문 앞부분만, 인증키는 가림
+            body = response.text[:300].replace("\n", " ")
+            for k in {G2B_API_KEY or "", requests.utils.unquote(G2B_API_KEY or "")} - {""}:
+                body = body.replace(k, "***")
+            print(f"⚠️ [G2B {page_num}페이지] {reason} — HTTP {response.status_code} — {body}")
+
         if response.status_code != 200:
+            _diag("HTTP 오류")
             return page_num, []
-        root = ET.fromstring(response.text)
+        try:
+            root = ET.fromstring(response.text)
+        except ET.ParseError:
+            _diag("XML 아님")
+            return page_num, []
         if root.findtext(".//resultCode", "") != "00":
+            _diag(f"resultCode={root.findtext('.//resultCode', '')} {root.findtext('.//resultMsg', '')}")
             return page_num, []
         items = [
             {child.tag: (child.text or "") for child in item_el}
