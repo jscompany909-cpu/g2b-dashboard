@@ -1,6 +1,7 @@
 /**
- * G2B 알리미 Cron Worker
- * 평일 09:30 KST 정각에 GitHub Actions 이메일 워크플로우를 트리거합니다.
+ * G2B 통합 파이프라인 정시 트리거 Worker
+ * 평일 08:00 KST 정각에 GitHub Actions pipeline.yml(수집 → 대시보드 → 메일)을 workflow_dispatch로 실행합니다.
+ * GitHub 자체 예약(schedule)은 수 시간 지연·누락이 잦아 백업으로만 둡니다.
  *
  * 환경변수 (Cloudflare Dashboard → Settings → Variables → Secrets):
  *   GITHUB_TOKEN   : GitHub Personal Access Token (repo scope)
@@ -8,7 +9,7 @@
  */
 
 const REPO     = 'jscompany909-cpu/g2b-dashboard';
-const WORKFLOW = 'notify.yml';
+const WORKFLOW = 'pipeline.yml';
 
 export default {
   // ── Cron 트리거 (wrangler.toml 스케줄에서 자동 실행) ──────────────
@@ -37,7 +38,7 @@ export default {
     }
 
     return new Response(
-      JSON.stringify({ status: 'G2B Cron Worker 동작 중', schedule: '평일 09:30 KST' }),
+      JSON.stringify({ status: 'G2B Cron Worker 동작 중', workflow: WORKFLOW, schedule: '평일 08:00 KST' }),
       { headers: { 'Content-Type': 'application/json' } }
     );
   },
@@ -62,7 +63,7 @@ async function triggerWorkflow(env) {
   );
 
   if (res.ok) {
-    console.log(`[G2B Cron] 이메일 워크플로우 트리거 성공 (${res.status})`);
+    console.log(`[G2B Cron] ${WORKFLOW} 트리거 성공 (${res.status})`);
     return { ok: true, status: res.status, time: now };
   } else {
     const text = await res.text();

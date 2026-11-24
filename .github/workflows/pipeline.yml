@@ -5,6 +5,8 @@ name: G2B 통합 파이프라인 (수집 → 대시보드 → 메일)
 # 3) 대시보드 요약 메일 발송 (기본: 월요일만, 저장소 변수 MAIL_WEEKDAYS 로 변경 가능)
 
 on:
+  # 정시 실행은 Cloudflare Worker(cloudflare-cron/, 평일 08:00 KST)가 workflow_dispatch로 호출한다.
+  # GitHub 예약은 수 시간 지연·누락이 잦아 백업으로만 둔다 — 그날 이미 실행됐으면 gate가 건너뛴다.
   schedule:
     - cron: '0 23 * * 0-4'   # 평일 08:00 KST (UTC 전날 23:00)
   workflow_dispatch:
@@ -22,7 +24,37 @@ env:
   TZ: Asia/Seoul   # 러너는 UTC — 날짜 경계·updated_at을 KST로
 
 jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - id: g
+        name: 중복 실행 확인 (백업 예약 실행만)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # 오늘(KST) 0시 이후 workflow_dispatch 실행이 성공했거나 진행 중이면 건너뜀
+          SINCE=$(date -u -d "$(date +%Y-%m-%d) 00:00 +0900" +%Y-%m-%dT%H:%M:%SZ)
+          N=$(gh api "repos/${{ github.repository }}/actions/workflows/pipeline.yml/runs?event=workflow_dispatch&per_page=20" \
+              --jq "[.workflow_runs[] | select(.created_at >= \"$SINCE\") | select(.conclusion == \"success\" or .status != \"completed\")] | length")
+          echo "since=$SINCE dispatch_runs_today=$N"
+          if [ "$N" -gt 0 ]; then
+            echo "오늘 이미 실행됨 (Worker) → 백업 예약 실행 건너뜀"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "오늘 실행 기록 없음 → 백업 예약 실행 진행"
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   collect:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-24.04   # ubuntu-latest(26.04)는 Playwright 미지원
     timeout-minutes: 60
     permissions:

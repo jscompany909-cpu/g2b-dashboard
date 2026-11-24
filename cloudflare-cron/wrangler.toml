@@ -2,6 +2,6 @@ name            = "g2b-cron"
 main            = "worker.js"
 compatibility_date = "2024-09-23"
 
-# 평일(월~금) 09:30 KST = UTC 00:30
+# [임시 테스트] 2026-11-24 07:05 UTC(16:05 KST) 1회 호출 확인용 — 확인 후 평일 08:00 KST로 되돌림
 [triggers]
-crons = ["30 0 * * 1-5"]
+crons = ["5 7 * * *"]
