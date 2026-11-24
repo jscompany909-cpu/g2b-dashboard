@@ -268,8 +268,13 @@ def _fetch_iitp_playwright(max_pages: int = 10) -> list:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         pg      = browser.new_page()
-        pg.goto(f"{BASE}/web/lay1/program/S1T44C51/iris/list.do",
-                wait_until="networkidle", timeout=25000)
+        try:
+            pg.goto(f"{BASE}/web/lay1/program/S1T44C51/iris/list.do",
+                    wait_until="networkidle", timeout=25000)
+        except Exception as e:
+            print(f"  ⚠️ IITP(PW) 접속 실패: {e}")
+            browser.close()
+            return []
         pg.wait_for_timeout(1000)
 
         for page_num in range(1, max_pages + 1):
@@ -315,24 +320,19 @@ def _fetch_iitp_playwright(max_pages: int = 10) -> list:
 
 # ── 전체 수집 ──────────────────────────────────────────────────────────────────
 def fetch_all_external(pages: int = 10) -> list:
-    """KISA + NIPA + IITP 통합 수집"""
+    """KISA + NIPA + IITP 통합 수집 — 한 사이트가 실패해도 나머지(및 나라장터)는 계속 진행"""
     all_items = []
-
-    print("🔍 KISA 입찰공고 수집 중...")
-    kisa = fetch_kisa(pages)
-    print(f"  └─ KISA 총 {len(kisa)}건")
-    all_items.extend(kisa)
-
-    print("🔍 NIPA 입찰공고 수집 중...")
-    nipa = fetch_nipa(pages)
-    print(f"  └─ NIPA 총 {len(nipa)}건")
-    all_items.extend(nipa)
-
-    print("🔍 IITP 사업공고 수집 중...")
-    iitp = fetch_iitp(pages)
-    print(f"  └─ IITP 총 {len(iitp)}건")
-    all_items.extend(iitp)
-
+    for label, kind, fn in (("KISA", "입찰공고", fetch_kisa),
+                            ("NIPA", "입찰공고", fetch_nipa),
+                            ("IITP", "사업공고", fetch_iitp)):
+        print(f"🔍 {label} {kind} 수집 중...")
+        try:
+            got = fn(pages)
+        except Exception as e:
+            print(f"  ⚠️ {label} 수집 실패 → 건너뜀: {type(e).__name__}: {str(e)[:150]}")
+            got = []
+        print(f"  └─ {label} 총 {len(got)}건")
+        all_items.extend(got)
     return all_items
 
 
