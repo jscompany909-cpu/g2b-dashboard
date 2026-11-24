@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-24 16:38",
-  "period": "2026-10-25 ~ 2026-11-24",
+  "updated_at": "2026-11-25 08:09",
+  "period": "2026-10-26 ~ 2026-11-25",
   "deadline_note": "의견마감일은 API 미제공 — 등록일+7일 추정",
   "kpi": {
-    "total": 63,
-    "active": 10,
+    "total": 62,
+    "active": 8,
     "tier1": 7
   },
   "errors": [],
@@ -808,8 +808,8 @@
       "budget": "2.9억",
       "contract": "제한경쟁",
       "reg_date": "2026-11-19",
-      "deadline": "2026-11-26",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [],
       "t2": [
         "보안시스템"
@@ -888,24 +888,6 @@
       ],
       "score": 1,
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00304869"
-    },
-    {
-      "biz_no": "R26BD00289951",
-      "title": "2027년 고양시 사이버 침해대응 보안관제 용역",
-      "org": "경기도 고양시",
-      "task": "일반용역",
-      "budget_raw": 170123610,
-      "budget": "1.7억",
-      "contract": "제한경쟁",
-      "reg_date": "2026-10-25",
-      "deadline": "마감",
-      "status": "마감",
-      "t1": [],
-      "t2": [
-        "보안관제"
-      ],
-      "score": 1,
-      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00289951"
     },
     {
       "biz_no": "R26BD00294053",
@@ -1150,8 +1132,8 @@
       "budget": "32백만",
       "contract": "",
       "reg_date": "2026-11-18",
-      "deadline": "2026-11-25",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [],
       "t2": [
         "보안관제"

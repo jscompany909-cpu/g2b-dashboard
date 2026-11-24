@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-24 16:42",
-  "news_updated_at": "2026-11-24 16:42",
+  "updated_at": "2026-11-25 08:13",
+  "news_updated_at": "2026-11-25 08:13",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1315,
+    "bizinfo": 1306,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
     "new": 5,
-    "total": 41,
-    "news": 3
+    "total": 40,
+    "news": 4
   },
   "errors": [],
   "items": [
@@ -569,25 +569,6 @@
       "is_new": false
     },
     {
-      "id": "PBLN_000000000127731",
-      "source": "기업마당",
-      "title": "2026년 onephai 플랫폼 활용 피지컬 AI 기술개발 및 실증 지원사업 지원기업 모집 공고(인간친화형 로봇 스케일업 밸리 혁신 생태계 구축사업)",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127731",
-      "agency": "대전광역시 · 대전테크노파크",
-      "period": "2026-11-05 ~ 2026-11-24",
-      "reg_date": "2026-11-06",
-      "end_date": "2026-11-24",
-      "category": "기술",
-      "score": 3,
-      "t1": [],
-      "t2": [
-        "AI",
-        "기술개발",
-        "실증"
-      ],
-      "is_new": false
-    },
-    {
       "id": "PBLN_000000000126426",
       "source": "기업마당",
       "title": "[경남] 2026년 ICT 중소기업 정보보호 지원 사업 수요기업 모집 공고",
@@ -765,6 +746,25 @@
   "news": [
     {
       "source": "뉴스",
+      "title": "전주 도심융합특구 후보지 선정… AI 신뢰성 검·인증 거점 추진 - 천지일보",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBIXzRhQ2NENURkUnpfVFhHNnZobGdZUDRfVGIwQkNZdnR1LXdlZTdzQWNhd3J2U3NzU3NQSXZCRWl0VUJudV9hOWJtU2hmSTZmWWVSajZZV3RKMGxiUkZ1X1hSUEREOElHdWc?oc=5",
+      "agency": "천지일보",
+      "period": "",
+      "reg_date": "2026-11-24",
+      "end_date": "",
+      "category": "",
+      "score": 7,
+      "t1": [
+        "AI 신뢰성",
+        "신뢰성 검"
+      ],
+      "t2": [
+        "인증"
+      ],
+      "is_new": false
+    },
+    {
+      "source": "뉴스",
       "title": "KISTI, 공공 AX 의사결정 지원 서비스'AXIS'… AI 신뢰성 인증 획득 - 전자신문",
       "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1EVUNTeXZTdkVfRjJBMUo0a0NTQ2FnVkY5d2k0MVFEZWFxWmszT3pKY1c1TzJlYktHVmJWTHNGSzczdlljTmhjYXdCS0tjdw?oc=5",
       "agency": "전자신문",
@@ -800,21 +800,19 @@
     },
     {
       "source": "뉴스",
-      "title": "다현로앤컨설팅노무법인, 2027년 수출바우처 지원… 노무·ESG 등 6대 서비스 제공 - 파이낸스투데이",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9LeThjY1dlQW45UVpZQmlsY0ltOVpOMzV6eHIyUVE2RklaOUVIWHMtODhzdWloQWtBRWJlMWZXSFJDSDBFZVN5MkU4aXl0QVNHMjRXUFZrRThmQ1E4anNWS3FmeHFzcno2QmNWYg?oc=5",
+      "title": "[최종국 칼럼] 2027년 혁신바우처·수출바우처, 준비된 중소기업에 기회가 온다! - 파이낸스투데이",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBUMDA1TEJ4Q0I4SjNKTS1yT09mbmxrbFBJMEdhY1ZiWlRpd0JFcWN5Rm9oZmx4RHdleExLTDZhdmhVLVJHLV82TlB3dElrZ1BTaUZrSTdNVHVmblFyb2xRelMtOWN4Szg?oc=5",
       "agency": "파이낸스투데이",
       "period": "",
-      "reg_date": "2026-11-17",
+      "reg_date": "2026-11-20",
       "end_date": "",
       "category": "",
-      "score": 5,
+      "score": 6,
       "t1": [
-        "수출바우처"
+        "수출바우처",
+        "혁신바우처"
       ],
-      "t2": [
-        "컨설팅",
-        "ESG"
-      ],
+      "t2": [],
       "is_new": false
     }
   ]

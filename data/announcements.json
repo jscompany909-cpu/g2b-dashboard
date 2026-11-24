@@ -1,24 +1,11 @@
 {
   "kpi": {
-    "new_week": 109,
-    "top7": 6,
-    "total": 318,
-    "deadline": 5
+    "new_week": 111,
+    "top7": 4,
+    "total": 320,
+    "deadline": 3
   },
   "top": [
-    {
-      "id": 376,
-      "institution": "한전KDN(주)",
-      "title": "[재공고]문서암호화(DRM) SW 유지보수",
-      "reg_date": "2026-11-11",
-      "end_date": "2026-11-24",
-      "score": 9,
-      "category_tag": "문서암호화, DRM, 유지보수",
-      "ai_reason": "문서 보안 관련 솔루션으로 이노티움의 문서중앙화 및 DLP 제품군과 직접 연관성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01825226&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 115596041
-    },
     {
       "id": 386,
       "institution": "조달청 서울지방조달청",
@@ -44,19 +31,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01845319&bidPbancOrd=000",
       "source": "G2B",
       "budget": 669711673
-    },
-    {
-      "id": 302,
-      "institution": "조달청",
-      "title": "2027~2028년 망분리 및 스마트워크 환경 유지보수 용역",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-24",
-      "score": 7,
-      "category_tag": "망분리, 스마트워크 환경 유지보수",
-      "ai_reason": "보안 솔루션 구축 및 도입 관련으로 이노티움 제품군 일부 적용 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794132&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 594180000
     },
     {
       "id": 400,
@@ -401,32 +375,6 @@
   ],
   "deadline": [
     {
-      "id": 302,
-      "institution": "조달청",
-      "title": "2027~2028년 망분리 및 스마트워크 환경 유지보수 용역",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-24",
-      "score": 7,
-      "category_tag": "망분리, 스마트워크 환경 유지보수",
-      "ai_reason": "보안 솔루션 구축 및 도입 관련으로 이노티움 제품군 일부 적용 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794132&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 594180000
-    },
-    {
-      "id": 376,
-      "institution": "한전KDN(주)",
-      "title": "[재공고]문서암호화(DRM) SW 유지보수",
-      "reg_date": "2026-11-11",
-      "end_date": "2026-11-24",
-      "score": 9,
-      "category_tag": "문서암호화, DRM, 유지보수",
-      "ai_reason": "문서 보안 관련 솔루션으로 이노티움의 문서중앙화 및 DLP 제품군과 직접 연관성이 높음.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01825226&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 115596041
-    },
-    {
       "id": 386,
       "institution": "조달청 서울지방조달청",
       "title": "기관 문서중앙화 시스템 고도화 용역",
@@ -477,7 +425,7 @@
     },
     {
       "name": "조달청",
-      "cnt": 16
+      "cnt": 17
     },
     {
       "name": "한전KDN(주)",
@@ -534,6 +482,10 @@
       "cnt": 6
     },
     {
+      "tag": "유지관리, 용역",
+      "cnt": 4
+    },
+    {
       "tag": "보안 컨설팅",
       "cnt": 4
     },
@@ -551,10 +503,6 @@
     },
     {
       "tag": "유지보수, 용역",
-      "cnt": 3
-    },
-    {
-      "tag": "유지관리, 용역",
       "cnt": 3
     },
     {
@@ -583,6 +531,32 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01847096&bidPbancOrd=000",
       "source": "G2B",
       "budget": 316676364
+    },
+    {
+      "id": 423,
+      "institution": "경상남도 진주시",
+      "title": "2027년 암호화장비 유지관리 용역",
+      "reg_date": "2026-11-24",
+      "end_date": "2026-11-30",
+      "score": 0,
+      "category_tag": "유지관리, 용역",
+      "ai_reason": "유지관리 용역은 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01853670&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 22647273
+    },
+    {
+      "id": 424,
+      "institution": "조달청",
+      "title": "전기차 전주기 통합환경정보 시스템 구축 감리",
+      "reg_date": "2026-11-24",
+      "end_date": "2026-12-15",
+      "score": 0,
+      "category_tag": "감리",
+      "ai_reason": "감리 사업은 이노티움의 납품·구축 특성과 무관합니다.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01849455&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1000000000
     },
     {
       "id": 414,
@@ -2012,19 +1986,19 @@
     },
     {
       "month": "2026-11",
-      "total": 80,
+      "total": 82,
       "core": 11
     }
   ],
   "insights": {
     "top_category": "클라우드, 통합백업, 랜섬웨어 방어",
     "top_category_count": 1,
-    "urgent_7day": 4,
-    "top_institution": "한전KDN(주)",
+    "urgent_7day": 2,
+    "top_institution": "경기도 이천시",
     "total_budget": 3539523659,
-    "new_this_week": 22,
-    "db_total": 318
+    "new_this_week": 20,
+    "db_total": 320
   },
-  "updated_at": "2026-11-24 16:38",
-  "period": "2026-10-25 ~ 2026-11-24"
+  "updated_at": "2026-11-25 08:08",
+  "period": "2026-10-26 ~ 2026-11-25"
 }
