@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-24 15:24",
-  "news_updated_at": "2026-11-24 15:24",
+  "updated_at": "2026-11-24 15:54",
+  "news_updated_at": "2026-11-24 15:54",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1316,
+    "bizinfo": 1315,
     "nipa": 30
   },
   "kpi": {

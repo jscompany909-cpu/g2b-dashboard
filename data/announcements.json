@@ -1,8 +1,8 @@
 {
   "kpi": {
-    "new_week": 108,
+    "new_week": 109,
     "top7": 6,
-    "total": 317,
+    "total": 318,
     "deadline": 5
   },
   "top": [
@@ -571,6 +571,19 @@
     }
   ],
   "raw": [
+    {
+      "id": 422,
+      "institution": "조달청 대구지방조달청",
+      "title": "2027년 경상북도교육청 정보보호시스템 및 부대장비 유지관리 용역",
+      "reg_date": "2026-11-24",
+      "end_date": "2026-12-08",
+      "score": 0,
+      "category_tag": "유지관리 용역",
+      "ai_reason": "유지관리 서비스는 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01847096&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 316676364
+    },
     {
       "id": 414,
       "institution": "사단법인 보험개발원",
@@ -1999,7 +2012,7 @@
     },
     {
       "month": "2026-11",
-      "total": 79,
+      "total": 80,
       "core": 11
     }
   ],
@@ -2009,9 +2022,9 @@
     "urgent_7day": 4,
     "top_institution": "한전KDN(주)",
     "total_budget": 3539523659,
-    "new_this_week": 21,
-    "db_total": 317
+    "new_this_week": 22,
+    "db_total": 318
   },
-  "updated_at": "2026-11-24 15:19",
+  "updated_at": "2026-11-24 15:50",
   "period": "2026-10-25 ~ 2026-11-24"
 }
