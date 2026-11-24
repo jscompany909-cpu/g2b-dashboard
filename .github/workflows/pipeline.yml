@@ -65,6 +65,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main          # 대기 중 쌓인 최신 DB·코드에서 시작 (실행 생성 시점 커밋이 아니라)
           fetch-depth: 0
 
       - name: Set up Python 3.11
@@ -124,14 +125,22 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add "정부과제_트렌드_창고.db" data/announcements.json data/prespec.json data/vouchers.json
-          if git diff --staged --quiet; then
-            echo "변경사항 없음 — 커밋 스킵"
-            exit 0
-          fi
-          git commit -m "chore: 데이터 업데이트 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
-          git pull --rebase origin main
-          git push origin main
+          FILES=("정부과제_트렌드_창고.db" data/announcements.json data/prespec.json data/vouchers.json)
+          # 대기 중 다른 실행이 데이터를 먼저 push했을 수 있다 → 항상 최신 main 위에 이번 데이터만 올린다
+          # (rebase로 합치면 DB·JSON이 충돌한다. 방금 수집한 데이터가 최신이므로 그대로 덮어쓴다)
+          for i in 1 2 3; do
+            git fetch -q origin main
+            git reset -q origin/main          # HEAD만 최신으로, 작업 트리(새 데이터)는 유지
+            git add "${FILES[@]}"
+            if git diff --staged --quiet; then
+              echo "변경사항 없음 — 커밋 스킵"
+              exit 0
+            fi
+            git commit -q -m "chore: 데이터 업데이트 $(date '+%Y-%m-%d %H:%M')"
+            if git push -q origin HEAD:main; then echo "push 완료"; exit 0; fi
+            echo "push 경합 — 재시도 $i"; sleep 5
+          done
+          exit 1
 
   deploy:
     needs: collect
