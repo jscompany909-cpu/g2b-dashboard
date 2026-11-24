@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: read
-  actions: read      # deploy-pages가 업로드된 아티팩트 메타데이터를 조회 (없으면 간헐적 'Fetching artifact metadata failed')
+  actions: read
   pages: write
   id-token: write
 
@@ -19,10 +19,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # 업로드와 배포를 별도 잡으로 분리 (GitHub 공식 패턴).
+  # 같은 잡에서 업로드 직후 배포하면 아티팩트 목록 반영이 늦어
+  # 'Found 0 artifact(s) / Fetching artifact metadata failed' 가 간헐적으로 발생했다.
+  build:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -37,5 +37,20 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
       - id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: 재시도 대기
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
