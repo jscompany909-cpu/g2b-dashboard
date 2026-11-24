@@ -2,6 +2,6 @@ name            = "g2b-cron"
 main            = "worker.js"
 compatibility_date = "2024-09-23"
 
-# [임시 테스트] 2026-11-24 07:05 UTC(16:05 KST) 1회 호출 확인용 — 확인 후 평일 08:00 KST로 되돌림
+# 평일(월~금) 08:00 KST = UTC 전날(일~목) 23:00 → pipeline.yml workflow_dispatch
 [triggers]
-crons = ["5 7 * * *"]
+crons = ["0 23 * * 0-4"]
