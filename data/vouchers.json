@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-23 16:02",
-  "news_updated_at": "2026-11-23 16:02",
+  "updated_at": "2026-11-24 15:24",
+  "news_updated_at": "2026-11-24 15:24",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1310,
+    "bizinfo": 1316,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
-    "new": 4,
-    "total": 40,
-    "news": 5
+    "new": 5,
+    "total": 41,
+    "news": 3
   },
   "errors": [],
   "items": [
@@ -53,6 +53,25 @@
         "수출"
       ],
       "is_new": false
+    },
+    {
+      "id": "PBLN_000000000128091",
+      "source": "기업마당",
+      "title": "[경남] 창원시 2026년 3차 의료기기 부품ㆍ모듈 국산화 및 기술개발 지원사업 연장 공고(AI 빅데이터 기반 의료바이오 첨단기기 연구제조센터 구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128091",
+      "agency": "산업통상부 · 창원산업진흥원",
+      "period": "2026-11-23 ~ 2026-12-14",
+      "reg_date": "2026-11-24",
+      "end_date": "2026-12-14",
+      "category": "기술",
+      "score": 5,
+      "t1": [],
+      "t2": [
+        "AI",
+        "기술개발",
+        "데이터"
+      ],
+      "is_new": true
     },
     {
       "id": "PBLN_000000000126963",
@@ -781,23 +800,6 @@
     },
     {
       "source": "뉴스",
-      "title": "[최종국 칼럼] 2027년 혁신바우처·수출바우처, 준비된 중소기업에 기회가 온다! - 파이낸스투데이",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xcW9UZVNlWmpaQ2FpZzRuSkVSZkZqVGpXckktSmlfc1VJWktDWWZ4T1BoSXRXSUZGWE9DT3MxTjJaNHRJcFRrbENsdHE5bXJjbWRXNU0zU3U2Z2JyQ3FSZFlma0NKTldPTUJsag?oc=5",
-      "agency": "파이낸스투데이",
-      "period": "",
-      "reg_date": "2026-11-20",
-      "end_date": "",
-      "category": "",
-      "score": 6,
-      "t1": [
-        "수출바우처",
-        "혁신바우처"
-      ],
-      "t2": [],
-      "is_new": false
-    },
-    {
-      "source": "뉴스",
       "title": "다현로앤컨설팅노무법인, 2027년 수출바우처 지원… 노무·ESG 등 6대 서비스 제공 - 파이낸스투데이",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9LeThjY1dlQW45UVpZQmlsY0ltOVpOMzV6eHIyUVE2RklaOUVIWHMtODhzdWloQWtBRWJlMWZXSFJDSDBFZVN5MkU4aXl0QVNHMjRXUFZrRThmQ1E4anNWS3FmeHFzcno2QmNWYg?oc=5",
       "agency": "파이낸스투데이",
@@ -813,22 +815,6 @@
         "컨설팅",
         "ESG"
       ],
-      "is_new": false
-    },
-    {
-      "source": "뉴스",
-      "title": "정부 \"AI 기본법, 기업 혁신 뒷받침하도록 보완\" - 지디넷코리아",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZN0NwQWl5MlBNV1I0ZlhVeFhBbDM3cFhCQkJkaW1CZmxFWWpYQUdfelN5a1FRT3h3S1JmSW5KRjJ2ekxpNzByY3pBb1lER2RrMGdWaXV3?oc=5",
-      "agency": "지디넷코리아",
-      "period": "",
-      "reg_date": "2026-11-16",
-      "end_date": "",
-      "category": "",
-      "score": 3,
-      "t1": [
-        "AI 기본법"
-      ],
-      "t2": [],
       "is_new": false
     }
   ]

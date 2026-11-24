@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-23 15:58",
-  "period": "2026-10-24 ~ 2026-11-23",
+  "updated_at": "2026-11-24 15:20",
+  "period": "2026-10-25 ~ 2026-11-24",
   "deadline_note": "의견마감일은 API 미제공 — 등록일+7일 추정",
   "kpi": {
-    "total": 59,
+    "total": 62,
     "active": 9,
     "tier1": 7
   },
@@ -76,8 +76,8 @@
       "budget": "1.1억",
       "contract": "",
       "reg_date": "2026-11-18",
-      "deadline": "2026-11-25",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [
         "문서중앙화"
       ],
@@ -177,6 +177,25 @@
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00297696"
     },
     {
+      "biz_no": "R26BD00305452",
+      "title": "(긴급)2027년도 정보보안시스템 통합유지보수 용역",
+      "org": "대구광역시",
+      "task": "일반용역",
+      "budget_raw": 820000000,
+      "budget": "8.2억",
+      "contract": "",
+      "reg_date": "2026-11-24",
+      "deadline": "2026-12-01",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템",
+        "정보보안"
+      ],
+      "score": 2,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00305452"
+    },
+    {
       "biz_no": "R26BD00290408",
       "title": "2027년 사이버보안관제센터 위탁운영 용역",
       "org": "해양경찰청",
@@ -242,8 +261,8 @@
       "budget": "3.0억",
       "contract": "",
       "reg_date": "2026-11-20",
-      "deadline": "2026-11-27",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [],
       "t2": [
         "보안시스템",
@@ -454,6 +473,24 @@
       ],
       "score": 1,
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295455"
+    },
+    {
+      "biz_no": "R26BD00305277",
+      "title": "2027~2028년 강원사이버통합보안관제센터 보안관제 용역",
+      "org": "강원특별자치도",
+      "task": "일반용역",
+      "budget_raw": 2174825800,
+      "budget": "21.7억",
+      "contract": "일반경쟁",
+      "reg_date": "2026-11-24",
+      "deadline": "2026-12-01",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00305277"
     },
     {
       "biz_no": "R26BD00304720",
@@ -896,8 +933,8 @@
       "budget": "1.3억",
       "contract": "",
       "reg_date": "2026-11-17",
-      "deadline": "2026-11-24",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [],
       "t2": [
         "정보보안"
@@ -1012,6 +1049,24 @@
       ],
       "score": 1,
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295748"
+    },
+    {
+      "biz_no": "R26BD00305212",
+      "title": "2027년 구정정보망 및 보안시스템 유지보수 용역",
+      "org": "전남광주통합특별시 북구",
+      "task": "일반용역",
+      "budget_raw": 69006000,
+      "budget": "69백만",
+      "contract": "",
+      "reg_date": "2026-11-23",
+      "deadline": "2026-11-30",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안시스템"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00305212"
     },
     {
       "biz_no": "R26BD00296241",
