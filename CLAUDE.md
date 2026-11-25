@@ -92,7 +92,7 @@ python -m http.server 8765              # 대시보드 로컬 확인 → http://
 
 ## Top 후보 기준
 - 입찰: AI 점수 `TOP_SCORE`(기본 7, `g2b_export_json.py`) 이상. 인사이트·월별 추이의 '핵심 후보'도 같은 기준.
-- 바우처: 관련도 5점 이상 — `index.html` `TOP_VOU_MIN`, `g2b_email_notify.py` `VOU_TOP_MIN` 두 곳을 함께 바꾼다. 바우처 점수는 키워드 합산이라 입찰 점수와 척도가 다르다.
+- 바우처: **핵심 키워드(TIER1) 1개 이상 + 관련도 5점 이상** — 흔한 관련 키워드+기관 가산만으로 5점이 되는 공고를 거르기 위함. `index.html` `TOP_VOU_MIN`, `g2b_email_notify.py` `VOU_TOP_MIN` 두 곳을 함께 바꾼다. 바우처 점수는 키워드 합산이라 입찰 점수와 척도가 다르다.
 - 데이터 API 일일 한도: 나라장터 입찰 API는 하루 파이프라인 6회 이상이면 HTTP 429. 테스트 반복 실행 자제.
 
 ## 알려진 미정리 항목

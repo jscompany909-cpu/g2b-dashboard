@@ -41,7 +41,7 @@ SMTP_HOST = os.environ.get("SMTP_HOST") or "smtp.daouoffice.com"
 SMTP_PORT = int(os.environ.get("SMTP_PORT") or "465")
 
 TOP_N = 5
-VOU_TOP_MIN = 5   # Top 후보에 넣을 바우처 관련도 하한 (index.html TOP_VOU_MIN 과 맞출 것)
+VOU_TOP_MIN = 5   # Top 후보 바우처: 핵심 키워드(t1) 1개 이상 + 관련도 하한 (index.html TOP_VOU_MIN 과 맞출 것)
 
 
 def load(name: str) -> dict:
@@ -135,7 +135,7 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
             "sub": f'{n.get("source")} · {n.get("agency")}',
             "badge": badge(int(n.get("score") or 0), hi=9, mid=6, lo=3), "score": int(n.get("score") or 0),
             "budget": "-", "end": n.get("end_date") or ""}
-           for n in vou_items if int(n.get("score") or 0) >= VOU_TOP_MIN])
+           for n in vou_items if int(n.get("score") or 0) >= VOU_TOP_MIN and n.get("t1")])
     top_mix.sort(key=lambda x: (x["end"] or "9999", -x["score"]))
 
     kpis = [
@@ -191,7 +191,7 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
         for n in vou_pick[:TOP_N]]
 
     body = "".join([
-        section(f"🎯 Top 후보 (입찰 {bid_min}점+ · 바우처 {VOU_TOP_MIN}점+, 마감 임박 순)", "#1e3a8a",
+        section(f"🎯 Top 후보 (입찰 {bid_min}점+ · 바우처 핵심 키워드+{VOU_TOP_MIN}점+, 마감 임박 순)", "#1e3a8a",
                 table(["공고명", "점수", "금액", "마감"], top_rows, "Top 후보 없음"),
                 f"{DASHBOARD}#tab=top", f"전체 {len(top_mix)}건"),
         section("📝 사전규격 게시중 (의견 제출 가능)", "#6d28d9",

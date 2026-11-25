@@ -161,7 +161,7 @@ td a:hover { text-decoration: underline; }
 <!-- KPI -->
 <div class="kpi-grid">
   <div class="kpi-card" style="border-color:#ef4444" onclick="goTab('top')">
-    <div class="kpi-label">🎯 TOP 후보 (입찰 7+ · 바우처 5+)</div>
+    <div class="kpi-label">🎯 TOP 후보 (입찰 7+ · 바우처 핵심 5+)</div>
     <div class="kpi-value" style="color:#ef4444"><span id="kpi-top">-</span><span class="kpi-sub"> 건</span></div>
   </div>
   <div class="kpi-card" style="border-color:#f59e0b" onclick="goTab('deadline')">
@@ -244,7 +244,7 @@ td a:hover { text-decoration: underline; }
 
 <!-- Tab: Top -->
 <div id="tab-top" class="tab-content active">
-  <p class="tab-desc">🎯 <strong>Top 후보</strong> — <strong>입찰공고 AI 점수 <span class="top-bid-min">7</span>점 이상</strong>(나라장터·KISA·NIPA·IITP) + <strong>바우처·지원사업 관련도 <span class="top-vou-min">5</span>점 이상</strong>, 마감 미경과만. 기본 정렬은 마감 임박 순.
+  <p class="tab-desc">🎯 <strong>Top 후보</strong> — <strong>입찰공고 AI 점수 <span class="top-bid-min">7</span>점 이상</strong>(나라장터·KISA·NIPA·IITP) + <strong>바우처·지원사업 핵심 키워드 포함 + 관련도 <span class="top-vou-min">5</span>점 이상</strong>, 마감 미경과만. 기본 정렬은 마감 임박 순.
     <span style="color:#6b7280">(점수 체계가 다름: 입찰 0~10점 AI 채점 / 바우처 키워드 합산)</span></p>
   <div class="table-wrap"><table>
     <thead><tr>
@@ -521,7 +521,8 @@ function topRows() {
     end_date: r.end_date && r.end_date !== '-' ? r.end_date : '',
     score: Number(r.score), scoreHtml: badge(r.score), category: r.category_tag, reason: esc(r.ai_reason),
   }));
-  const vous = (_vou.items || []).filter(n => Number(n.score) >= TOP_VOU_MIN).map(n => ({
+  // 바우처: 핵심 키워드(TIER1) 1개 이상 + 관련도 5점 이상 — 흔한 단어+기관 가산만으로 5점이 되는 공고 제외
+  const vous = (_vou.items || []).filter(n => Number(n.score) >= TOP_VOU_MIN && (n.t1 || []).length > 0).map(n => ({
     kind: 'vou', key: n.id, hide: 'vou:' + n.id, source: n.source, org: n.agency,
     title: n.title, url: n.url, budget: 0, reg_date: n.reg_date || '', end_date: n.end_date || '',
     score: Number(n.score), scoreHtml: vouBadge(n.score), category: n.category || '바우처·지원사업',
