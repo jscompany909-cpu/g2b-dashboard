@@ -161,7 +161,7 @@ td a:hover { text-decoration: underline; }
 <!-- KPI -->
 <div class="kpi-grid">
   <div class="kpi-card" style="border-color:#ef4444" onclick="goTab('top')">
-    <div class="kpi-label">🎯 TOP 후보 (5점+)</div>
+    <div class="kpi-label">🎯 TOP 후보 (입찰 7+ · 바우처 5+)</div>
     <div class="kpi-value" style="color:#ef4444"><span id="kpi-top">-</span><span class="kpi-sub"> 건</span></div>
   </div>
   <div class="kpi-card" style="border-color:#f59e0b" onclick="goTab('deadline')">
@@ -244,14 +244,15 @@ td a:hover { text-decoration: underline; }
 
 <!-- Tab: Top -->
 <div id="tab-top" class="tab-content active">
-  <p class="tab-desc">🎯 <strong>Top 후보</strong> — 관련도 5점 이상, 마감 미경과 공고만. 지금 바로 지원 가능한 건.</p>
+  <p class="tab-desc">🎯 <strong>Top 후보</strong> — <strong>입찰공고 AI 점수 <span class="top-bid-min">7</span>점 이상</strong>(나라장터·KISA·NIPA·IITP) + <strong>바우처·지원사업 관련도 <span class="top-vou-min">5</span>점 이상</strong>, 마감 미경과만. 기본 정렬은 마감 임박 순.
+    <span style="color:#6b7280">(점수 체계가 다름: 입찰 0~10점 AI 채점 / 바우처 키워드 합산)</span></p>
   <div class="table-wrap"><table>
     <thead><tr>
       <th>발주기관</th><th>공고명</th><th>금액</th>
-      <th onclick="sortTab('top',2)">공고일 ↕</th>
-      <th onclick="sortTab('top',3)">마감일 ↕</th>
-      <th onclick="sortTab('top',4)">점수 ↕</th>
-      <th>카테고리</th><th>AI 분석</th><th></th>
+      <th onclick="sortTop('reg_date')">공고일 ↕</th>
+      <th onclick="sortTop('end_date')">마감일 ↕</th>
+      <th onclick="sortTop('score')">점수 ↕</th>
+      <th>카테고리</th><th>분석 · 매칭</th><th></th>
     </tr></thead>
     <tbody id="tbody-top"></tbody>
   </table></div>
@@ -416,7 +417,6 @@ async function fetchData() {
     _bidById = new Map();
     ['raw','new','deadline','top'].forEach(k => (d[k] || []).forEach(r => _bidById.set(String(r.id), r)));
     document.getElementById('kpi-new').textContent      = d.kpi.new_week;
-    document.getElementById('kpi-top').textContent      = d.kpi.top7;
     document.getElementById('kpi-total').textContent    = d.kpi.total;
     document.getElementById('kpi-deadline').textContent = d.kpi.deadline;
     document.getElementById('updated-at').textContent   = '입찰 기준: ' + d.updated_at;
@@ -436,7 +436,7 @@ async function fetchData() {
 
 function renderAllBids() {
   if (!_cache.top) return;
-  renderTable('top',      _cache.top);
+  renderTop();
   renderTable('new',      _cache.new);
   renderTable('deadline', _cache.deadline);
   renderTable('raw',      _cache.raw);
@@ -508,18 +508,85 @@ function renderTable(key, rows) {
   }).join('');
 }
 
+// ── Top 후보: 입찰(AI 7점+) + 바우처(관련도 5점+) 통합 ─────────────────
+const TOP_VOU_MIN = 5;
+let _topSort = {key: 'end_date', asc: true};
+function topBidMin() { return Number(_cache.top_score) || 7; }
+
+function topRows() {
+  const bmin = topBidMin();
+  const bids = (_cache.top || []).filter(r => Number(r.score) >= bmin).map(r => ({
+    kind: 'bid', key: r.id, hide: r.id, source: r.source || 'G2B', org: r.institution,
+    title: r.title, url: r.link, budget: r.budget, reg_date: r.reg_date,
+    end_date: r.end_date && r.end_date !== '-' ? r.end_date : '',
+    score: Number(r.score), scoreHtml: badge(r.score), category: r.category_tag, reason: esc(r.ai_reason),
+  }));
+  const vous = (_vou.items || []).filter(n => Number(n.score) >= TOP_VOU_MIN).map(n => ({
+    kind: 'vou', key: n.id, hide: 'vou:' + n.id, source: n.source, org: n.agency,
+    title: n.title, url: n.url, budget: 0, reg_date: n.reg_date || '', end_date: n.end_date || '',
+    score: Number(n.score), scoreHtml: vouBadge(n.score), category: n.category || '바우처·지원사업',
+    reason: vouFlags(n) + kwChips(n),
+  }));
+  return [...bids, ...vous];
+}
+
+function sortTop(key) {
+  _topSort = { key, asc: _topSort.key === key ? !_topSort.asc : key !== 'score' };
+  renderTop();
+}
+
+function renderTop() {
+  const {key, asc} = _topSort;
+  const rows = topRows().filter(r => !_deleted.has(r.hide)).sort((a, b) => {
+    let va = a[key], vb = b[key];
+    if (key === 'end_date' || key === 'reg_date') { va = va || '9999'; vb = vb || '9999'; }  // 미정은 뒤로
+    const c = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb));
+    return (asc ? c : -c) || (b.score - a.score);
+  });
+  document.querySelectorAll('.top-bid-min').forEach(e => e.textContent = topBidMin());
+  document.querySelectorAll('.top-vou-min').forEach(e => e.textContent = TOP_VOU_MIN);
+  document.getElementById('cnt-top').textContent = rows.length;
+  document.getElementById('kpi-top').textContent = rows.length;
+  const tbody = document.getElementById('tbody-top');
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:28px;color:#9ca3af">조건에 맞는 공고 없음</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(r => `<tr>
+      <td>${srcBadge(r.source)}<span style="font-size:12px">${esc(String(r.org || '').slice(0, 24))}</span></td>
+      <td>${titleCell(r.kind, r.key, r.title, r.url)}</td>
+      <td style="text-align:right;white-space:nowrap">${r.budget > 0
+        ? `<span style="color:#1e40af;font-weight:700">${formatBudget(r.budget)}</span>`
+        : '<span style="color:#d1d5db;font-size:11px">-</span>'}</td>
+      <td style="white-space:nowrap">${esc(r.reg_date || '-')}</td>
+      <td class="deadline-cell">${r.end_date ? esc(r.end_date) : '<span style="color:#9ca3af;font-weight:400;font-size:11px">미정</span>'}</td>
+      <td style="text-align:center">${r.scoreHtml}</td>
+      <td style="white-space:nowrap;font-size:11px">${esc(r.category)}</td>
+      <td class="reason-cell">${r.reason}</td>
+      <td><button onclick="deleteItem(${esc(JSON.stringify(r.hide))})" style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;cursor:pointer;font-size:11px;white-space:nowrap">숨김</button></td>
+    </tr>`).join('');
+}
+
 function loadDeleted() {
-  const deleted = [..._bidById.values()].filter(r => _deleted.has(r.id));
+  const btn = h => `<td><button onclick="restoreItem(${esc(JSON.stringify(h))})" style="padding:3px 10px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:5px;cursor:pointer;font-size:11px">복구</button></td>`;
+  const bids = [..._bidById.values()].filter(r => _deleted.has(r.id));
+  const vous = (_vou.items || []).filter(n => _deleted.has('vou:' + n.id));
+  const total = bids.length + vous.length;
   const cnt = document.getElementById('cnt-deleted');
-  if (cnt) cnt.textContent = deleted.length || '0';
+  if (cnt) cnt.textContent = total || '0';
   const tbody = document.getElementById('tbody-deleted');
   if (!tbody) return;
-  if (!deleted.length) {
+  if (!total) {
     tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:28px;color:#9ca3af">숨긴 항목 없음</td></tr>`;
     return;
   }
-  tbody.innerHTML = deleted.map(r => `<tr style="opacity:.7">${bidRow(r,
-    `<td><button onclick="restoreItem(${Number(r.id)})" style="padding:3px 10px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:5px;cursor:pointer;font-size:11px">복구</button></td>`)}</tr>`).join('');
+  tbody.innerHTML = bids.map(r => `<tr style="opacity:.7">${bidRow(r, btn(r.id))}</tr>`).join('')
+    + vous.map(n => `<tr style="opacity:.7">
+        <td>${srcBadge(n.source)}${esc(String(n.agency || '').slice(0, 24))}</td>
+        <td>${titleCell('vou', n.id, n.title, n.url)}</td><td>-</td>
+        <td>${esc(n.reg_date || '-')}</td><td class="deadline-cell">${esc(n.end_date || '미정')}</td>
+        <td style="text-align:center">${vouBadge(n.score)}</td><td>${esc(n.category || '')}</td>
+        <td class="reason-cell">${kwChips(n)}</td>${btn('vou:' + n.id)}</tr>`).join('');
 }
 
 function sortTab(key, idx) {
@@ -744,7 +811,7 @@ function renderInsights(d) {
   const items = [
     { color:'#ef4444', icon:'🔥',
       title:`이번 주 핵심 카테고리: ${ins.top_category}`,
-      body:`5점+ 핵심 후보 중 ${ins.top_category_count}건. 관련 솔루션 영업 우선순위 검토 필요.` },
+      body:`${topBidMin()}점+ 핵심 후보 중 ${ins.top_category_count}건. 관련 솔루션 영업 우선순위 검토 필요.` },
     { color:'#f59e0b', icon:'⏰',
       title:`7일 내 마감 핵심 공고 ${ins.urgent_7day}건`,
       body:'긴급 영업 액션 필요. 마감임박 탭에서 상세 확인 후 사업개발팀 즉시 공유.' },
@@ -756,7 +823,7 @@ function renderInsights(d) {
       body:'이번 주 가장 활발하게 관련 공고를 게시한 기관. 담당자 네트워크 점검 권장.' },
     { color:'#f59e0b', icon:'💰',
       title:`핵심 후보 총 예산: ${fmtBudget(ins.total_budget)}`,
-      body:'최근 30일 핵심 후보(5점+) 추정가 합산. 영업 자원 배분 우선순위 자료로 활용.' },
+      body:`최근 30일 입찰 핵심 후보(${topBidMin()}점+) 추정가 합산. 영업 자원 배분 우선순위 자료로 활용.` },
     { color:'#10b981', icon:'📊',
       title:`DB 누적 ${(ins.db_total||0).toLocaleString()}건 / 이번 주 신규 ${ins.new_this_week}건`,
       body:'데이터 지속 수집 중. 누적될수록 트렌드 분석 정확도 향상 예상.' },
@@ -805,7 +872,7 @@ function renderCharts(d) {
           { label:'전체 신규', data: d.monthly_trend.map(r=>r.total),
             borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,.1)',
             tension:.3, fill:true, pointRadius:4 },
-          { label:'핵심 후보 (5점+)', data: d.monthly_trend.map(r=>r.core),
+          { label:`핵심 후보 (${topBidMin()}점+)`, data: d.monthly_trend.map(r=>r.core),
             borderColor:'#ef4444', backgroundColor:'rgba(239,68,68,.1)',
             tension:.3, fill:true, pointRadius:4 }
         ]

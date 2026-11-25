@@ -5,10 +5,10 @@ name: G2B 통합 파이프라인 (수집 → 대시보드 → 메일)
 # 3) 대시보드 요약 메일 발송 (기본: 월요일만, 저장소 변수 MAIL_WEEKDAYS 로 변경 가능)
 
 on:
-  # 정시 실행은 Cloudflare Worker(cloudflare-cron/, 평일 08:00 KST)가 workflow_dispatch로 호출한다.
+  # 정시 실행은 Cloudflare Worker(cloudflare-cron/, 매일 08:00 KST)가 workflow_dispatch로 호출한다.
   # GitHub 예약은 수 시간 지연·누락이 잦아 백업으로만 둔다 — 그날 이미 실행됐으면 gate가 건너뛴다.
   schedule:
-    - cron: '0 23 * * 0-4'   # 평일 08:00 KST (UTC 전날 23:00)
+    - cron: '0 23 * * *'     # 매일 08:00 KST (UTC 전날 23:00) — 수집·대시보드는 매일, 메일은 MAIL_WEEKDAYS(기본 월요일)
   workflow_dispatch:
     inputs:
       send_mail:

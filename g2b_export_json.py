@@ -26,6 +26,7 @@ REDMINE_PASS    = os.environ.get("REDMINE_PASS", "")
 REDMINE_AUTH    = (REDMINE_USER, REDMINE_PASS)
 REDMINE_PROJECT = os.environ.get("REDMINE_PROJECT", "g2b_project")
 TRACKER_ID      = 2   # 새기능
+TOP_SCORE       = 7   # 대시보드·메일 Top 후보/핵심 후보 기준 (AI 점수 0~10)
 
 
 def _migrate_db():
@@ -73,7 +74,7 @@ def build_json() -> dict:
                 (thirty_ago,)
             ),
             "top7": scalar(
-                f"SELECT COUNT(*) FROM announcements WHERE score >= 5 AND reg_date >= ? "
+                f"SELECT COUNT(*) FROM announcements WHERE score >= {TOP_SCORE} AND reg_date >= ? "
                 f"AND (end_date >= ? OR end_date = '-') AND {NOT_DELETED}",
                 (thirty_ago, today)
             ),
@@ -88,7 +89,7 @@ def build_json() -> dict:
         },
         "top": rows(
             f"SELECT {SELECT_COLS} FROM announcements "
-            f"WHERE score>=5 AND reg_date>=? "
+            f"WHERE score>={TOP_SCORE} AND reg_date>=? "
             f"AND (end_date >= ? OR end_date = '-') AND {NOT_DELETED} ORDER BY score DESC",
             (thirty_ago, today)
         ),
@@ -121,7 +122,7 @@ def build_json() -> dict:
         "monthly_trend": rows(
             f"SELECT strftime('%Y-%m', reg_date) AS month, "
             f"COUNT(*) AS total, "
-            f"SUM(CASE WHEN score>=5 THEN 1 ELSE 0 END) AS core "
+            f"SUM(CASE WHEN score>={TOP_SCORE} THEN 1 ELSE 0 END) AS core "
             f"FROM announcements WHERE reg_date>=? AND {NOT_DELETED} "
             f"GROUP BY month ORDER BY month",
             (six_mo_ago,)
@@ -131,17 +132,17 @@ def build_json() -> dict:
         "insights": {
             "top_category":       (rows(
                 f"SELECT category_tag, COUNT(*) AS cnt FROM announcements "
-                f"WHERE score>=5 AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
+                f"WHERE score>={TOP_SCORE} AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
                 f"GROUP BY category_tag ORDER BY cnt DESC LIMIT 1", (week_ago,)) or [{}]
             )[0].get("category_tag", "없음"),
             "top_category_count": (rows(
                 f"SELECT category_tag, COUNT(*) AS cnt FROM announcements "
-                f"WHERE score>=5 AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
+                f"WHERE score>={TOP_SCORE} AND reg_date>=? AND category_tag NOT IN ('오류','') AND {NOT_DELETED} "
                 f"GROUP BY category_tag ORDER BY cnt DESC LIMIT 1", (week_ago,)) or [{}]
             )[0].get("cnt", 0),
             "urgent_7day": scalar(
                 f"SELECT COUNT(*) FROM announcements "
-                f"WHERE end_date BETWEEN ? AND ? AND end_date!='-' AND score>=5 AND {NOT_DELETED}",
+                f"WHERE end_date BETWEEN ? AND ? AND end_date!='-' AND score>={TOP_SCORE} AND {NOT_DELETED}",
                 (today, d7)
             ),
             "top_institution": (rows(
@@ -151,7 +152,7 @@ def build_json() -> dict:
             )[0].get("institution", "없음"),
             "total_budget": scalar(
                 f"SELECT SUM(COALESCE(budget,0)) FROM announcements "
-                f"WHERE score>=5 AND reg_date>=? AND {NOT_DELETED}", (thirty_ago,)
+                f"WHERE score>={TOP_SCORE} AND reg_date>=? AND {NOT_DELETED}", (thirty_ago,)
             ) or 0,
             "new_this_week": scalar(
                 f"SELECT COUNT(*) FROM announcements WHERE reg_date>=? AND {NOT_DELETED}", (week_ago,)
@@ -159,6 +160,7 @@ def build_json() -> dict:
             "db_total": scalar(f"SELECT COUNT(*) FROM announcements WHERE {NOT_DELETED}"),
         },
 
+        "top_score": TOP_SCORE,
         "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "period": f"{thirty_ago} ~ {today}",
     }
@@ -298,7 +300,7 @@ def main():
     print(f"   기간      : {data['period']}")
     print(f"   전체 누적 : {kpi['total']}건")
     print(f"   최근 30일 : {kpi['new_week']}건")
-    print(f"   Top 후보  : {kpi['top7']}건 (5점+)")
+    print(f"   Top 후보  : {kpi['top7']}건 ({TOP_SCORE}점+)")
     print(f"   마감임박  : {kpi['deadline']}건 (14일 내)")
 
     ci_mode = "--ci" in sys.argv          # GitHub Actions: git·Redmine 모두 건너뜀 (workflow가 처리)

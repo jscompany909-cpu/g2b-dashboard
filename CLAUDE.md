@@ -11,7 +11,7 @@ GitHub Pages 대시보드에 올리고, 대시보드 요약 메일을 보낸다.
 
 | 파일 | 역할 |
 |---|---|
-| `.github/workflows/pipeline.yml` | 평일 08:00 KST(cron `0 23 * * 0-4`) 수집 → 배포 → 메일. `TZ=Asia/Seoul` |
+| `.github/workflows/pipeline.yml` | 매일 08:00 KST 수집 → 배포, 메일은 주 1회(월). 정시 호출은 Cloudflare Worker, GitHub cron `0 23 * * *`은 백업(gate가 중복 실행 방지). `TZ=Asia/Seoul` |
 | `g2b_harness.py` → `g2b_bid_collector.py`, `scrapers.py` | 입찰공고 수집(나라장터 API + KISA·NIPA·IITP) + Azure OpenAI 채점 → SQLite DB |
 | `g2b_pdf_budget.py` | 공고 PDF에서 사업금액 추출 (실패해도 계속) |
 | `g2b_export_json.py --ci` | DB → `data/announcements.json` |
@@ -84,6 +84,16 @@ python -m http.server 8765              # 대시보드 로컬 확인 → http://
 - CAPTCHA·로그인 우회, 프록시 우회 코드를 작성하지 않는다. 공개 페이지가 막히면 멈추고 보고한다.
 - `data/*.json` 스키마를 바꾸면 `index.html`과 `g2b_email_notify.py`를 함께 고친다.
 
+## 정시 실행 (Cloudflare Worker)
+- `cloudflare-cron/` Worker `g2b-cron`이 매일 08:00 KST(`0 23 * * *` UTC)에 `pipeline.yml`을 workflow_dispatch로 호출한다. `cloudflare-cron/**`을 push하면 `deploy-cf-worker.yml`이 자동 배포한다.
+- GitHub 자체 cron은 실측 7시간 이상 지연·누락 → 백업으로만 두고, `gate` 잡이 그날(KST) dispatch 실행이 성공/진행 중이면 건너뛴다.
+- Cloudflare cron에서 요일을 지정할 때는 이름(`SUN-THU`)으로 쓴다. 숫자 `0-4`는 거부된다(`invalid cron string`).
+- Worker의 GitHub 토큰은 레포 시크릿 `PERSONAL_ACCESS_TOKEN`을 배포 시 주입한다. 만료되면 Worker 호출이 401로 실패하고 백업 cron만 늦게 돈다.
+
+## Top 후보 기준
+- 입찰: AI 점수 `TOP_SCORE`(기본 7, `g2b_export_json.py`) 이상. 인사이트·월별 추이의 '핵심 후보'도 같은 기준.
+- 바우처: 관련도 5점 이상 — `index.html` `TOP_VOU_MIN`, `g2b_email_notify.py` `VOU_TOP_MIN` 두 곳을 함께 바꾼다. 바우처 점수는 키워드 합산이라 입찰 점수와 척도가 다르다.
+- 데이터 API 일일 한도: 나라장터 입찰 API는 하루 파이프라인 6회 이상이면 HTTP 429. 테스트 반복 실행 자제.
+
 ## 알려진 미정리 항목
-- Cloudflare Worker `g2b-cron`(`cloudflare-cron/`)은 삭제된 `notify.yml`을 호출해 실패한다. Cloudflare 대시보드에서 끄거나, 정시 실행이 필요하면 `pipeline.yml`로 연결한다 (GitHub cron은 최대 수 시간 지연될 수 있음).
 - `G2B_설계서.md`는 통합 전 설계 문서다.

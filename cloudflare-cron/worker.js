@@ -1,6 +1,6 @@
 /**
  * G2B 통합 파이프라인 정시 트리거 Worker
- * 평일 08:00 KST 정각에 GitHub Actions pipeline.yml(수집 → 대시보드 → 메일)을 workflow_dispatch로 실행합니다.
+ * 매일 08:00 KST 정각에 GitHub Actions pipeline.yml(수집 → 대시보드 → 메일)을 workflow_dispatch로 실행합니다.
  * GitHub 자체 예약(schedule)은 수 시간 지연·누락이 잦아 백업으로만 둡니다.
  *
  * 환경변수 (Cloudflare Dashboard → Settings → Variables → Secrets):
@@ -38,7 +38,7 @@ export default {
     }
 
     return new Response(
-      JSON.stringify({ status: 'G2B Cron Worker 동작 중', workflow: WORKFLOW, schedule: '평일 08:00 KST' }),
+      JSON.stringify({ status: 'G2B Cron Worker 동작 중', workflow: WORKFLOW, schedule: '매일 08:00 KST' }),
       { headers: { 'Content-Type': 'application/json' } }
     );
   },

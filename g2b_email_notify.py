@@ -41,6 +41,7 @@ SMTP_HOST = os.environ.get("SMTP_HOST") or "smtp.daouoffice.com"
 SMTP_PORT = int(os.environ.get("SMTP_PORT") or "465")
 
 TOP_N = 5
+VOU_TOP_MIN = 5   # Top 후보에 넣을 바우처 관련도 하한 (index.html TOP_VOU_MIN 과 맞출 것)
 
 
 def load(name: str) -> dict:
@@ -121,8 +122,24 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
     vou_pick = sorted(vou_items, key=lambda n: (not n.get("t1"), not n.get("is_new"),
                                                 -n.get("score", 0), n.get("end_date") or "9999"))
 
+    # Top 후보 = 입찰 AI 점수 7점+ (나라장터·KISA·NIPA·IITP) + 바우처 관련도 5점+, 마감 임박 순
+    bid_min = int(bids.get("top_score") or 7)
+    top_mix = (
+        [{"kind": "bid", "key": r["id"], "title": r.get("title"),
+          "sub": (r.get("source") or "G2B") + " · " + (r.get("institution") or ""),
+          "badge": badge(int(r.get("score") or 0)), "score": int(r.get("score") or 0),
+          "budget": fmt_budget(r.get("budget")),
+          "end": r.get("end_date") if r.get("end_date") not in (None, "", "-") else ""}
+         for r in top if int(r.get("score") or 0) >= bid_min]
+        + [{"kind": "vou", "key": n["id"], "title": n.get("title"),
+            "sub": f'{n.get("source")} · {n.get("agency")}',
+            "badge": badge(int(n.get("score") or 0), hi=9, mid=6, lo=3), "score": int(n.get("score") or 0),
+            "budget": "-", "end": n.get("end_date") or ""}
+           for n in vou_items if int(n.get("score") or 0) >= VOU_TOP_MIN])
+    top_mix.sort(key=lambda x: (x["end"] or "9999", -x["score"]))
+
     kpis = [
-        ("#ef4444", len(top), "입찰 Top 후보", "top"),
+        ("#ef4444", len(top_mix), "Top 후보", "top"),
         ("#f59e0b", len(urgent), "14일 내 마감", "deadline"),
         ("#7c3aed", len(pre_active), "사전규격 게시중", "prespec"),
         ("#d97706", len(vou_hot), "바우처 핵심", "voucher"),
@@ -136,11 +153,11 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
         for c, v, label, tab in kpis)
 
     top_rows = [
-        f'<tr>{title_cell("bid", r["id"], r.get("title"), (r.get("source") or "G2B") + " · " + (r.get("institution") or ""))}'
-        f'<td style="{TD};text-align:center">{badge(int(r.get("score") or 0))}</td>'
-        f'<td style="{TD};text-align:right;white-space:nowrap;color:#1e40af;font-weight:700">{fmt_budget(r.get("budget"))}</td>'
-        f'<td style="{TD};white-space:nowrap;color:#e53e3e;font-weight:600">{esc(r.get("end_date") or "-")}</td></tr>'
-        for r in top[:TOP_N]]
+        f'<tr>{title_cell(x["kind"], x["key"], x["title"], ("바우처 · " if x["kind"] == "vou" else "입찰 · ") + x["sub"])}'
+        f'<td style="{TD};text-align:center">{x["badge"]}</td>'
+        f'<td style="{TD};text-align:right;white-space:nowrap;color:#1e40af;font-weight:700">{esc(x["budget"])}</td>'
+        f'<td style="{TD};white-space:nowrap;color:#e53e3e;font-weight:600">{esc(x["end"] or "미정")}</td></tr>'
+        for x in top_mix[:TOP_N * 2]]
 
     pre_rows = [
         f'<tr>{title_cell("pre", n["biz_no"], n.get("title"), n.get("org") or "")}'
@@ -174,9 +191,9 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
         for n in vou_pick[:TOP_N]]
 
     body = "".join([
-        section("🎯 입찰 Top 후보 (5점+)", "#1e3a8a",
+        section(f"🎯 Top 후보 (입찰 {bid_min}점+ · 바우처 {VOU_TOP_MIN}점+, 마감 임박 순)", "#1e3a8a",
                 table(["공고명", "점수", "금액", "마감"], top_rows, "Top 후보 없음"),
-                f"{DASHBOARD}#tab=top", f"전체 {len(top)}건"),
+                f"{DASHBOARD}#tab=top", f"전체 {len(top_mix)}건"),
         section("📝 사전규격 게시중 (의견 제출 가능)", "#6d28d9",
                 table(["사업명", "관련도", "예산", "의견마감(추정)"], pre_rows, "게시중 사전규격 없음"),
                 f"{DASHBOARD}#tab=prespec", f"전체 {len(pre_active)}건"),
@@ -216,13 +233,13 @@ def build(bids: dict, pre: dict, vou: dict | None = None) -> tuple[str, str]:
   {body}
   <tr><td style="padding:26px 28px;text-align:center">
     <a href="{esc(DASHBOARD)}" style="display:inline-block;background:#1e3a8a;color:#fff;padding:13px 34px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px">📊 대시보드에서 전체 보기</a>
-    <p style="margin:12px 0 0;font-size:11px;color:#9ca3af">공고명을 누르면 대시보드 상세 화면이 열리고, 거기서 원문(나라장터 등)으로 이동할 수 있습니다.<br>
+    <p style="margin:12px 0 0;font-size:11px;color:#9ca3af">대시보드는 매일 08:00(KST)에 갱신되고, 이 요약 메일은 주 1회(월요일) 발송됩니다.<br>공고명을 누르면 대시보드 상세 화면이 열리고, 거기서 원문(나라장터 등)으로 이동할 수 있습니다.<br>
     데이터 기준: 입찰 {esc(bids.get("updated_at", "-"))} · 사전규격 {esc(pre.get("updated_at", "-"))} · 바우처 {esc(vou.get("updated_at", "-"))} · 사전규격 의견마감일은 등록일+7일 추정</p>
   </td></tr>
 </table></td></tr></table>
 </body></html>"""
 
-    subject = (f"[G2B 입찰 요약] {now:%m/%d} — Top {len(top)} · 사전규격 게시중 {len(pre_active)}"
+    subject = (f"[G2B 주간 요약] {now:%m/%d} — Top {len(top_mix)} · 사전규격 게시중 {len(pre_active)}"
                f" · 마감임박 {len(urgent)} · 바우처 핵심 {len(vou_hot)}")
     return subject, doc
 
