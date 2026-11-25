@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-25 14:42",
-  "news_updated_at": "2026-11-25 14:42",
+  "updated_at": "2026-11-26 08:14",
+  "news_updated_at": "2026-11-26 08:14",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1327,
+    "bizinfo": 1311,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
-    "new": 5,
+    "new": 4,
     "total": 40,
-    "news": 4
+    "news": 5
   },
   "errors": [],
   "items": [
@@ -362,7 +362,7 @@
         "정보보호"
       ],
       "t2": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "PBLN_000000000127846",
@@ -744,6 +744,22 @@
     }
   ],
   "news": [
+    {
+      "source": "뉴스",
+      "title": "충남 정보보호 혁신 컨퍼런스 2026, 12월 4일 아산에서 개최 - 위런치",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LWnJ1SS1rQmM4VXg4d2pvMzdwcDFTSXJ4S2ZfU1VJLUlaQ3dKN1lncENyM3FjVEpmVzJ2M2FkaDNOeDRxRnUzZUNkSjJyaTc3QnBydWxHbU1Eak5YOXFvNTNzV3M?oc=5",
+      "agency": "위런치",
+      "period": "",
+      "reg_date": "2026-11-25",
+      "end_date": "",
+      "category": "",
+      "score": 3,
+      "t1": [
+        "정보보호"
+      ],
+      "t2": [],
+      "is_new": false
+    },
     {
       "source": "뉴스",
       "title": "전주 도심융합특구 후보지 선정… AI 신뢰성 검·인증 거점 추진 - 천지일보",
