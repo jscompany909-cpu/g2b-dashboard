@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-26 08:14",
-  "news_updated_at": "2026-11-26 08:14",
+  "updated_at": "2026-11-27 08:15",
+  "news_updated_at": "2026-11-27 08:15",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1311,
+    "bizinfo": 1318,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
-    "new": 4,
+    "new": 2,
     "total": 40,
-    "news": 5
+    "news": 4
   },
   "errors": [],
   "items": [
@@ -345,7 +345,7 @@
         "AI",
         "실증"
       ],
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "PBLN_000000000127988",
@@ -601,7 +601,7 @@
         "AI",
         "데이터"
       ],
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "PBLN_000000000127847",
@@ -810,23 +810,6 @@
       "score": 3,
       "t1": [
         "수출바우처"
-      ],
-      "t2": [],
-      "is_new": false
-    },
-    {
-      "source": "뉴스",
-      "title": "[최종국 칼럼] 2027년 혁신바우처·수출바우처, 준비된 중소기업에 기회가 온다! - 파이낸스투데이",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBUMDA1TEJ4Q0I4SjNKTS1yT09mbmxrbFBJMEdhY1ZiWlRpd0JFcWN5Rm9oZmx4RHdleExLTDZhdmhVLVJHLV82TlB3dElrZ1BTaUZrSTdNVHVmblFyb2xRelMtOWN4Szg?oc=5",
-      "agency": "파이낸스투데이",
-      "period": "",
-      "reg_date": "2026-11-20",
-      "end_date": "",
-      "category": "",
-      "score": 6,
-      "t1": [
-        "수출바우처",
-        "혁신바우처"
       ],
       "t2": [],
       "is_new": false

@@ -1,24 +1,11 @@
 {
   "kpi": {
-    "new_week": 108,
-    "top7": 3,
-    "total": 324,
-    "deadline": 4
+    "new_week": 103,
+    "top7": 2,
+    "total": 325,
+    "deadline": 3
   },
   "top": [
-    {
-      "id": 386,
-      "institution": "조달청 서울지방조달청",
-      "title": "기관 문서중앙화 시스템 고도화 용역",
-      "reg_date": "2026-11-13",
-      "end_date": "2026-11-26",
-      "score": 9,
-      "category_tag": "문서중앙화 구축",
-      "ai_reason": "문서중앙화 시스템 고도화는 이노티움의 핵심 제품군에 직접 해당.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01803932&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 136970000
-    },
     {
       "id": 411,
       "institution": "경기도 이천시",
@@ -150,19 +137,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01845319&bidPbancOrd=000",
       "source": "G2B",
       "budget": 669711673
-    },
-    {
-      "id": 302,
-      "institution": "조달청",
-      "title": "2027~2028년 망분리 및 스마트워크 환경 유지보수 용역",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-24",
-      "score": 7,
-      "category_tag": "망분리, 스마트워크 환경 유지보수",
-      "ai_reason": "보안 솔루션 구축 및 도입 관련으로 이노티움 제품군 일부 적용 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794132&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 594180000
     },
     {
       "id": 314,
@@ -375,19 +349,6 @@
   ],
   "deadline": [
     {
-      "id": 386,
-      "institution": "조달청 서울지방조달청",
-      "title": "기관 문서중앙화 시스템 고도화 용역",
-      "reg_date": "2026-11-13",
-      "end_date": "2026-11-26",
-      "score": 9,
-      "category_tag": "문서중앙화 구축",
-      "ai_reason": "문서중앙화 시스템 고도화는 이노티움의 핵심 제품군에 직접 해당.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01803932&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 136970000
-    },
-    {
       "id": 391,
       "institution": "한전KDN(주)",
       "title": "2027년 전력연구원 디스크(NetApp) 및 백업 및 주변설비 유지보수",
@@ -532,6 +493,19 @@
     }
   ],
   "raw": [
+    {
+      "id": 429,
+      "institution": "조달청 경남지방조달청",
+      "title": "2027년 정보보호시스템 유지보수 및 보안관제 운영 용역",
+      "reg_date": "2026-11-26",
+      "end_date": "2026-12-08",
+      "score": 0,
+      "category_tag": "보안 관제, 유지보수",
+      "ai_reason": "보안 관제 및 유지보수는 이노티움의 납품·구축 사업과 무관함.",
+      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01858628&bidPbancOrd=000",
+      "source": "G2B",
+      "budget": 1112910000
+    },
     {
       "id": 428,
       "institution": "전남광주통합특별시 담양군",
@@ -1857,84 +1831,6 @@
       "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01796333&bidPbancOrd=000",
       "source": "G2B",
       "budget": 151927273
-    },
-    {
-      "id": 302,
-      "institution": "조달청",
-      "title": "2027~2028년 망분리 및 스마트워크 환경 유지보수 용역",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-24",
-      "score": 7,
-      "category_tag": "망분리, 스마트워크 환경 유지보수",
-      "ai_reason": "보안 솔루션 구축 및 도입 관련으로 이노티움 제품군 일부 적용 가능.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794132&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 594180000
-    },
-    {
-      "id": 301,
-      "institution": "관세청",
-      "title": "2026년 여행자 통관분야 동시구현시스템 구축 사업 개인정보영향평가 계약",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-09",
-      "score": 0,
-      "category_tag": "개인정보영향평가, 컨설팅",
-      "ai_reason": "개인정보영향평가는 컨설팅·감사 영역으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01793120&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 67067000
-    },
-    {
-      "id": 303,
-      "institution": "조달청 대구지방조달청",
-      "title": "빈집정비통합지원시스템 개인정보 활용체계 구축 및 고도화",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-13",
-      "score": 0,
-      "category_tag": "개인정보영향평가, 컨설팅",
-      "ai_reason": "개인정보 활용체계 구축은 컨설팅 및 평가 중심으로 이노티움의 납품 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01793295&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 245454545
-    },
-    {
-      "id": 304,
-      "institution": "국민건강보험공단",
-      "title": "2026년 노후 인프라 교체 및 정보시스템 고도화 사업 개인정보 영향평가",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-09",
-      "score": 0,
-      "category_tag": "개인정보영향평가, PIA",
-      "ai_reason": "개인정보 영향평가는 컨설팅/감사/진단 전용으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794775&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 36363636
-    },
-    {
-      "id": 305,
-      "institution": "국민건강보험공단",
-      "title": "국가금연지원서비스 간 정보연계 자동화 사업 개인정보 영향평가(입찰참가자격 확대)",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-09",
-      "score": 0,
-      "category_tag": "개인정보영향평가, PIA",
-      "ai_reason": "개인정보 영향평가는 컨설팅/감리 전용으로 이노티움 사업과 무관함.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794815&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 36363636
-    },
-    {
-      "id": 309,
-      "institution": "한국자산관리공사",
-      "title": "기업지원 통합 전산시스템 구축 개인정보영향평가 용역",
-      "reg_date": "2026-10-27",
-      "end_date": "2026-11-04",
-      "score": 0,
-      "category_tag": "개인정보영향평가, 용역",
-      "ai_reason": "이노티움은 납품·구축 사업을 전문으로 하며, 개인정보영향평가는 컨설팅·감사 영역에 해당합니다.",
-      "link": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794434&bidPbancOrd=000",
-      "source": "G2B",
-      "budget": 45000000
     }
   ],
   "monthly_trend": [
@@ -1960,20 +1856,20 @@
     },
     {
       "month": "2026-11",
-      "total": 86,
+      "total": 87,
       "core": 9
     }
   ],
   "insights": {
     "top_category": "클라우드, 통합백업, 랜섬웨어 방어",
     "top_category_count": 1,
-    "urgent_7day": 2,
+    "urgent_7day": 1,
     "top_institution": "경기도 이천시",
-    "total_budget": 3463143659,
-    "new_this_week": 19,
-    "db_total": 324
+    "total_budget": 2868963659,
+    "new_this_week": 18,
+    "db_total": 325
   },
   "top_score": 7,
-  "updated_at": "2026-11-26 08:10",
-  "period": "2026-10-27 ~ 2026-11-26"
+  "updated_at": "2026-11-27 08:10",
+  "period": "2026-10-28 ~ 2026-11-27"
 }
