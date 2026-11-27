@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-27 08:11",
-  "period": "2026-10-28 ~ 2026-11-27",
+  "updated_at": "2026-11-28 08:11",
+  "period": "2026-10-29 ~ 2026-11-28",
   "deadline_note": "의견마감일은 API 미제공 — 등록일+7일 추정",
   "kpi": {
-    "total": 58,
+    "total": 56,
     "active": 8,
-    "tier1": 5
+    "tier1": 4
   },
   "errors": [],
   "items": [
@@ -84,24 +84,6 @@
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00293953"
     },
     {
-      "biz_no": "R26BD00291614",
-      "title": "고정밀 산업용 DLP 3D 프린터 구매",
-      "org": "국립군산대학교 산학협력단",
-      "task": "물품",
-      "budget_raw": 99000000,
-      "budget": "99백만",
-      "contract": "",
-      "reg_date": "2026-10-28",
-      "deadline": "마감",
-      "status": "마감",
-      "t1": [
-        "DLP"
-      ],
-      "t2": [],
-      "score": 3,
-      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291614"
-    },
-    {
       "biz_no": "R26BD00292318",
       "title": "인터넷 망분리(SBC) 구축 사업",
       "org": "전북대학교병원",
@@ -147,8 +129,8 @@
       "budget": "8.2억",
       "contract": "",
       "reg_date": "2026-11-24",
-      "deadline": "2026-12-01",
-      "status": "게시중",
+      "deadline": "마감",
+      "status": "마감",
       "t1": [],
       "t2": [
         "보안시스템",
@@ -401,6 +383,24 @@
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00299537"
     },
     {
+      "biz_no": "R26BD00307812",
+      "title": "2027~2028 ITS 보안관제 및 유지관리 용역",
+      "org": "한국도로공사",
+      "task": "기술용역",
+      "budget_raw": 2516115000,
+      "budget": "25.2억",
+      "contract": "",
+      "reg_date": "2026-11-27",
+      "deadline": "2026-12-04",
+      "status": "게시중",
+      "t1": [],
+      "t2": [
+        "보안관제"
+      ],
+      "score": 1,
+      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00307812"
+    },
+    {
       "biz_no": "R26BD00297408",
       "title": "2027~2028년 보안관제 위탁운영",
       "org": "식품의약품안전처",
@@ -597,42 +597,6 @@
       ],
       "score": 1,
       "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00295473"
-    },
-    {
-      "biz_no": "R26BD00291541",
-      "title": "2027~2028년 정보보호시스템 유지관리 및 사이버 보안관제 운영",
-      "org": "경기도 성남시",
-      "task": "일반용역",
-      "budget_raw": 898840170,
-      "budget": "9.0억",
-      "contract": "제한경쟁",
-      "reg_date": "2026-10-28",
-      "deadline": "마감",
-      "status": "마감",
-      "t1": [],
-      "t2": [
-        "보안관제"
-      ],
-      "score": 1,
-      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291541"
-    },
-    {
-      "biz_no": "R26BD00291367",
-      "title": "‘27～’28년 통합보안관제시스템 유지보수",
-      "org": "국토교통부",
-      "task": "일반용역",
-      "budget_raw": 875597480,
-      "budget": "8.8억",
-      "contract": "제한경쟁",
-      "reg_date": "2026-10-28",
-      "deadline": "마감",
-      "status": "마감",
-      "t1": [],
-      "t2": [
-        "보안관제"
-      ],
-      "score": 1,
-      "url": "https://www.g2b.go.kr/link/PRCA001_04/single/?srch=0002&flag=cnrtSl&oderPlanNo=R26BD00291367"
     },
     {
       "biz_no": "R26BD00293317",

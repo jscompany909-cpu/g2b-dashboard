@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-27 08:15",
-  "news_updated_at": "2026-11-27 08:15",
+  "updated_at": "2026-11-28 08:16",
+  "news_updated_at": "2026-11-28 08:16",
   "news_stale": false,
   "new_days": 7,
   "scanned": {
-    "bizinfo": 1318,
+    "bizinfo": 1299,
     "nipa": 30
   },
   "kpi": {
     "hot": 23,
-    "new": 2,
+    "new": 1,
     "total": 40,
-    "news": 4
+    "news": 2
   },
   "errors": [],
   "items": [
@@ -291,7 +291,7 @@
       "t2": [
         "인증"
       ],
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "PBLN_000000000126910",
@@ -746,22 +746,6 @@
   "news": [
     {
       "source": "뉴스",
-      "title": "충남 정보보호 혁신 컨퍼런스 2026, 12월 4일 아산에서 개최 - 위런치",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LWnJ1SS1rQmM4VXg4d2pvMzdwcDFTSXJ4S2ZfU1VJLUlaQ3dKN1lncENyM3FjVEpmVzJ2M2FkaDNOeDRxRnUzZUNkSjJyaTc3QnBydWxHbU1Eak5YOXFvNTNzV3M?oc=5",
-      "agency": "위런치",
-      "period": "",
-      "reg_date": "2026-11-25",
-      "end_date": "",
-      "category": "",
-      "score": 3,
-      "t1": [
-        "정보보호"
-      ],
-      "t2": [],
-      "is_new": false
-    },
-    {
-      "source": "뉴스",
       "title": "전주 도심융합특구 후보지 선정… AI 신뢰성 검·인증 거점 추진 - 천지일보",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBIXzRhQ2NENURkUnpfVFhHNnZobGdZUDRfVGIwQkNZdnR1LXdlZTdzQWNhd3J2U3NzU3NQSXZCRWl0VUJudV9hOWJtU2hmSTZmWWVSajZZV3RKMGxiUkZ1X1hSUEREOElHdWc?oc=5",
       "agency": "천지일보",
@@ -796,22 +780,6 @@
         "AX",
         "인증"
       ],
-      "is_new": false
-    },
-    {
-      "source": "뉴스",
-      "title": "올해 수출바우처 지원 사업, 화장품·뷰티 기업 가장 많고, 중동 수출기업에 집중 - cncnews.co.kr",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc1FKNlROcEJzNnpqTmtBVmE2VUhZNmV1OGlBOFBKZm5JOTJuaVI2R29CWWlHcU11ZUFYNFhXcE5zbERfbGt2cF9RWUpMSGV0eXNXZVhPb3VYTWdIOGN5SEpJSnh5TVhNNnZnRHFBN3RWRGRWbDJ6aHh3RktabktGczQ4VDZiWkd5?oc=5",
-      "agency": "cncnews.co.kr",
-      "period": "",
-      "reg_date": "2026-11-21",
-      "end_date": "",
-      "category": "",
-      "score": 3,
-      "t1": [
-        "수출바우처"
-      ],
-      "t2": [],
       "is_new": false
     }
   ]
